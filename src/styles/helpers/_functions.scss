@@ -3,11 +3,11 @@
 @use 'sass:list';
 
 @function to-rem($pxs...) {
-    $rem-values: ();
-    @each $px in $pxs {
-      $rem-values: list.append($rem-values, calc(($px / 16) * 1rem));
-    }
-    @return $rem-values;
+  $rem-values: ();
+  @each $px in $pxs {
+    $rem-values: list.append($rem-values, calc(($px / 16) * 1rem));
+  }
+  @return $rem-values;
 }
 
 // z-index: z('site-header'); Используется для адекватного определения z-index'a. Выставляем последовательность элементов тут.

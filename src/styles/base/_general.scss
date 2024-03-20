@@ -1,17 +1,26 @@
-h1, h2, h3, h4, h5, h6, ul {
-    margin: 0;
-    padding: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
 }
 
-*{
+* {
   box-sizing: border-box;
 }
 
-input,button,textarea{
+input,
+button,
+textarea {
   -webkit-appearance: none;
 }
 
-html, body {
+html,
+body {
   min-width: 320px;
   scroll-behavior: smooth;
   overflow-x: clip !important;
@@ -27,68 +36,42 @@ body {
   font-family: $primary_font;
   font-size: 16px;
   line-height: 120%;
-  color: var(--color-black);
+  color: var(--color-white);
   font-style: normal;
   letter-spacing: normal;
   flex-direction: column;
 
   &.on-scroll {
-    margin-top: 76px;
+    // margin-top: 76px;
   }
 }
 
 .main {
-    z-index: z("l-default");
-    display: flex;
-    flex: 1;
-    flex-direction: column;
+  z-index: z("l-default");
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .l {
-    &-default {
-        margin: 0 auto;
-        padding: 0 to-rem(10);
-        transition: all .4s ease-in-out;
+  &-default {
+    margin: 0 auto;
+    padding: 0 to-rem(16);
+    transition: all 0.4s ease-in-out;
 
-        @media (min-width: 768px) {
-            padding: 0 to-rem(42);
-        }
-
-        @media (min-width: 1760px) {
-            max-width: to-rem(1744);
-            padding: 0;
-        }
-
-        @media (min-width: 2560px) {
-            max-width: to-rem(2316);
-        }
-
-        &-small {
-          margin: 0 auto;
-          padding: 0 to-rem(10);
-
-          @media (min-width: 768px) {
-            max-width: to-rem(752);
-          }
-
-          @media (min-width: 1440px) {
-            max-width: to-rem(1088);
-            padding: 0;
-          }
-
-          @media (min-width: 1760px) {
-            max-width: to-rem(1448);
-          }
-
-          @media (min-width: 2560px) {
-            max-width: to-rem(1924);
-          }
-        }
+    @media (min-width: 768px) {
+      padding: 0 to-rem(40);
     }
+
+    @media (min-width: 1440px) {
+      max-width: to-rem(1360);
+    }
+  }
 }
 
-.lazy, .swiper-lazy  {
-    opacity: 0;
+.lazy,
+.swiper-lazy {
+  opacity: 0;
 }
 
 .loading,
@@ -96,98 +79,99 @@ body {
 [data-was-processed="true"],
 [data-ll-status="entered"],
 .swiper-lazy-loaded {
-    opacity: 1;
-    @include tr(all);
+  opacity: 1;
+  @include tr(all);
 }
 
 .hidden {
-    display: none !important;
-    opacity: 0 !important;
+  display: none !important;
+  opacity: 0 !important;
 }
 
 .show,
 .show_btn {
-    display: flex !important;
+  display: flex !important;
 }
 
 textarea,
 a,
 button,
 input[type="submit"] {
-    text-decoration: none;
-    color: inherit;
-    outline: none;
-    @include tr(all);
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  @include tr(all);
 }
 
 a,
 button,
 input[type="submit"] {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 input[type="submit"]:disabled {
-    cursor: not-allowed;
-    opacity: .5;
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 
 button {
-    background: none;
-    border: none;
+  background: none;
+  border: none;
 }
 
 input,
 video {
-    border: none;
-    outline: none;
-}
-
-.fancybox-content{
-    padding: 0;
-}
-
-input, textarea {
-    &::placeholder {
-        @include tr("all");
-    }
-    &:focus {
-        &::placeholder {
-            opacity: 0 !important;
-        }
-    }
-}
-
-img {
-    display: block;
-    max-width: 100%;
-}
-
-.loader {
-    z-index: z("loader");
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #fff;
+  border: none;
+  outline: none;
 }
 
 .fancybox-content {
-    z-index: 99994;
-    background: none;
+  padding: 0;
+}
+
+input,
+textarea {
+  &::placeholder {
+    @include tr("all");
+  }
+  &:focus {
+    &::placeholder {
+      opacity: 0 !important;
+    }
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.loader {
+  z-index: z("loader");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #fff;
+}
+
+.fancybox-content {
+  z-index: 99994;
+  background: none;
 }
 
 .overflow-y-hidden {
-    overflow-y: hidden !important;
+  overflow-y: hidden !important;
 }
 
 @keyframes show {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
