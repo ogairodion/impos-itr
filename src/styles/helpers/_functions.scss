@@ -20,7 +20,7 @@
   }
 }
 
-$z-indexes: ("loader", "burger", "sidebar", "menu", "header-fixed", "popup", "header", "shadow", "l-default",  "checkbox-link" , "checkbox",  "checkbox-btn");
+$z-indexes: ("loader", "burger", "sidebar", "menu", "header", "shadow", "l-default");
 
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});
