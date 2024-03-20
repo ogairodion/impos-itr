@@ -1,0 +1,42 @@
+:root {
+    --color-black: #03060A;
+    --color-black-grey-2: #484D5C;
+
+    --color-grey-dark: #0F1114;
+    --color-grey-cold: #C7CBD7;
+
+    --color-grey-maps: #F1F1F1;
+    --color-grey-maps-blocks: #F1F2F6;
+    --color-grey-border: #D9D9D9;
+
+    --color-white: #FFFFFF;
+
+    --color-red: #EE372C;
+
+    --color-grey-light-opacity: rgba(#EBEFF4, 0.6);
+
+    --color-grey-gradient: linear-gradient(127.8deg, #C7CBD7 -5.9%, #484D5C 98.01%);
+    --color-grey-gradient-light: linear-gradient(180deg, #FFFFFF -17.73%, #9498A2 109.92%, #9498A2 109.92%);
+
+    --color-black-gradient-glass: linear-gradient(113.79deg, rgba(255, 255, 255, 0.291) -17.29%, rgba(255, 255, 255, 0) 101.07%);
+    --color-black-gradient-glass-circuit: linear-gradient(343.59deg, #FFFFFF -4.52%, rgba(255, 255, 255, 0) 105.58%);
+
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+    --color-orange-gradient-hover: radial-gradient(72.68% 83.68% at 83.3% 20.97%, #FFB800 0%, rgba(253, 251, 230, 0.11) 100%);
+    --color-orange-gradient-hover-circuit: linear-gradient(127.81deg, #F1A712 2.11%, #FFFFFF 100%);
+    --color-orange-gradient-btn: linear-gradient(127.8deg, #FFF7AD -5.9%, #FFB800 98.01%);
+
+    --color-accent: #F1A712;
+}
+
+// на случай если CSS Properties не срабатывает с градиентом и прозрачностью
+$grey_gradient: linear-gradient(127.8deg, #C7CBD7 -5.9%, #484D5C 98.01%);
+$grey_gradient_light: linear-gradient(180deg, #FFFFFF -17.73%, #9498A2 109.92%, #9498A2 109.92%);
+$grey_light_opacity: rgba(#EBEFF4, 0.6);
+
+$black_gradient_glass: linear-gradient(113.79deg, rgba(255, 255, 255, 0.291) -17.29%, rgba(255, 255, 255, 0) 101.07%);
+$black_gradient_glass_circuit: linear-gradient(343.59deg, #FFFFFF -4.52%, rgba(255, 255, 255, 0) 105.58%);
+
+$orange_gradient_hover: radial-gradient(72.68% 83.68% at 83.3% 20.97%, #FFB800 0%, rgba(253, 251, 230, 0.11) 100%);
+$orange_gradient_hover_circuit: linear-gradient(127.81deg, #F1A712 2.11%, #FFFFFF 100%);
+$orange_gradient_btn: linear-gradient(127.8deg, #FFF7AD -5.9%, #FFB800 98.01%);

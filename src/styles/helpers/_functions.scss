@@ -1,0 +1,31 @@
+// Функции для работы с компонентнами
+@use 'sass:math';
+@use 'sass:list';
+
+@function to-rem($pxs...) {
+    $rem-values: ();
+    @each $px in $pxs {
+      $rem-values: list.append($rem-values, calc(($px / 16) * 1rem));
+    }
+    @return $rem-values;
+}
+
+// z-index: z('site-header'); Используется для адекватного определения z-index'a. Выставляем последовательность элементов тут.
+@function z($name) {
+  @if index($z-indexes, $name) {
+    @return (length($z-indexes) - index($z-indexes, $name)) + 1;
+  } @else {
+    @warn 'There is no item "#{$name}" in this list; choose one of: #{$z-indexes}';
+    @return null;
+  }
+}
+
+$z-indexes: ("loader", "burger", "sidebar", "menu", "header-fixed", "popup", "header", "shadow", "l-default",  "checkbox-link" , "checkbox",  "checkbox-btn");
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}
