@@ -166,6 +166,21 @@ img {
   overflow-y: hidden !important;
 }
 
+.swiper-slide {
+  .fade-bottom {
+    opacity: 0;
+    transform: translateY(to-rem(20));
+  }
+
+  &-active {
+    .fade-bottom {
+      transition: all 0.8s ease-in-out;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
 @keyframes show {
   from {
     opacity: 0;

@@ -32,17 +32,15 @@
     }
   }
 
-  &--more {
-    &:hover {
-      svg {
-        path {
-          &:first-child {
-            animation: more-reverse 0.6s infinite;
-          }
+  &:hover {
+    svg {
+      path {
+        &:first-child {
+          animation: more-reverse 0.6s infinite;
+        }
 
-          &:last-child {
-            animation: more 0.6s infinite;
-          }
+        &:last-child {
+          animation: more 0.6s infinite;
         }
       }
     }

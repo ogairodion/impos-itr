@@ -1,0 +1,51 @@
+.slider-navigation {
+  position: relative;
+
+  &-arrow {
+    background: var(--color-gray);
+  }
+
+  &--custom {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(4);
+    width: 100%;
+    min-height: 100%;
+
+    .slider-navigation {
+      &-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 auto;
+        cursor: pointer;
+
+        &:first-child {
+          border-radius: to-rem(24, 8, 8);
+        }
+
+        &:last-child {
+          border-radius: to-rem(8, 8, 8, 24);
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
+  &-progress {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-card-bg);
+    border-radius: to-rem(8);
+    padding: to-rem(8, 16);
+  }
+}
