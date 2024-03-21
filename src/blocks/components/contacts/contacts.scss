@@ -1,0 +1,48 @@
+.contacts {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--color-card-bg);
+    border-radius: to-rem(12);
+    padding: to-rem(4);
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: to-rem(40);
+    min-height: to-rem(40);
+    background: var(--color-gray);
+    border-radius: to-rem(8);
+  }
+
+  &__items, &__links {
+    display: flex;
+    align-items: center;
+  }
+
+  &__items {
+    gap: to-rem(10);
+    margin-left: to-rem(16);
+    margin-right: to-rem(20);
+  }
+
+  &__links {
+    gap: to-rem(4);
+  }
+
+  &__phone {
+    font-weight: 400;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: to-rem(24);
+    min-height: to-rem(24);
+    background: var(--color-primary);
+    border-radius: 100%;
+  }
+}

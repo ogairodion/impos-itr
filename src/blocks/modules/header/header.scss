@@ -1,1 +1,12 @@
-.header {}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: to-rem(32, 0);
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+}

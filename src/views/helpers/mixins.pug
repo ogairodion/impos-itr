@@ -42,5 +42,3 @@ mixin webp(names, typeImg, lazy, alt, sizes)
         source(data-srcset="/img/"+names[i]+".webp" type="image/webp")
         source(data-srcset="/img/"+names[i]+"."+typeImg+"" type="image/"+typeImg+"")
         img(data-src="/img/"+names[i]+"."+typeImg+"" alt=""+altValue+"" class=lazy)
-
-include ../../blocks/components/section/section.pug
