@@ -4,6 +4,7 @@
   left: 0;
   z-index: 100;
   width: 100%;
+  background: var(--color-dark);
   padding: to-rem(32, 0);
 
   &__wrapper {

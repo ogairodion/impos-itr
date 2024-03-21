@@ -1,0 +1,5 @@
+mixin image(element)
+  picture
+    source(srcset=`/img/${element.src}.${element.type}` type=`image/${element.type}`)
+    source(srcset=`/img/${element.src}.webp` type="image/webp")
+    img(src=`/img/${element.src}.${element.type}` alt="")
