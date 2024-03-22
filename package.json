@@ -27,7 +27,7 @@
         "@babel/eslint-parser": "^7.17.0",
         "@babel/preset-env": "^7.16.11",
         "@babel/register": "^7.17.0",
-        "babel-loader": "^8.2.3",
+        "babel-loader": "^9.1.3",
         "bem-tools-core": "bem-tools/bem-tools-core",
         "bem-tools-create": "^2.3.0",
         "browser-sync": "^2.27.7",

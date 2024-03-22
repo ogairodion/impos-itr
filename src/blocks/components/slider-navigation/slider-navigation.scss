@@ -2,7 +2,13 @@
   position: relative;
 
   &-arrow {
+    transition: all 0.4s ease-in-out;
     background: var(--color-gray);
+    border: to-rem(1) solid var(--color-gray);
+
+    &:hover {
+      background: var(--color-card-bg);
+    }
   }
 
   &--custom {
