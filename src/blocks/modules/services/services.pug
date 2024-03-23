@@ -1,0 +1,27 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/button/button.pug
+include ../.././components/image/image.pug
+
+section.services.point-wrapper
+  .l-default
+    +point({
+      number: '02',
+      text: 'Услуги',
+    })
+    h2.services__title.f-h2 Заголовк блока про услуги в разработке
+    .services__items
+      each services_item in services_items
+        .services__item
+          .services__item-img.filter-fade
+            +image({
+              src: services_item.img,
+              type: services_item.type
+            })
+          .services__item-info
+            .services__item-title.f-h4= services_item.title
+            .services__item-text.f-body= services_item.text
+            +button({
+              text: 'Подробнее',
+              icon: services_icon,
+            })

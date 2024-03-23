@@ -34,7 +34,7 @@ const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
 
 if (mainTopSlider_1) {
   mainTopSlider_1.on('slideChange', () => {
-    slidesProgressActive.innerText = mainTopSlider_1.activeIndex + 1;
+    slidesProgressActive.innerText = mainTopSlider_1.realIndex + 1;
   });
 }
 

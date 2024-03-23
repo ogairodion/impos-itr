@@ -1,0 +1,21 @@
+.point {
+  width: to-rem(214);
+  margin: 0 auto to-rem(24);
+
+  &__number {
+    margin-bottom: to-rem(11);
+  }
+
+  &__progress {
+    width: 100%;
+    height: to-rem(1);
+    border-radius: to-rem(2);
+    background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+    margin-bottom: to-rem(9);
+  }
+
+  &__text {
+    max-width: fit-content;
+    margin-left: auto;
+  }
+}

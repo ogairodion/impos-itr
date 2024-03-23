@@ -183,10 +183,11 @@ img {
 
 .filter-fade {
   position: relative;
-  background: rgba(#9C958F, 0.55);
+  // background: rgba(#9C958F, 0.55);
+  overflow: hidden;
 
   img {
-    mix-blend-mode: luminosity;
+    // mix-blend-mode: luminosity;
   }
 }
 

@@ -3,6 +3,8 @@
   align-items: center;
   max-width: fit-content;
   transition: all 0.4s ease-in-out;
+  color: var(--color-primary);
+  background: var(--color-gray);
   border-radius: to-rem(12);
   padding: to-rem(4, 4, 4, 32);
 
@@ -12,6 +14,7 @@
     justify-content: center;
     min-width: to-rem(48);
     min-height: to-rem(48);
+    background: var(--color-dark);
     border-radius: to-rem(8);
   }
 
@@ -27,7 +30,6 @@
     .button {
       &__icon {
         background: var(--color-dark);
-        margin-left: auto;
       }
     }
   }
@@ -44,6 +46,10 @@
         }
       }
     }
+  }
+
+  &__icon {
+    margin-left: auto;
   }
 }
 
