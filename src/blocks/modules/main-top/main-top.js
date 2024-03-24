@@ -7,8 +7,6 @@ const slidesProgress = mainTop.querySelector('.slider-navigation-progress');
 const slidesProgressActive = slidesProgress.querySelector('.slider-navigation-progress__active');
 const slidesProgressLength = slidesProgress.querySelector('.slider-navigation-progress__length');
 
-slidesProgressLength.innerText = slides.length;
-
 const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
   modules: [Navigation, Pagination, EffectFade, Autoplay],
   slidesPerView: 1,
@@ -33,6 +31,8 @@ const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
 });
 
 if (mainTopSlider_1) {
+  slidesProgressLength.innerText = mainTopSlider_1.slides.length;
+
   mainTopSlider_1.on('slideChange', () => {
     slidesProgressActive.innerText = mainTopSlider_1.realIndex + 1;
   });
