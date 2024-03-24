@@ -1,0 +1,23 @@
+.tabs {
+  display: flex;
+  max-width: fit-content;
+  gap: to-rem(4);
+  padding: to-rem(8);
+  border-radius: to-rem(20);
+  background: var(--color-card-bg);
+  margin: 0 auto to-rem(32);
+
+  .tab {
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    border-radius: to-rem(12);
+    padding: to-rem(19, 32);
+
+    &.active, &:hover {
+      background: var(--color-primary);
+      color: var(--color-dark);
+    }
+  }
+}

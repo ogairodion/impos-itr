@@ -1,0 +1,40 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/steps/steps.pug
+include ../.././components/tabs/tabs.pug
+include ../.././components/image/image.pug
+include ../.././components/slider-navigation/slider-navigation.pug
+
+section.scheme
+  .l-default
+    +point({
+      number: '03',
+      text: 'схема работы',
+    })
+    h2.scheme__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    +tabs(scheme_tabs)
+    each scheme_tab in scheme_tabs
+      .tabs__content(data-tab=scheme_tab.value)
+        +steps
+        .scheme__slider-wrapper
+          .swiper.scheme__slider
+            .swiper-wrapper
+              each scheme_slide in scheme_slides
+                .swiper-slide.scheme__slide
+                  .scheme__slide-img
+                    +image({
+                      src: scheme_slide.img,
+                      type: scheme_slide.type,
+                    })
+          .scheme__slide-info
+            .swiper.scheme__slider-info
+              .swiper-wrapper
+                each scheme_slide in scheme_slides
+                  .swiper-slide.scheme__slide
+                    .scheme__slide-step.f-caps-small.fade-bottom= scheme_slide.step
+                    .scheme__slide-title.f-h4.fade-bottom= scheme_slide.title
+                    .scheme__slide-text.f-body.fade-bottom= scheme_slide.text
+              +slider-navigation({
+                type: 'default',
+              })
+

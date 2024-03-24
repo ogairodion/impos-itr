@@ -75,4 +75,9 @@
       line-height: to-rem(24);
     }
   }
+
+  &-centered {
+    text-align: center;
+    margin: 0 auto;
+  }
 }

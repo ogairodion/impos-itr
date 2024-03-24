@@ -1,0 +1,7 @@
+mixin tabs(elements)
+  .tabs
+    each element, index in elements
+      - if (index === 0)
+        .tab.f-caps.active(data-tab=element.value)= element.text
+      - else
+        .tab.f-caps(data-tab=element.value)= element.text

@@ -5,9 +5,44 @@
     transition: all 0.4s ease-in-out;
     background: var(--color-gray);
     border: to-rem(1) solid var(--color-gray);
+    cursor: pointer;
 
     &:hover {
       background: var(--color-card-bg);
+    }
+  }
+
+  &--default {
+    display: flex;
+    gap: to-rem(4);
+    padding: to-rem(8);
+    border-radius: to-rem(20);
+    background: var(--color-card-bg);
+
+    .slider-navigation {
+      &-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 auto;
+        min-height: to-rem(56);
+
+        &:first-child {
+          border-radius: to-rem(8);
+          border-top-left-radius: to-rem(12);
+          border-bottom-left-radius: to-rem(12);
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+
+        &:last-child {
+          border-radius: to-rem(8);
+          border-top-right-radius: to-rem(12);
+          border-bottom-right-radius: to-rem(12);
+        }
+      }
     }
   }
 
