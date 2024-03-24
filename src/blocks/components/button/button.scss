@@ -8,6 +8,11 @@
   border-radius: to-rem(12);
   padding: to-rem(4, 4, 4, 32);
 
+  &:hover {
+    color: var(--color-gray);
+    background: var(--color-primary);
+  }
+
   &__icon {
     display: flex;
     align-items: center;
