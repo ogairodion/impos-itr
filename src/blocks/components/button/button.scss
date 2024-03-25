@@ -29,7 +29,7 @@
 
     &:hover {
       color: var(--color-primary);
-      background: var(--color-card-bg);
+      background: var(--color-gray);
     }
 
     .button {
@@ -55,6 +55,10 @@
 
   &__icon {
     margin-left: auto;
+  }
+
+  &__text {
+    font-weight: 600;
   }
 }
 

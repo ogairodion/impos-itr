@@ -1,0 +1,63 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/button/button.pug
+include ../.././components/image/image.pug
+include ../.././components/slider-navigation/slider-navigation.pug
+
+section.team
+  .l-default
+    +point({
+      number: '06',
+      text: 'команда',
+    })
+    h2.team__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    .team__mission
+      .team__mission-img
+        +image({
+          src: main_person.img,
+          type: main_person.type,
+        })
+      .team__mission-caption.f-caps-small Моя миссия
+      .team__mission-info
+        .team__mission-text= main_person.text
+        .team__mission-bottom
+          .team__mission-person
+            .team__mission-name.f-h5!= main_person.name
+            .team__mission-progress
+            .team__mission-position= main_person.position
+          .team__mission-button
+            +button({
+              theme: 'button--light',
+              text: 'О компании',
+              icon: arrow_up_icon,
+            })
+    .team__caption.f-caps-small Команда профессионалов
+    .team__wrapper
+      .team__slider.swiper
+        .swiper-wrapper
+          each team_slide in team_slides
+            .team__slide.swiper-slide
+              .team__slide-start
+                .team__slide-steps.f-caps-small
+                  .team__slide-step--current 1
+                  span —
+                  .team__slide-step--length 12
+                .team__slide-img
+                .team__slide-info
+                  .team__slide-name.f-h5!= team_slide.name
+                  .team__slide-progress
+                  .team__slide-position.f-body-small= team_slide.position
+              .team__slide-education
+                .team__slide-title.f-caps-small= team_slide.info.title
+                .team__slide-text.f-body-small!= team_slide.info.text
+              .team__slide-job
+                .team__slide-container
+                  .team__slide-title.f-caps-small= team_slide.job.title
+                  .team__slide-text.f-body-small!= team_slide.job.text
+                +button({
+                  text: 'Подробнее',
+                  icon: plus_icon,
+                })
+      +slider-navigation({
+          type: 'vertical',
+        })
