@@ -1,0 +1,14 @@
+include data.pug
+include ../.././components/point/point.pug
+
+section.partners
+  .l-default
+    +point({
+      number: '08',
+      text: 'Нам доверяют',
+    })
+    h2.partners__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    .partners__items
+      each partner in partners
+        .partners__item
+          img(src=`img/partners/${partner}.svg`, alt="")

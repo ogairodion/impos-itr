@@ -39,10 +39,14 @@ section.team
             .team__slide.swiper-slide
               .team__slide-start
                 .team__slide-steps.f-caps-small
-                  .team__slide-step--current 1
+                  span.team__slide-step--current 01
                   span —
-                  .team__slide-step--length 12
+                  span.team__slide-step--length 12
                 .team__slide-img
+                  +image({
+                    src: team_slide.img,
+                    type: team_slide.type,
+                  })
                 .team__slide-info
                   .team__slide-name.f-h5!= team_slide.name
                   .team__slide-progress
@@ -57,6 +61,13 @@ section.team
                 +button({
                   text: 'Подробнее',
                   icon: plus_icon,
+                  class: 'btn--more',
+                })
+
+                +button({
+                  text: 'Закрыть',
+                  icon: plus_icon,
+                  class: 'btn--close',
                 })
       +slider-navigation({
           type: 'vertical',

@@ -81,4 +81,179 @@
   &__caption {
     margin-bottom: to-rem(16);
   }
+
+  &__slider {
+    width: 100%;
+
+    .swiper-slide {
+      opacity: 0;
+
+      &-visible {
+        opacity: 1;
+        animation: show 0.4s ease-in-out;
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    max-width: to-rem(410);
+    height: auto;
+    min-height: to-rem(437);
+    border-radius: to-rem(32);
+    background: var(--color-card-bg);
+    padding: to-rem(8);
+
+    .button {
+      width: 100%;
+      max-width: 100%;
+      margin-top: auto;
+    }
+
+    &-start {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    &-progress {
+      width: 100%;
+      height: to-rem(2);
+      border-radius: to-rem(2);
+      background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+      margin: to-rem(14, 0, 16);
+    }
+
+    &-img {
+      position: relative;
+      width: to-rem(180);
+      height: to-rem(180);
+      border-radius: to-rem(24);
+      overflow: hidden;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+
+    &-steps {
+      display: block;
+      white-space: nowrap;
+      opacity: 0.5;
+      padding-top: to-rem(16);
+      padding-left: to-rem(16);
+    }
+
+    &-info {
+      margin: to-rem(32, 16, 39);
+    }
+
+    .btn--close {
+      display: none;
+    }
+
+    &-position {
+      opacity: 0.5;
+    }
+
+    &-education, &-text, &-title {
+      display: none;
+    }
+
+    &-job {
+      padding: to-rem(0, 16);
+    }
+
+    &-more {
+      display: flex;
+      max-width: 100%;
+
+      .button {
+        max-width: 100%;
+
+        svg {
+          transform: rotate(45deg);
+        }
+      }
+
+      .btn--more {
+        display: none;
+      }
+
+      .btn--close {
+        display: flex;
+      }
+
+      .team {
+        &__slide {
+          &-start {
+            flex-direction: column;
+            position: relative;
+            flex: 1 1 auto;
+            padding: to-rem(8);
+          }
+
+          &-education {
+            display: flex;
+            flex-direction: column;
+            max-width: to-rem(433);
+            padding: to-rem(40, 40, 24, 29);
+          }
+
+          &-job {
+            display: flex;
+            flex-direction: column;
+            max-width: to-rem(382);
+            padding: to-rem(40, 28, 24, 32);
+            border-left: to-rem(1) solid var(--color-gray);
+          }
+
+          &-title {
+            display: block;
+            margin-bottom: to-rem(16);
+          }
+
+          &-text {
+            display: block;
+          }
+
+          &-steps {
+            display: none;
+          }
+
+          &-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+          }
+
+          &-info {
+            position: relative;
+            z-index: 2;
+            border: to-rem(1) solid rgba(#fff, 0.22);
+            border-radius: to-rem(16);
+            background: rgba(#F8F1DF, 0.08);
+            backdrop-filter: blur(to-rem(8));
+            margin-top: auto;
+            padding: to-rem(24, 18, 23, 24);
+          }
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr to-rem(99);
+    gap: to-rem(15);
+  }
 }

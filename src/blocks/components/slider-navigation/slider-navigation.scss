@@ -76,6 +76,36 @@
     }
   }
 
+  &--vertical {
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(5);
+    padding: to-rem(8);
+    background: var(--color-card-bg);
+    border-radius: to-rem(32);
+
+    .slider-navigation {
+      &-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 auto;
+
+        &:first-child {
+          border-radius: to-rem(24, 24, 8, 8);
+        }
+
+        &:last-child {
+          border-radius: to-rem(8, 8, 24, 24);
+
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+  }
+
   &-progress {
     position: absolute;
     top: 50%;

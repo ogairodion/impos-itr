@@ -1,0 +1,22 @@
+.partners {
+  padding-bottom: to-rem(160);
+
+  &__title {
+    margin-bottom: to-rem(64);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: to-rem(8);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: to-rem(24);
+    background: var(--color-card-bg);
+    min-height: to-rem(124);
+  }
+}

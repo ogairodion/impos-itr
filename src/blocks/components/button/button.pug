@@ -3,7 +3,8 @@ mixin button(element)
     - if (element.href)
       a.button(class=[element.theme, element.class] href=element.href)
         .button__text.f-caps= element.text
-        .button__icon!= element.icon
+        - if (element.icon)
+          .button__icon!= element.icon
     - else
       button.button(class=[element.theme, element.class])
           .button__text.f-caps= element.text
