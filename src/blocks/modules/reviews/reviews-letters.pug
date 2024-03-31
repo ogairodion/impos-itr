@@ -1,0 +1,24 @@
+.reviews-letters
+  .reviews-letters__slider.swiper
+    .swiper-wrapper
+      each review_letters in reviews_letters
+        .reviews-letters__slide.swiper-slide
+          .reviews-letters__slide-logo
+            img(src=review_letters.logo, alt="")
+          .reviews-letters__slide-img
+            +image({
+              src: review_letters.img,
+              type: review_letters.type,
+            })
+          .reviews-letters__slide-info
+            .reviews-letters__slide-title.f-h4= review_letters.title
+            .reviews-letters__slide-description.f-body= review_letters.description
+            .reviews-letters__slide-bottom
+              .reviews-letters__slide-caption.f-caps-small Услуги
+              .reviews-letters__slide-progress
+              .reviews-letters__slide-tags
+                each reviews_tag in review_letters.tags
+                  .reviews-letters__slide-tag.f-caps-small= reviews_tag
+  +slider-navigation({
+    type: 'vertical',
+  })

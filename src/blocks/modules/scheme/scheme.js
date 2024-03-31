@@ -1,3 +1,4 @@
+import "%components%/tabs/tabs";
 import Swiper from 'swiper';
 import { Navigation, EffectFade, Pagination, Thumbs } from 'swiper/modules';
 

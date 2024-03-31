@@ -3,6 +3,7 @@ include ../.././components/point/point.pug
 include ../.././components/image/image.pug
 include ../.././components/button/button.pug
 include ../.././components/tabs/tabs.pug
+include ../.././components/slider-navigation/slider-navigation.pug
 
 section.reviews
   .l-default
@@ -14,6 +15,8 @@ section.reviews
     +tabs(reviews_tabs)
     .tabs__content.tabs__content-messengers(data-tab=reviews_tabs[0].value)
       include reviews-messengers.pug
+    .tabs__content.tabs__content-letters.hidden(data-tab=reviews_tabs[1].value)
+      include reviews-letters.pug
     +button({
       theme: 'button--more',
       text: 'Смотреть все отзывы компании ( 54 )',
