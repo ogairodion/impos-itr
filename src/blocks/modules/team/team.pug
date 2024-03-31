@@ -38,7 +38,7 @@ section.team
           each team_slide in team_slides
             .team__slide.swiper-slide
               .team__slide-start
-                .team__slide-steps.f-caps-small
+                .team__slide-steps.f-caps-small.fade-bottom
                   span.team__slide-step--current 01
                   span —
                   span.team__slide-step--length 12
@@ -48,26 +48,26 @@ section.team
                     type: team_slide.type,
                   })
                 .team__slide-info
-                  .team__slide-name.f-h5!= team_slide.name
+                  .team__slide-name.f-h5.fade-bottom!= team_slide.name
                   .team__slide-progress
-                  .team__slide-position.f-body-small= team_slide.position
+                  .team__slide-position.f-body-small.fade-bottom= team_slide.position
               .team__slide-education
-                .team__slide-title.f-caps-small= team_slide.info.title
-                .team__slide-text.f-body-small!= team_slide.info.text
+                .team__slide-title.f-caps-small.fade-bottom= team_slide.info.title
+                .team__slide-text.f-body-small.fade-bottom!= team_slide.info.text
               .team__slide-job
                 .team__slide-container
-                  .team__slide-title.f-caps-small= team_slide.job.title
-                  .team__slide-text.f-body-small!= team_slide.job.text
+                  .team__slide-title.f-caps-small.fade-bottom= team_slide.job.title
+                  .team__slide-text.f-body-small.fade-bottom!= team_slide.job.text
                 +button({
                   text: 'Подробнее',
                   icon: plus_icon,
-                  class: 'btn--more',
+                  class: 'btn--more fade-bottom',
                 })
 
                 +button({
                   text: 'Закрыть',
                   icon: plus_icon,
-                  class: 'btn--close',
+                  class: 'btn--close fade-bottom',
                 })
       +slider-navigation({
         type: 'vertical',
