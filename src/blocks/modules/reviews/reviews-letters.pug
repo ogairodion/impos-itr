@@ -3,13 +3,14 @@
     .swiper-wrapper
       each review_letters in reviews_letters
         .reviews-letters__slide.swiper-slide
-          .reviews-letters__slide-logo
-            img(src=review_letters.logo, alt="")
-          .reviews-letters__slide-img
-            +image({
-              src: review_letters.img,
-              type: review_letters.type,
-            })
+          .reviews-letters__slide-left
+            .reviews-letters__slide-logo
+              img(src=review_letters.logo, alt="")
+            .reviews-letters__slide-img
+              +image({
+                src: review_letters.img,
+                type: review_letters.type,
+              })
           .reviews-letters__slide-info
             .reviews-letters__slide-title.f-h4= review_letters.title
             .reviews-letters__slide-description.f-body= review_letters.description
