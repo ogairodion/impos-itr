@@ -1,7 +1,13 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
+const parent = document.querySelector('.team');
 const slides = document.querySelectorAll('.team__slide');
+const slidesCurrent = parent.querySelector('.slider-navigation-progress__length');
+const slidesActive = parent.querySelector('.slider-navigation-progress__active');
+
+slidesCurrent.innerText = slides.length;
+slidesActive.innerText = 1;
 
 const teamSlider = new Swiper('.team__slider', {
   modules: [Navigation, Pagination],
@@ -35,6 +41,10 @@ if (teamSlider) {
 
   teamSlider.on('transitionEnd ', () => {
     getActiveSlides();
+  });
+
+  teamSlider.on('slideChange ', () => {
+    slidesActive.innerText = teamSlider.realIndex + 1;
   });
 }
 
@@ -106,7 +116,7 @@ function changeSliders(switcher, id) {
         slide.classList.remove('swiper-slide-visible');
       }
     });
-
+    teamSlider.slideTo(0);
     teamSlider.update();
   }
 }

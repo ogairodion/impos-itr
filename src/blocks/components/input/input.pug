@@ -1,0 +1,8 @@
+mixin input(element)
+  .input
+    label.input-label.f-body-small= element.label
+    - if (element.required)
+      input.f-body(class=element.className type=element.type placeholder=element.placeholder required)
+    - else
+      input.f-body(class=element.className type=element.type placeholder=element.placeholder)
+    label.input-error.f-body-small

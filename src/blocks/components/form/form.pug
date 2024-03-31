@@ -1,0 +1,15 @@
+include .././input/input.pug
+include .././button/button.pug
+
+mixin form(element)
+  form.form
+    .form__inputs
+      each input in element.inputs
+        +input(input)
+    +button({
+      type: 'submit',
+      theme: element.button.theme,
+      text: element.button.text,
+      icon: element.button.icon,
+    })
+    .form__privacy.f-body-small Нажимая кнопку «Подписаться на рассылку» я соглашаюсь на обработку персональных данных
