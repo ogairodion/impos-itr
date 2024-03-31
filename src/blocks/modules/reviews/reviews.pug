@@ -1,0 +1,21 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/image/image.pug
+include ../.././components/button/button.pug
+include ../.././components/tabs/tabs.pug
+
+section.reviews
+  .l-default
+    +point({
+      number: '07',
+      text: 'отзывы',
+    })
+    h2.reviews__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    +tabs(reviews_tabs)
+    .tabs__content.tabs__content-messengers(data-tab=reviews_tabs[0].value)
+      include reviews-messengers.pug
+    +button({
+      theme: 'button--more',
+      text: 'Смотреть все отзывы компании ( 54 )',
+      href: '#',
+    })

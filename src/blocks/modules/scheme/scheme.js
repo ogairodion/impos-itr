@@ -1,7 +1,8 @@
 import Swiper from 'swiper';
 import { Navigation, EffectFade, Pagination, Thumbs } from 'swiper/modules';
 
-const tabsContent = document.querySelectorAll('.tabs__content');
+const parent = document.querySelector('.scheme');
+const tabsContent = parent.querySelectorAll('.tabs__content');
 
 function callback(mutationsList) {
   mutationsList.forEach((element) => {
@@ -22,8 +23,8 @@ function getSliders(element) {
   let sliderInfo = element.querySelector('.scheme__slider-info');
   let arrowLeft = element.querySelector('.slider-navigation-arrow--prev');
   let arrowRight = element.querySelector('.slider-navigation-arrow--next');
+  let sliders = sliderInfo ? sliderInfo.querySelectorAll('.swiper-slide') : [];
 
-  const sliders = sliderInfo.querySelectorAll('.swiper-slide');
   const sliderLength = element.querySelector('.slider-navigation-progress__length');
   const sliderActiveIndex = element.querySelector('.slider-navigation-progress__active');
 

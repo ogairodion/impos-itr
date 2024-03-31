@@ -1,0 +1,29 @@
+include ../.././components/slider-navigation/slider-navigation.pug
+
+.reviews-messengers
+  .reviews-messengers__slider.swiper
+    .swiper-wrapper
+      each review_messengers in reviews_messengers
+        .reviews-messengers__slide.swiper-slide
+          .reviews-messengers__slide-img
+            +image({
+              src: review_messengers.img,
+              type: review_messengers.type,
+            })
+          .reviews-messengers__slide-info
+            .reviews-messengers__slide-top
+              .reviews-messengers__slide-title.f-h4= review_messengers.title
+              .reviews-messengers__slide-step.f-caps-small
+                span.reviews-messengers__slide-step--current 01
+                span —
+                span.reviews-messengers__slide-step--length 12
+            .reviews-messengers__slide-description.f-body= review_messengers.description
+            .reviews-messengers__slide-bottom
+              .reviews-messengers__slide-caption.f-caps-small Услуги
+              .reviews-messengers__slide-progress
+              .reviews-messengers__slide-tags
+                each reviews_tag in review_messengers.tags
+                  .reviews-messengers__slide-tag.f-caps-small= reviews_tag
+  +slider-navigation({
+    type: 'vertical',
+  })
