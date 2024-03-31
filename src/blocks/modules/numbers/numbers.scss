@@ -1,0 +1,125 @@
+.numbers {
+  padding-bottom: to-rem(160);
+
+  .point {
+    margin: 0;
+    margin-bottom: to-rem(24);
+  }
+
+  &__top {
+    display: flex;
+    margin-bottom: to-rem(64);
+  }
+
+  &__title {
+    max-width: to-rem(640);
+  }
+
+  &__description {
+    max-width: to-rem(358);
+    opacity: 0.5;
+    margin: 0 auto;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(6, 6fr);
+    gap: to-rem(16);
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    grid-column: span 3;
+    min-height: to-rem(400);
+    border-radius: to-rem(24);
+    background: var(--color-card-bg);
+    padding: to-rem(32);
+
+    &-top {
+      display: flex;
+    }
+
+    &-top, &-bottom {
+      z-index: 2;
+    }
+
+    &-title {
+      font-size: to-rem(88);
+      line-height: 1;
+    }
+
+    &-description {
+      opacity: 0.5;
+    }
+
+    &-img {
+      img {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &:first-child {
+      grid-column: span 4;
+
+      .numbers {
+        &__item {
+          &-top {
+            gap: to-rem(16);
+          }
+
+          &-title {
+            margin-bottom: to-rem(6);
+          }
+
+          &-description {
+            max-width: to-rem(354);
+          }
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      grid-column: span 2;
+      max-width: to-rem(433);
+    }
+
+    &:last-child {
+      display: none;
+    }
+
+    &:not(:first-child) {
+      .numbers {
+        &__item {
+          &-top {
+            flex: 1 1 auto;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+          }
+
+          &-title {
+            margin-top: auto;
+          }
+
+          &-progress {
+            width: 100%;
+            height: to-rem(2);
+            border-radius: to-rem(2);
+            background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+            margin: to-rem(6, 0, 16);
+          }
+
+          &-description {
+            max-width: to-rem(292);
+          }
+        }
+      }
+    }
+  }
+}
