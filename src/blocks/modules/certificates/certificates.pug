@@ -1,0 +1,25 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/image/image.pug
+include ../.././components/slider-navigation/slider-navigation.pug
+
+section.certificates
+  .l-default
+    +point({
+      number: '10',
+      text: 'Сертификаты и лицензии',
+    })
+    h2.certificates__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    .certificates__wrapper
+      .certificates__slider.swiper
+        .swiper-wrapper
+          each certificates_slide in certificates_slides
+            .certificates__slide.swiper-slide
+              .certificates__slide-img
+                +image({
+                  src: certificates_slide,
+                  type: 'jpg',
+                })
+      +slider-navigation({
+        type: 'vertical',
+      })

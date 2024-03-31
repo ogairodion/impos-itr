@@ -1,0 +1,15 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/image/image.pug
+
+section.numbers
+  .l-default
+    +point({
+      number: '11',
+      text: 'Преимущества',
+    })
+    .numbers__top
+      h2.numbers__title.f-h2 Заголовк блока с логотипами в разработке
+      .numbers__description.f-body Текст описания блока в разработке, примерный объем текста может варьировтаься от 2-3 строк до 4-5.. Все ситуалисвно
+      .numbers__items
+        .numbers__item
