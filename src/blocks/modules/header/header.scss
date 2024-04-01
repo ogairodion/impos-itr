@@ -9,6 +9,9 @@
 
   &__wrapper {
     display: flex;
-    justify-content: space-between;
+  }
+
+  &__logo {
+    margin: 0 auto;
   }
 }

@@ -1,0 +1,40 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/button/button.pug
+include ../.././components/image/image.pug
+include ../.././components/slider-navigation/slider-navigation.pug
+
+section.rewards
+  .l-default
+    +point({
+      number: '13',
+      text: 'Наши награды',
+    })
+    .rewards__top
+      h2.rewards__title.f-h2 Заголовк блока с логотипами в разработке
+      .rewards__description.f-body Текст описания блока в разработке, примерный объем текста может варьировтаься от 2-3 строк до 4-5.. Все ситуалисвно
+    .rewards__container
+      .rewards__slider.swiper
+        .swiper-wrapper
+          each rewards_slide in rewards_slides
+            - const className = rewards_slide.title ? 'rewards__slide-video' : '';
+            .rewards__slide.swiper-slide(class=className)
+              .rewards__slide-img
+                +image({
+                  src: rewards_slide.img,
+                  type: 'jpg',
+                })
+              - if (rewards_slide.title)
+                .rewards__slide-bottom
+                  .rewards__slide-play
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path opacity="0.4" d="M16.9611 13.7384L8.99228 18.292C7.65896 19.0539 6 18.0912 6 16.5555V7.44827C6 5.91262 7.65896 4.94989 8.99228 5.71178L16.9611 10.2654C18.3048 11.0332 18.3048 12.9706 16.9611 13.7384Z" fill="#F8F1DF"/>
+                    </svg>
+                  .rewards__slide-info
+                    .rewards__slide-title.f-h5= rewards_slide.title
+                    .rewards__slide-caption.f-body-small= rewards_slide.caption
+      +slider-navigation({
+        type: 'vertical',
+      })
+
+
