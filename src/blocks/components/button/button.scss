@@ -72,6 +72,11 @@
     padding: to-rem(27, 0);
     margin: 0 auto;
   }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
 }
 
 @keyframes more {

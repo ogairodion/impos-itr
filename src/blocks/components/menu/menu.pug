@@ -1,3 +1,7 @@
+include data.pug
+include .././button/button.pug
+include .././form/form.pug
+
 .menu-main
   .menu-main__wrapper
     .menu-main__icon
@@ -9,3 +13,50 @@
     .menu-main__text.f-caps-small Меню
 
 .menu
+  .menu__wrapper
+    .menu__container
+      .menu__columns
+        .menu__column.menu__column-lvl-1
+          .menu__column-top
+            .menu__close
+              .menu__close-icon!= close_menu_icon
+              .menu__close-text.f-caps-small закрыть
+          .menu__items
+            each menu_item, index in menu_items
+              - if (menu_item.href)
+                a.menu__item.f-menu(href="")= menu_item.text= menu_item.text
+              - else
+                .menu__item.f-menu(data-menu-id=index + 1)= menu_item.text
+        .menu__column.menu__column-lvl-2
+          .menu__column-top
+          each menu_item, index in menu_items
+            - if (menu_item.submenu)
+              each sub_menu_item, idx in menu_item.submenu
+                .menu__links
+                  each level_2_item in sub_menu_item.submenu.items
+                    - if (level_2_item.href)
+                      a.menu__link.f-body(href=level_2_item.href)= level_2_item.text
+                    - else
+                      .menu__link.f-body(data-menu-id=`${index + 1}`)= level_2_item.text
+          .menu__column-top
+        .menu__column.menu__column-lvl-3
+          .menu__column-top
+          each menu_item, index in menu_items
+            - if (menu_item.submenu)
+              each sub_menu_item, idx in menu_item.submenu
+                .menu__links(data-menu-id=`${index + 1}`)
+                  each level_2_item in sub_menu_item.submenu.submenu
+                    a.menu__link.f-body(href=level_2_item.href)= level_2_item.text
+      .menu__bottom
+        each menu_bottom_item in menu_bottom
+          a.menu__bottom-item.f-h5(href=menu_bottom_item.href)= menu_bottom_item.text
+    .menu__form.form
+      .menu__form-title.f-h3 Заказать звонок
+      +form({
+          inputs: menu_form_inputs,
+          button: {
+            text: 'Заказать звонок',
+            icon: menu_form_icon,
+            theme: 'button--light'
+          },
+        })
