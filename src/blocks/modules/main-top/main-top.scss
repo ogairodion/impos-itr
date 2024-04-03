@@ -35,7 +35,12 @@
 
   &__title {
     max-width: to-rem(492);
-    margin-bottom: to-rem(48);
+  }
+
+  &__description {
+    max-width: to-rem(367);
+    opacity: 0.5;
+    margin-top: to-rem(16);
   }
 
   &__slider {
@@ -73,6 +78,7 @@
 
   .button {
     min-width: to-rem(333);
+    margin-top: to-rem(48);
   }
 
   .swiper {
@@ -107,6 +113,18 @@
         object-fit: cover;
         object-position: center center;
       }
+    }
+  }
+
+  &-page {
+    .main-top {
+      &__info {
+        padding-top: 0;
+      }
+    }
+
+    .breadcrumbs {
+      margin-bottom: to-rem(15);
     }
   }
 }

@@ -1,0 +1,4 @@
+mixin breadcrumbs(element)
+  .breadcrumbs
+    each breadcrumb in element.breadcrumbs
+      a.breadcrumb.f-body-small(href=breadcrumb.href)= breadcrumb.text

@@ -1,0 +1,22 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/button/button.pug
+include ../.././components/dropdowns/dropdowns.pug
+
+section.questions
+  .l-default
+    +point({
+      number: '03',
+      text: 'Ответы на вопросы',
+    })
+    .questions__top
+      h2.questions__title.f-h2 Заголовк блока находится в разработке
+      .questions__description Текст описания блока в разработке, примерный объем текста может варьировтаься от 2-3 строк до 4-5.. Все ситуалисвно
+    +dropdowns({
+      dropdowns,
+    })
+    +button({
+      text: 'Смотреть все вопросы',
+      theme: 'button--more',
+      href: '#',
+    })

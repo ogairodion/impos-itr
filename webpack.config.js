@@ -4,6 +4,7 @@ module.exports = {
     entry: {
       main: "./src/js/index.js",
       "main-page": "./src/js/main-page.js",
+      service: "./src/js/service.js",
     },
 
     output: {

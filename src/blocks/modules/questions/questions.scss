@@ -1,0 +1,28 @@
+.questions {
+  padding-bottom: to-rem(64);
+
+  .point {
+    margin: 0;
+    margin-bottom: to-rem(24);
+  }
+
+  &__top {
+    display: flex;
+    margin-bottom: to-rem(64);
+  }
+
+  &__title {
+    max-width: to-rem(640);
+  }
+
+  &__description {
+    max-width: to-rem(358);
+    opacity: 0.5;
+    margin: 0 auto;
+  }
+
+  .button--more {
+    max-width: 100%;
+    margin-top: to-rem(48);
+  }
+}

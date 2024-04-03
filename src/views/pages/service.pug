@@ -1,0 +1,18 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Service | ImposTrade";
+  - const styles_url = "styles/service.css";
+
+block content
+  include ../../blocks/modules/header/header
+  main.main
+    include ../../blocks/modules/main-top/main-top-page
+    include ../../blocks/modules/questions/questions
+    include ../../blocks/modules/horizontal-form/horizontal-form-service
+  include ../../blocks/modules/footer/footer
+
+block scripts
+  script(src="js/vendor.js")
+  script(src="js/main.js")
+  script(src="js/service.js")

@@ -1,0 +1,19 @@
+include data.pug
+include ../.././components/form/form.pug
+
+section.horizontal-form.horizontal-form-service
+  .l-default
+    .horizontal-form__container
+      .horizontal-form__info
+        h3.horizontal-form__title.f-h3 Остались вопросы?
+        .horizontal-form__progress
+        .horizontal-form__description.f-body Остались вопросы?
+      .horizontal-form__wrapper
+        +form({
+          inputs: form_inputs,
+          button: {
+            text: 'Подписаться на рассылку',
+            icon: horizontal_form_icon,
+            theme: 'button--light'
+          },
+        })
