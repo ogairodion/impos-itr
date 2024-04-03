@@ -1,0 +1,106 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/form/form.pug
+
+section.rates
+  .l-default
+    +point({
+      number: '04',
+      text: 'тарифы',
+    })
+    h2.rates__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    .rates__wrapper
+      .rates__form
+        .rates__form-title.f-h3 Скачать весь прайс
+        .rates__form-progress
+        .rates__form-description.f-body Текст в разработке, описываем что с вами свяжется менеджен и ответит на все интересующие вопросы
+        +form({
+          inputs: rates_inputs,
+          button: {
+            text: 'Задать вопрос',
+            icon: rates_form_icon,
+            theme: 'button--light'
+          },
+        })
+      .rates__content
+        table.rates__table
+          thead
+            th.f-caps-small №
+            th.f-caps-small Наименование услуги
+            th.f-caps-small Стоимость ₽
+          tbody
+            tr
+              td
+                .rates__table-number.f-body-small 01
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Аутсорсинг ВЭД (поставка под контракт компании «ИМПОС ТРЕЙД»)
+                .rates__table-items
+                  .rates__table-item.f-body-small Экспорт
+                  .rates__table-item.f-body-small Импорт
+              td
+                .rates__table-items
+                  .rates__table-item.f-body-small от 15 000 ₽
+                  .rates__table-item.f-body-small от 25 000 ₽
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Сопровождение внешнеэкономической сделки под прямой контракт клиента, включая:
+                ol
+                  li.f-body-small Подбор кода ТН ВЭД, расчет таможенных платежей
+                  li.f-body-small Полное консультационное и методическое сопровождение сделки
+                  li.f-body-small Услуги декларанта по подаче и выпуску декларации на таможенном посту
+                  li.f-body-small Проверка и при необходимости корректировка отгрузочных документов поставщика
+                  li.f-body-small Перевод документации от иностраного контрагента (при импортной поставке)
+                  li.f-body-small Оптимизация логистики и таможенных платежей
+                .rates__table-items
+                  .rates__table-item.f-body-small Экспорт
+                  .rates__table-item.f-body-small Импорт
+              td
+                .rates__table-items
+                  .rates__table-item.f-body-small от 20 000 ₽
+                  .rates__table-item.f-body-small от 35 000 ₽
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Сопровождение внешнеэкономической сделки под прямой контракт клиента, включая:
+              td.rates__table-td.f-body-small от 5 000 ₽
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Подбор кода ТН ВЭД с указанием перечня необходимой разрешительной документации
+              td.rates__table-td.f-body-small от 1000 ₽ + 500 ₽ за каждый последующий
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Подбор кода ТН ВЭД с указанием перечня необходимой разрешительной документации
+              td.rates__table-td.f-body-small от 1000 ₽ + 500 ₽ за каждый последующий
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Подбор кода ТН ВЭД с указанием перечня необходимой разрешительной документации
+              td.rates__table-td.f-body-small от 1000 ₽ + 500 ₽ за каждый последующий
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Подбор кода ТН ВЭД с указанием перечня необходимой разрешительной документации
+              td.rates__table-td.f-body-small от 1000 ₽ + 500 ₽ за каждый последующий
+            tr
+              td
+                .rates__table-number.f-body-small 02
+              td
+                .rates__table-top
+                  .rates__table-title.f-h5 Подбор кода ТН ВЭД с указанием перечня необходимой разрешительной документации
+              td.rates__table-td.f-body-small от 1000 ₽ + 500 ₽ за каждый последующий

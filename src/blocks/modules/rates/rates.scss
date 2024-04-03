@@ -1,0 +1,130 @@
+.rates {
+  padding-bottom: to-rem(160);
+
+  &__title {
+    margin-bottom: to-rem(64);
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: to-rem(557) 1fr;
+    gap: to-rem(16);
+  }
+
+  &__form {
+    position: sticky;
+    top: to-rem(120);
+    height: fit-content;
+    padding: to-rem(32);
+
+    &-progress {
+      height: to-rem(2);
+      border-radius: to-rem(2);
+      background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+      margin: to-rem(16, 0);
+    }
+
+    &-description {
+      max-width: to-rem(315);
+      opacity: 0.5;
+      margin-left: auto;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 100%;
+      margin-top: to-rem(16);
+    }
+
+    .form {
+      margin-top: to-rem(56);
+
+      &__inputs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: to-rem(16);
+
+        input {
+          width: 100%;
+        }
+      }
+
+      &__privacy {
+        max-width: to-rem(340);
+        margin-top: to-rem(16);
+      }
+    }
+  }
+
+  &__form, &__table {
+    background: var(--color-card-bg);
+    border-radius: to-rem(24);
+  }
+
+  &__table {
+    overflow: hidden;
+
+    th {
+      opacity: 0.5;
+      text-align: left;
+      padding: to-rem(32, 32, 24);
+    }
+
+    td {
+      vertical-align: top;
+      padding: to-rem(24, 32, 0);
+
+      &:first-child {
+        padding-top: to-rem(29);
+      }
+
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+
+      &:last-child {
+        vertical-align: bottom;
+        padding-left: 0;
+      }
+
+      ul, ol {
+        margin-top: to-rem(16);
+        padding-right: to-rem(64);
+      }
+
+      li {
+        &:not(:first-child) {
+          margin-top: to-rem(8);
+        }
+      }
+
+      &.rates {
+        &__table {
+          &-td {
+            vertical-align: top;
+            padding-left: to-rem(32);
+          }
+        }
+      }
+    }
+
+    &-top {
+      padding-right: to-rem(32);
+      padding-bottom: to-rem(24);
+    }
+
+    &-item {
+      border-top: to-rem(1) solid var(--color-gray);
+      padding: to-rem(10, 32);
+    }
+  }
+
+  table, td, th {
+    border: to-rem(1) solid var(--color-gray);
+    border-collapse: collapse;
+  }
+
+  input {
+    background: var(--color-gray);
+  }
+}

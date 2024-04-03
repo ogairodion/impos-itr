@@ -13,6 +13,7 @@
         content: '';
         min-width: to-rem(40);
         min-height: to-rem(1);
+        border-radius: to-rem(2);
         background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
         margin: to-rem(0, 8);
       }
