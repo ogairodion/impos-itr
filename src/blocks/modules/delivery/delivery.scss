@@ -1,0 +1,50 @@
+.delivery {
+  padding-bottom: to-rem(160);
+
+  &__title {
+    margin-bottom: to-rem(64);
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: to-rem(16);
+  }
+
+  &__item {
+    border-radius: to-rem(40);
+    background: var(--color-card-bg);
+    padding: to-rem(8, 8, 24);
+
+    &-img {
+      position: relative;
+      min-height: to-rem(175);
+      border-radius: to-rem(32);
+      overflow: hidden;
+      margin-bottom: to-rem(16);
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &-info {
+      padding: to-rem(0, 16);
+    }
+
+    &-title {
+      margin-bottom: to-rem(40);
+    }
+
+    .button {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

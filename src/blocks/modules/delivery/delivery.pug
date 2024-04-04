@@ -1,0 +1,27 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/image/image.pug
+include ../.././components/button/button.pug
+
+section.delivery
+  .l-default
+    +point({
+      number: '12',
+      text: 'Виды доставки',
+    })
+    h2.delivery__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    .delivery__items
+      each delivery_item in delivery_items
+        .delivery__item
+          .delivery__item-img
+            +image({
+              type: 'jpg',
+              src: delivery_item.img,
+            })
+          .delivery__item-info
+            .delivery__item-title.f-h4!= delivery_item.title
+            +button({
+              icon: plus_icon_delivery,
+              text: 'Подробнее',
+              href: '#',
+            })
