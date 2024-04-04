@@ -1,0 +1,45 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/image/image.pug
+include ../.././components/button/button.pug
+include ../.././components/breadcrumbs/breadcrumbs.pug
+include ../.././components/slider-navigation/slider-navigation.pug
+
+section.cases.block-main
+  .l-default
+    +breadcrumbs({
+      breadcrumbs: [
+        { text: 'Главная', href: '#' },
+        { text: 'Кейсы компании', href: '#' },
+      ],
+    })
+    h1.cases__title.f-h1 Кейсы<br /> компании
+    .cases__items
+      each cases_item in cases_items
+        .cases__item
+          .cases__item-info
+            .cases__item-title.f-h3!= cases_item.title
+            .cases__item-description.f-body= cases_item.description
+            .cases__table.cases__item-table
+              each cases_table_item in cases_item.table
+                .cases__table-item
+                  .cases__table-title.f-body= cases_table_item.title
+                  .cases__table-text.f-body= cases_table_item.text
+          .cases__item-actions
+            .cases__item-slider.swiper
+              .swiper-wrapper
+                each cases_slide in cases_item.slides
+                  .cases__item-slide.swiper-slide
+                    .cases__item-img
+                      +image({
+                        src: cases_slide,
+                        type: 'jpg',
+                      })
+            +slider-navigation({
+              type: 'default',
+            })
+            +button({
+              href: '#',
+              text: 'подробнее',
+              icon: plus_icon_cases,
+            })

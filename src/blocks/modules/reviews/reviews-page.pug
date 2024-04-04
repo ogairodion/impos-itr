@@ -1,0 +1,21 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/image/image.pug
+include ../.././components/button/button.pug
+include ../.././components/tabs/tabs.pug
+include ../.././components/breadcrumbs/breadcrumbs.pug
+
+section.reviews.block-main
+  .l-default
+    +breadcrumbs({
+      breadcrumbs: [
+        { text: 'Главная', href: '#' },
+        { text: 'Кейсы компании', href: '#' },
+      ],
+    })
+    h1.cases__title.f-h1 Кейсы<br /> компании
+    +tabs(reviews_tabs)
+    .tabs__content.tabs__content-messengers(data-tab=reviews_tabs[0].value)
+      include reviews-messengers-page.pug
+    .tabs__content.tabs__content-letters.hidden(data-tab=reviews_tabs[1].value)
+      include reviews-letters-page.pug

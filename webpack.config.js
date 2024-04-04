@@ -5,6 +5,7 @@ module.exports = {
       main: "./src/js/index.js",
       "main-page": "./src/js/main-page.js",
       service: "./src/js/service.js",
+      cases: "./src/js/cases.js",
     },
 
     output: {

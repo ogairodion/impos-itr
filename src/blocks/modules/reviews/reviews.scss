@@ -192,4 +192,16 @@
   .button--more {
     margin-top: to-rem(48);
   }
+
+  &.block-main {
+    .reviews-messengers, .reviews-letters {
+      grid-template-columns: 1fr;
+    }
+
+    .reviews-messengers__slider, .reviews-letters__slider {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: to-rem(16);
+    }
+  }
 }

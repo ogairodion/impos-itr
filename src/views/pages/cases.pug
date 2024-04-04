@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block variables
+  - const title = "Service | ImposTrade";
+  - const styles_url = "styles/cases.css";
+
+block content
+  include ../../blocks/modules/header/header
+  main.main
+    include ../../blocks/modules/cases/cases-page
+
+block scripts
+  script(src="js/vendor.js")
+  script(src="js/main.js")
+  script(src="js/cases.js")

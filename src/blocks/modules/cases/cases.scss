@@ -105,4 +105,19 @@
       margin-top: to-rem(48);
     }
   }
+
+  &.block-main {
+    .cases {
+      &__items {
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(16);
+      }
+
+      &__item {
+        position: static;
+        margin-top: 0;
+      }
+    }
+  }
 }

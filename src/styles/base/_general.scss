@@ -52,6 +52,19 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
+  margin-top: to-rem(136);
+}
+
+.block-main {
+  padding-bottom: to-rem(160);
+
+  .breadcrumbs {
+    margin-bottom: to-rem(64);
+  }
+
+  .f-h1 {
+    margin-bottom: to-rem(48);
+  }
 }
 
 .l {
