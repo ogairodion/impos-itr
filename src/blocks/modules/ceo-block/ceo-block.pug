@@ -1,0 +1,32 @@
+include data.pug
+include ../.././components/point/point.pug
+include ../.././components/dropdowns/dropdowns.pug
+include ../.././components/image/image.pug
+include ../.././components/tag/tag.pug
+
+section.ceo-block
+  .l-default
+    +point({
+      number: '05',
+      text: 'СЕО',
+    })
+    .ceo-block__top
+      h2.ceo-block__title.f-h2 Заголовк блока находится в разработке
+      .ceo-block__description Текст описания блока в разработке, примерный объем текста может варьировтаься от 2-3 строк до 4-5.. Все ситуалисвно
+    .ceo-block__items
+      each ceo_block_item in ceo_block_items
+        .ceo-block__item
+          - if (ceo_block_item.title)
+            .ceo-block__item-title.f-h5= ceo_block_item.title
+          - if (ceo_block_item.text)
+          .ceo-block__item-text.f-body-small!= ceo_block_item.text
+          .ceo-block__item-img
+            +image({
+              type: 'jpg',
+              src: ceo_block_item.img,
+            })
+    .ceo-block__tags
+      each ceo_block_tag in ceo_block_tags
+        +tag({
+          text: ceo_block_tag,
+        })

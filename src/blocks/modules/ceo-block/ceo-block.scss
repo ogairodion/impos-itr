@@ -1,0 +1,53 @@
+.ceo-block {
+  padding-bottom: to-rem(160);
+
+  .point {
+    width: to-rem(328);
+    margin: 0;
+    margin-bottom: to-rem(24);
+  }
+
+  &__top {
+    display: flex;
+    margin-bottom: to-rem(48);
+  }
+
+  &__title {
+    max-width: to-rem(640);
+  }
+
+  &__description {
+    max-width: to-rem(358);
+    opacity: 0.5;
+    margin: 0 auto;
+  }
+
+  &__items {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    gap: to-rem(48);
+    margin-bottom: to-rem(56);
+  }
+
+  &__item {
+    &-img {
+      border-radius: to-rem(32);
+      overflow: hidden;
+
+      img {
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: to-rem(8);
+    background: var(--color-card-bg);
+    border-radius: to-rem(24);
+    padding: to-rem(16);
+  }
+}

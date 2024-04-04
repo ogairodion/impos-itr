@@ -4,12 +4,12 @@ include ../.././components/point/point.pug
 section.advantages
   .l-default
     +point({
-      number: '04',
+      number: '07',
       text: 'Преимущества',
     })
     h2.advantages__title.f-h2.f-centered Заголовк блока про преимущества<br /> в разработке
     .advantages__items
-      each advantages_item in advantages_items
+      each advantages_item in advantages_page_items
         .advantages__item
           .advantages__item-wrapper
             .advantages__item-content

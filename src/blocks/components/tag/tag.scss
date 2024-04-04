@@ -1,0 +1,7 @@
+.tag {
+  border-radius: to-rem(8);
+  color: var(--color-primary);
+  background: rgba(#F8F1DF, 0.05);
+  border: to-rem(1) solid rgba(#fff, 0.1);
+  padding: to-rem(11, 20);
+}
