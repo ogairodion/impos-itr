@@ -1,0 +1,31 @@
+include data.pug
+include ../.././components/button/button.pug
+include ../.././components/image/image.pug
+include ../.././components/breadcrumbs/breadcrumbs.pug
+
+section.posts.block-main
+  .l-default
+    +breadcrumbs({
+      breadcrumbs: [
+        { text: 'Главная', href: '#' },
+        { text: 'Кейсы компании', href: '#' },
+      ],
+    })
+    h1.posts__title.f-h1 Новости компании
+    .posts__items
+      each post in post_items
+        .posts__item
+          .posts__item-top
+            .posts__item-img
+              +image({
+                src: post.img,
+                type: post.type,
+              })
+            .posts__item-date.f-caps-small= post.date
+          .posts__item-info
+            .posts__item-title.f-h5= post.title
+            .posts__item-description.f-body-small= post.description
+            +button({
+              text: 'Подробнее',
+              icon: plus_icon_posts,
+            })

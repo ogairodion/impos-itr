@@ -1,13 +1,14 @@
 extends ../layouts/default
 
 block variables
-  - const title = "Page Not Found | ImposTrade";
-  - const styles_url = "styles/error-page.css";
+  - const title = "News | ImposTrade";
+  - const styles_url = "styles/news.css";
 
 block content
   include ../../blocks/modules/header/header
   main.main
-    include ../../blocks/modules/404/404
+    include ../../blocks/modules/posts/posts-page
+  include ../../blocks/modules/footer/footer
 
 block scripts
   script(src="js/vendor.js")

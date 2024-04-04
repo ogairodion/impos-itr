@@ -1,0 +1,18 @@
+.page-error {
+  padding-top: to-rem(16);
+
+  &__title {
+    max-width: to-rem(586);
+    margin-bottom: to-rem(16);
+  }
+
+  &__description {
+    max-width: to-rem(344);
+    opacity: 0.5;
+    margin-bottom: to-rem(48);
+  }
+
+  .button {
+    max-width: to-rem(333);
+  }
+}

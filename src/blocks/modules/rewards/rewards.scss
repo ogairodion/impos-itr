@@ -58,6 +58,7 @@
       justify-content: center;
       min-width: to-rem(74);
       min-height: to-rem(74);
+      border-radius: to-rem(16);
       background: var(--color-gray);
     }
 
@@ -109,5 +110,30 @@
   &__container {
     display: grid;
     grid-template-columns: 1fr to-rem(99);
+  }
+
+  &.block-main {
+    .rewards {
+      &__slide {
+        flex: 1 1 auto;
+        width: auto;
+
+        img {
+          width: 100%;
+          object-fit: cover;
+        }
+
+        &-video {
+          width: calc(50% - 16px);
+          max-width: 100%;
+        }
+      }
+
+      &__items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: to-rem(16);
+      }
+    }
   }
 }

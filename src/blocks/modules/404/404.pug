@@ -1,0 +1,13 @@
+include data.pug
+include ../.././components/button/button.pug
+
+section.page-error
+  .l-default
+    h1.page-error__title.f-h1 Ошибка 404 — такой страницы не существует или она была удалена
+    .page-error__description Воспользуйтесь меню сайта или перейдите на главную страницу.
+    +button({
+      href: '#',
+      text: 'Перейти на главную',
+      icon: page_error_icon,
+      theme: 'button--light',
+    })
