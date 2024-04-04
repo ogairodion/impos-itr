@@ -1,0 +1,39 @@
+.steps {
+  position: relative;
+  background: var(--color-card-bg);
+  border-radius: to-rem(32);
+  padding: to-rem(24);
+  margin-bottom: to-rem(24);
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: to-rem(12);
+    min-height: to-rem(126);
+  }
+
+  .step {
+    color: var(--color-primary);
+    border-radius: to-rem(8);
+    border: to-rem(1) solid rgba(#fff, 0.1);
+    padding: to-rem(13, 24);
+
+    &:nth-child(2n) {
+      align-self: flex-end;
+    }
+  }
+
+  &__progress, &__progressbar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: to-rem(2);
+    background: var(--color-gray);
+  }
+
+  &__progress {
+    background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+  }
+}
