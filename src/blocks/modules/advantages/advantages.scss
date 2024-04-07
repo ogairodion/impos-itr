@@ -1,70 +1,128 @@
 .advantages {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   &__title {
     margin-bottom: to-rem(64);
+
+    @media (min-width: 1200px) {
+      margin-bottom: to-rem(40);
+    }
   }
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: to-rem(16);
+    gap: to-rem(8);
+
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: to-rem(16);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
     position: relative;
-    perspective: to-rem(2000);
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 1200px) {
+      perspective: to-rem(2000);
+    }
 
     &-wrapper {
-      min-height: to-rem(400);
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+
+      @media (min-width: 1200px) {
+        min-height: to-rem(400);
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
     }
 
     &-plus {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 1 1 auto;
-      margin: auto;
+      display: none;
+
+      @media (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1 1 auto;
+        margin: auto;
+      }
     }
 
     &-icon {
+      display: none;
       border-radius: to-rem(12);
       background: var(--color-gray);
       padding: to-rem(16);
+
+      @media (min-width: 768px) {
+        display: block;
+      }
     }
 
     &-info {
-      min-height: to-rem(64);
       margin-top: auto;
+
+      @media (min-width: 1200px) {
+        min-height: to-rem(64);
+      }
     }
 
     &-content, &-back {
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
+      position: static;
+      flex: 1 1 auto;
+      border-radius: to-rem(16);
       background: var(--color-card-bg);
-      border-radius: to-rem(40);
-      padding: to-rem(32);
+      padding: to-rem(16, 24, 24);
+
+      @media (min-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: to-rem(40);
+        padding: to-rem(32);
+      }
     }
 
     &:hover {
       .advantages {
         &__item {
           &-wrapper {
-            transform: rotateY(180deg);
+            @media (min-width: 1200px) {
+              transform: rotateY(180deg);
+            }
           }
         }
       }
     }
 
+    &-content {
+      display: none;
+
+      @media (min-width: 1200px) {
+        display: flex;
+      }
+    }
+
     &-back {
-      transform: rotateY(180deg);
+      @media (min-width: 1200px) {
+        transform: rotateY(180deg);
+      }
     }
 
     &-text {
@@ -73,11 +131,16 @@
     }
 
     &-step {
+      display: none;
       max-width: fit-content;
       color: var(--color-primary);
       border-radius: to-rem(8);
       border: to-rem(1) solid var(--color-gray);
       padding: to-rem(20, 24);
+
+      @media (min-width: 1200px) {
+        display: flex;
+      }
     }
   }
 }
