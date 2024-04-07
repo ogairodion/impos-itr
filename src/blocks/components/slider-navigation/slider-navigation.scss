@@ -15,9 +15,15 @@
   &--default {
     display: flex;
     gap: to-rem(4);
-    padding: to-rem(8);
-    border-radius: to-rem(20);
+    padding: to-rem(4);
+    border-radius: to-rem(16);
     background: var(--color-card-bg);
+
+
+    @media (min-width: 768px) {
+      border-radius: to-rem(20);
+      padding: to-rem(8);
+    }
 
     .slider-navigation {
       &-arrow {
@@ -25,12 +31,20 @@
         align-items: center;
         justify-content: center;
         flex: 1 1 auto;
-        min-height: to-rem(56);
+        min-height: to-rem(48);
+
+        @media (min-width: 768px) {
+          min-height: to-rem(56);
+        }
 
         &:first-child {
-          border-radius: to-rem(8);
+          border-radius: to-rem(4);
           border-top-left-radius: to-rem(12);
           border-bottom-left-radius: to-rem(12);
+
+          @media (min-width: 768px) {
+            border-radius: to-rem(8);
+          }
 
           svg {
             transform: rotate(180deg);
@@ -38,9 +52,13 @@
         }
 
         &:last-child {
-          border-radius: to-rem(8);
+          border-radius: to-rem(4);
           border-top-right-radius: to-rem(12);
           border-bottom-right-radius: to-rem(12);
+
+          @media (min-width: 768px) {
+            border-radius: to-rem(8);
+          }
         }
       }
     }

@@ -5,7 +5,7 @@
   z-index: 1000;
   width: 100%;
   height: 100%;
-  transform: translateX(200%);
+  transform: translateX(1000%);
 
   &__wrapper, &__form {
     position: relative;
@@ -160,6 +160,12 @@
     gap: to-rem(40);
     border-top: to-rem(1) solid var(--color-card-bg);
     padding: to-rem(32, 40, 40);
+
+    &-item {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
   }
 
   &__form {

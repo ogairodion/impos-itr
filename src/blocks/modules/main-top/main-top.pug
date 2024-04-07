@@ -25,6 +25,7 @@ section.main-top
                   .main-top__slide-title.f-h5.fade-bottom= main_top_slide.title
                   .main-top__slide-text.f-body-small.fade-bottom= main_top_slide.text
             .main-top__slider-scrollbar
+            .main-top__slider-pagination.slider-pagination
           .main-top__slider-right.swiper
             .swiper-wrapper
               each main_top_slide in main_top_slides
@@ -35,5 +36,5 @@ section.main-top
                       type: main_top_slide.type,
                     })
       .main-top__video
-        //- video(autoplay mute loop)
-        //-   source(src="videos/1.mp4" type="video/mp4")
+        video(autoplay mute loop)
+          source(src="videos/1.mp4" type="video/mp4")

@@ -1,6 +1,10 @@
 .point {
-  width: to-rem(214);
+  width: to-rem(159);
   margin: 0 auto to-rem(24);
+
+  @media (min-width: 768px) {
+    width: to-rem(214);
+  }
 
   &__number {
     margin-bottom: to-rem(11);
@@ -8,10 +12,14 @@
 
   &__progress {
     width: 100%;
-    height: to-rem(2);
+    height: to-rem(1);
     border-radius: to-rem(2);
     background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
     margin-bottom: to-rem(9);
+
+    @media (min-width: 768px) {
+      height: to-rem(2);
+    }
   }
 
   &__text {

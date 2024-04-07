@@ -52,7 +52,11 @@ body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  margin-top: to-rem(136);
+  margin-top: to-rem(96);
+
+  @media (min-width: 992px) {
+    margin-top: to-rem(136);
+  }
 }
 
 .block-main {
@@ -203,6 +207,28 @@ img {
 
   img {
     // mix-blend-mode: luminosity;
+  }
+}
+
+.slider-pagination {
+  position: static;
+  top: unset;
+  display: flex;
+  justify-content: center;
+  gap: to-rem(8);
+  margin: 0 auto;
+  margin-top: to-rem(16);
+
+  .swiper-pagination-bullet {
+    width: to-rem(8);
+    height: to-rem(4);
+    border-radius: to-rem(1);
+    background: var(--color-card-bg);
+    margin: 0 !important;
+
+    &-active {
+      background: var(--color-primary);
+    }
   }
 }
 

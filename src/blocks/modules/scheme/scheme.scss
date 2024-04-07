@@ -1,15 +1,41 @@
 .scheme {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   &__title {
-    margin-bottom: to-rem(24);
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      margin-bottom: to-rem(24);
+    }
   }
 
   &__slider {
     &-wrapper {
       display: grid;
-      grid-template-columns: 1fr to-rem(417);
-      gap: to-rem(39);
+      gap: to-rem(16);
+
+      @media (min-width: 1200px) {
+        grid-template-columns: 1fr to-rem(417);
+        gap: to-rem(39);
+      }
+    }
+
+    &-info {
+      @media (max-width: 1199px) {
+        .swiper-wrapper {
+          height: auto;
+        }
+      }
+
+      .slider-navigation {
+        @media (max-width: 1199px) {
+          margin-top: to-rem(40);
+        }
+      }
     }
   }
 
@@ -17,9 +43,14 @@
     &-img {
       position: relative;
       width: 100%;
-      min-height: to-rem(411);
-      border-radius: to-rem(32);
+      min-height: to-rem(171);
+      border-radius: to-rem(16);
       overflow: hidden;
+
+      @media (min-width: 768px) {
+        min-height: to-rem(411);
+        border-radius: to-rem(32);
+      }
 
       img {
         position: absolute;
@@ -35,8 +66,11 @@
     &-info {
       display: flex;
       flex-direction: column;
-      padding: to-rem(40, 0, 32);
       overflow: hidden;
+
+      @media (min-width: 1200px) {
+        padding: to-rem(40, 0, 32);
+      }
 
       .swiper {
         overflow: visible;
@@ -44,11 +78,21 @@
     }
 
     &-step {
-      margin-bottom: to-rem(16);
+      display: none;
+
+      @media (min-width: 1200px) {
+        display: block;
+        margin-bottom: to-rem(16);
+      }
     }
 
     &-title {
-      margin-bottom: to-rem(32);
+      display: none;
+
+      @media (min-width: 1200px) {
+        display: block;
+        margin-bottom: to-rem(32);
+      }
     }
 
     .slider-navigation {
@@ -58,5 +102,13 @@
 
   .swiper {
     width: 100%;
+  }
+
+  .steps {
+    display: none;
+
+    @media (min-width: 1440px) {
+      display: block;
+    }
   }
 }

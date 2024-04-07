@@ -1,4 +1,5 @@
 import "%modules%/main-top/main-top";
+import "%modules%/services/services";
 import "%modules%/scheme/scheme";
 import "%modules%/team/team";
 import "%modules%/reviews/reviews-messengers";

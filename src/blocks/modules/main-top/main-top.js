@@ -9,25 +9,38 @@ const slidesProgressLength = slidesProgress.querySelector('.slider-navigation-pr
 
 const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
   modules: [Navigation, Pagination, EffectFade, Autoplay],
-  slidesPerView: 1,
-  observer: true,
-  observeParents: true,
-  observeSlideChildren: true,
-  allowTouchMove: false,
-  effect: 'fade',
-  fadeEffect: {
-    crossFade: true
-  },
+  slidesPerView: 'auto',
   autoplay: {
     delay: 2000,
     disableOnInteraction: false,
   },
-  speed: 1000,
+  spaceBetween: 8,
   navigation: {
     nextEl: '.main-top .slider-navigation-arrow--next',
     prevEl: '.main-top .slider-navigation-arrow--prev',
   },
   loop: true,
+  centeredSlides: true,
+  breakpoints: {
+    768: {
+      slidesPerView: 1,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true
+      },
+      speed: 1000,
+      spaceBetween: 0,
+      allowTouchMove: false,
+      observer: true,
+      observeParents: true,
+      observeSlideChildren: true,
+      centeredSlides: false,
+    },
+  },
+  pagination: {
+    el: '.main-top__slider-pagination',
+    clickable: true,
+  },
 });
 
 if (mainTopSlider_1) {

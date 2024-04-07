@@ -5,6 +5,10 @@ import { Navigation, EffectFade, Pagination, Thumbs } from 'swiper/modules';
 const parent = document.querySelector('.scheme');
 const tabsContent = parent.querySelectorAll('.tabs__content');
 
+let windowWidth = 0;
+
+windowWidth = window.innerWidth;
+
 function callback(mutationsList) {
   mutationsList.forEach((element) => {
     if (!element.target.classList.contains('hidden')) {
@@ -14,6 +18,17 @@ function callback(mutationsList) {
 }
 
 const mutationObserver = new MutationObserver(callback);
+
+window.addEventListener('resize', () => {
+  const steps = document.querySelectorAll('.step');
+  windowWidth = window.innerWidth;
+
+  if (windowWidth >= 1440 && !steps.length) {
+    tabsContent.forEach((content) => {
+      getSliders(content);
+    });
+  }
+});
 
 tabsContent.forEach((content) => {
   mutationObserver.observe(content, { attributes: true });
@@ -71,7 +86,9 @@ function getSliders(element) {
   });
 
   if (!steps || !steps.length) {
-    getSteps(element, slider);
+    if (windowWidth >= 1440) {
+      getSteps(element, slider);
+    }
   }
 }
 
