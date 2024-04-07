@@ -54,6 +54,7 @@ include .././form/form.pug
           a.menu__bottom-item.f-h5(href=menu_bottom_item.href)= menu_bottom_item.text
     .menu__form.form
       .menu__form-title.f-h3 Заказать звонок
+      .menu__form-description.f-body.hidden Спасибо за обращение, наш менеджер свяжется с вами в ближайшее время.
       +form({
           inputs: menu_form_inputs,
           button: {

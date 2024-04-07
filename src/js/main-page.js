@@ -6,3 +6,4 @@ import "%modules%/reviews/reviews-letters";
 import "%modules%/certificates/certificates";
 import "%modules%/cases/cases";
 import "%modules%/rewards/rewards";
+import "%modules%/numbers/numbers";

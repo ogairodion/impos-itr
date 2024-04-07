@@ -117,10 +117,11 @@
     }
 
     &-progress {
-      width: 100%;
+      width: 0;
       height: to-rem(2);
       border-radius: to-rem(2);
       background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+      transition: width 2s ease;
       margin: to-rem(14, 0, 16);
     }
 
@@ -245,6 +246,16 @@
             backdrop-filter: blur(to-rem(8));
             margin-top: auto;
             padding: to-rem(24, 18, 23, 24);
+          }
+        }
+      }
+    }
+
+    &.swiper-slide-visible {
+      .team {
+        &__slide {
+          &-progress {
+            width: 100%;
           }
         }
       }

@@ -30,7 +30,7 @@ section.cases.block-main
               .swiper-wrapper
                 each cases_slide in cases_item.slides
                   .cases__item-slide.swiper-slide
-                    .cases__item-img
+                    a.cases__item-img(href='img/' + cases_slide + '.jpg' data-fancybox)
                       +image({
                         src: cases_slide,
                         type: 'jpg',

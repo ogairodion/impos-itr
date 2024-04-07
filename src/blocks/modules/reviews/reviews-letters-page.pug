@@ -5,7 +5,7 @@
         .reviews-letters__slide-left
           .reviews-letters__slide-logo
             img(src=review_letters.logo, alt="")
-          .reviews-letters__slide-img
+          a.reviews-letters__slide-img(href='img/' + review_letters.img + '.' + review_letters.type data-fancybox)
             +image({
               src: review_letters.img,
               type: review_letters.type,

@@ -1,0 +1,153 @@
+.map {
+  position: relative;
+  z-index: 2;
+
+  svg {
+    path {
+      &[data-city] {
+        position: relative;
+        cursor: pointer;
+        fill: var(--color-primary);
+        transition: all 0.4s ease;
+      }
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    content: '';
+    min-width: to-rem(22);
+    min-height: to-rem(22);
+    border-radius: 100%;
+    background: var(--color-primary);
+    opacity: 0;
+    transform: scale(0.5);
+
+    &.show {
+      opacity: 1;
+      transform: scale(1);
+      transition: transform 1s ease;
+    }
+  }
+
+  &__popup {
+    position: absolute;
+    width: to-rem(453);
+    height: max-content;
+    background: var(--color-card-bg);
+    border-radius: to-rem(16, 16, 32, 32);
+    border: to-rem(1) solid rgba(#fff, 0.5);
+    padding: to-rem(8, 8, 24);
+    transition: all 0.6s ease;
+
+    &-top {
+      display: flex;
+      align-items: flex-start;
+      gap: to-rem(24);
+      padding-bottom: to-rem(12);
+    }
+
+    &-info {
+      padding-top: to-rem(12);
+    }
+
+    &-title {
+      margin-bottom: to-rem(16);
+    }
+
+    &-text {
+      opacity: 0.5;
+    }
+
+    img {
+      min-width: to-rem(72);
+    }
+
+    &-items {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: to-rem(24);
+      padding: to-rem(0, 16);
+    }
+
+    &-item {
+      &:first-child {
+        max-width: to-rem(138);
+        margin-right: to-rem(40);
+      }
+    }
+
+    &-caption {
+      margin-bottom: to-rem(2);
+    }
+
+    &-btns {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: to-rem(8);
+      padding: to-rem(0, 16);
+
+      .button {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__progress {
+    height: to-rem(2);
+    background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+    margin: to-rem(0, 16, 16);
+  }
+
+  &__line {
+    position: absolute;
+    width: 0;
+    height: to-rem(2);
+    background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
+
+    &.show {
+      width: 100%;
+      max-width: to-rem(32);
+      animation: line 4s ease-in-out;
+    }
+  }
+}
+
+@keyframes showPopup {
+  0% {
+    opacity: 0;
+    transform: translateY(to-rem(10));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes closePopup {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(to-rem(10));
+  }
+}
+
+@keyframes line {
+  0% {
+    width: 0;
+  }
+
+  50% {
+    width: 50%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}

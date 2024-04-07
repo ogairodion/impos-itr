@@ -5,7 +5,7 @@
   z-index: 1000;
   width: 100%;
   height: 100%;
-  display: none;
+  transform: translateX(200%);
 
   &__wrapper, &__form {
     position: relative;
@@ -32,6 +32,7 @@
     background: var(--color-card-bg);
     border-radius: to-rem(12);
     padding: to-rem(4);
+    transition: all 0.4s ease;
 
     &-icon {
       position: relative;
@@ -43,6 +44,20 @@
       border-radius: to-rem(8);
       background: var(--color-gray);
       margin-right: to-rem(16);
+      transition: all 0.4s ease;
+    }
+
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-dark);
+
+      .menu {
+        &__close {
+          &-icon {
+            background: var(--color-dark);
+          }
+        }
+      }
     }
   }
 
@@ -60,15 +75,13 @@
     background: var(--color-dark);
     border-top-right-radius: to-rem(32);
     border-bottom-right-radius: to-rem(32);
+    transform: translateX(-100%);
   }
 
   &__columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     flex: 1;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: all 0.4s ease-in-out;
   }
 
   &__column {
@@ -192,10 +205,12 @@
     background: var(--color-card-bg);
     border-radius: to-rem(12);
     padding: to-rem(4);
+    transition: all 0.4s ease;
 
     &__wrapper {
       display: flex;
       align-items: center;
+      transition: all 0.4s ease;
     }
 
     &__text {
@@ -250,15 +265,27 @@
         }
       }
     }
+
+    &:hover {
+      background: var(--color-primary);
+      color: var(--color-dark);
+
+      .menu-main {
+        &__icon {
+          background: var(--color-dark);
+        }
+      }
+    }
   }
 
   &.open {
-    display: block;
+    transform: translateX(0);
 
     .menu {
-      &__columns, &__form {
+      &__container, &__form {
         opacity: 1;
         transform: translateX(0);
+        transition: transform 1s ease-in-out;
       }
     }
   }

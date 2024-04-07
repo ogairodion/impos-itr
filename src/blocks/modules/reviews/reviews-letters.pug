@@ -2,7 +2,7 @@
   .reviews-letters__slider.swiper
     .swiper-wrapper
       each review_letters in reviews_letters
-        .reviews-letters__slide.swiper-slide
+        a.reviews-letters__slide.swiper-slide(href='img/' + review_letters.img + '.' + review_letters.type data-fancybox)
           .reviews-letters__slide-left
             .reviews-letters__slide-logo
               img(src=review_letters.logo, alt="")

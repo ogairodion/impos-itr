@@ -18,7 +18,8 @@ section.rewards
         .swiper-wrapper
           each rewards_slide in rewards_slides
             - const className = rewards_slide.title ? 'rewards__slide-video' : '';
-            .rewards__slide.swiper-slide(class=className)
+            - const href = rewards_slide.title ? rewards_slide.video : 'img/' + rewards_slide.img + '.jpg';
+            a.rewards__slide.swiper-slide(class=className href=href data-fancybox)
               .rewards__slide-img
                 +image({
                   src: rewards_slide.img,

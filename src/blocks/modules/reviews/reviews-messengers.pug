@@ -3,7 +3,7 @@
     .swiper-wrapper
       each review_messengers in reviews_messengers
         .reviews-messengers__slide.swiper-slide
-          .reviews-messengers__slide-img
+          a.reviews-messengers__slide-img(href='img/' + review_messengers.img + '.' + review_messengers.type data-fancybox)
             +image({
               src: review_messengers.img,
               type: review_messengers.type,
