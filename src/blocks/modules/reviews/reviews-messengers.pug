@@ -16,6 +16,7 @@
                 span.fade-bottom —
                 span.reviews-messengers__slide-step--length.fade-bottom 12
             .reviews-messengers__slide-description.f-body.fade-bottom= review_messengers.description
+            .reviews-messengers__slide-link.f-caps-small Подробнее
             .reviews-messengers__slide-bottom
               .reviews-messengers__slide-caption.f-caps-small.fade-bottom Услуги
               .reviews-messengers__slide-progress
@@ -25,3 +26,21 @@
   +slider-navigation({
     type: 'vertical',
   })
+
+  #reviews-messengers-popup.reviews-messengers__popup
+    .reviews-messengers__popup-info
+      .reviews-messengers__popup-top
+        .reviews-messengers__popup-title.f-h4
+      .reviews-messengers__popup-description.f-body
+      .reviews-messengers__popup-bottom
+        .reviews-messengers__popup-caption.f-caps-small Услуги
+        .reviews-messengers__popup-progress
+        .reviews-messengers__popup-tags
+    .reviews-messengers__popup-img
+      img(src="", alt="")
+    +button({
+        text: 'Закрыть',
+        icon: plus_icon,
+        class: 'btn--close',
+        close: true,
+      })

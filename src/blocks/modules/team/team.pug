@@ -72,3 +72,26 @@ section.team
       +slider-navigation({
         type: 'vertical',
       })
+
+  .team__popup#team-popup
+    .team__popup-wrapper
+      .team__popup-start
+        .team__popup-img
+          img(src="", alt="")
+        .team__popup-info
+          .team__popup-name.f-h5.fade-bottom
+          .team__popup-progress
+          .team__popup-position.f-body-small.fade-bottom
+      .team__popup-education
+        .team__popup-title.f-caps-small.fade-bottom
+        .team__popup-text.f-body-small.fade-bottom
+      .team__popup-job
+        .team__popup-container
+          .team__popup-title.f-caps-small.fade-bottom
+          .team__popup-text.f-body-small.fade-bottom
+      +button({
+        text: 'Закрыть',
+        icon: plus_icon,
+        class: 'btn--close',
+        close: true,
+      })

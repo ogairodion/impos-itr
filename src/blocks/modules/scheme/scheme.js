@@ -118,18 +118,18 @@ function getPoints(content, points, pointsBar) {
   let positionX = 24;
 
   steps.forEach((step, index) => {
-    const { width } = step.getBoundingClientRect();
+    // const { width } = step.getBoundingClientRect();
 
     const createdPoint = document.createElement('div');
     const createdPointBar = document.createElement('div');
 
-    positionX += index == 0 ? width : width + 12;
+    positionX += index == 0 ? 98 : 98 + 12;
 
     createdPoint.classList.add('steps__point');
     createdPointBar.classList.add('steps__point');
 
-    createdPoint.style.left = (positionX - (width / 2)) + 'px';
-    createdPointBar.style.left = (positionX - (width / 2)) + 'px';
+    createdPoint.style.left = (positionX - (98 / 2)) + 'px';
+    createdPointBar.style.left = (positionX - (98 / 2)) + 'px';
 
     points.append(createdPoint);
     pointsBar.append(createdPointBar);

@@ -1,16 +1,17 @@
 .tabs {
   display: flex;
-  max-width: 100%;
+  max-width: to-rem(284);
   gap: to-rem(4);
   padding: to-rem(4);
   border-radius: to-rem(16);
   background: var(--color-card-bg);
-  margin: 0 auto to-rem(32);
+  margin: 0 auto to-rem(24);
 
   @media (min-width: 768px) {
     max-width: fit-content;
     border-radius: to-rem(20);
     padding: to-rem(8);
+    margin: 0 auto to-rem(32);
   }
 
   .tab {

@@ -2,11 +2,11 @@
   .reviews-letters__slider.swiper
     .swiper-wrapper
       each review_letters in reviews_letters
-        a.reviews-letters__slide.swiper-slide(href='img/' + review_letters.img + '.' + review_letters.type data-fancybox)
+        .reviews-letters__slide.swiper-slide
           .reviews-letters__slide-left
             .reviews-letters__slide-logo
               img(src=review_letters.logo, alt="")
-            .reviews-letters__slide-img
+            a.reviews-letters__slide-img(href='img/' + review_letters.img + '.' + review_letters.type data-fancybox)
               +image({
                 src: review_letters.img,
                 type: review_letters.type,
@@ -14,6 +14,7 @@
           .reviews-letters__slide-info
             .reviews-letters__slide-title.f-h4.fade-bottom= review_letters.title
             .reviews-letters__slide-description.f-body.fade-bottom= review_letters.description
+            .reviews-letters__slide-link.f-caps-small Подробнее
             .reviews-letters__slide-bottom
               .reviews-letters__slide-caption.f-caps-small.fade-bottom Услуги
               .reviews-letters__slide-progress
@@ -23,3 +24,21 @@
   +slider-navigation({
     type: 'vertical',
   })
+
+  #reviews-letters-popup.reviews-letters__popup
+      .reviews-letters__popup-info
+        .reviews-letters__popup-top
+          .reviews-letters__popup-title.f-h4
+          .reviews-letters__popup-description.f-body
+        .reviews-letters__popup-bottom
+          .reviews-letters__popup-caption.f-caps-small Услуги
+          .reviews-letters__popup-progress
+          .reviews-letters__popup-tags
+      .reviews-letters__popup-img
+        img(src="", alt="")
+      +button({
+          text: 'Закрыть',
+          icon: plus_icon,
+          class: 'btn--close',
+          close: true,
+        })

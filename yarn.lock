@@ -1118,6 +1118,11 @@
   resolved "https://registry.yarnpkg.com/@fancyapps/fancybox/-/fancybox-3.5.7.tgz#12f8734663ec6eae7f9236b92ca236e6e07fdfd5"
   integrity sha512-rcEtu8t+WnmqIDV/Wfm1yvy/nDdwc7YV25j9HLxGC2/WOsUhk9rcWg2nB8g1BrjRt9zaoADdjHTU6ILYTJzBBg==
 
+"@fancyapps/ui@^5.0.35":
+  version "5.0.35"
+  resolved "https://registry.yarnpkg.com/@fancyapps/ui/-/ui-5.0.35.tgz#30cf838ee562c13c01614409998b7f227c0c6b9b"
+  integrity sha512-2aTAksmugIDmadEEgK41i3RyNGE2zK7liOSXC41Oh7Lh1RBHpNyz97vbzKfuik9Pwx5B8hGGd8DEPcjyXbS3NQ==
+
 "@gulp-sourcemaps/identity-map@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@gulp-sourcemaps/identity-map/-/identity-map-2.0.1.tgz#a6e8b1abec8f790ec6be2b8c500e6e68037c0019"

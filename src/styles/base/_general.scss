@@ -187,15 +187,19 @@ img {
 
 .swiper-slide {
   .fade-bottom {
-    opacity: 0;
-    transform: translateY(to-rem(20));
+    @media (min-width: 1200px) {
+      opacity: 0;
+      transform: translateY(to-rem(20));
+    }
   }
 
   &-active, &-visible {
     .fade-bottom {
-      transition: all 1s ease-in-out !important;
-      opacity: 1;
-      transform: translateY(0);
+      @media (min-width: 1200px) {
+        transition: all 1s ease-in-out !important;
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
 }

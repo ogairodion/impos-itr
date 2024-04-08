@@ -1,6 +1,7 @@
 include data.pug
 include ../.././components/point/point.pug
 include ../.././components/image/image.pug
+include ../.././components/tabs/tabs.pug
 include ../.././components/button/button.pug
 
 section.services-main
@@ -10,9 +11,10 @@ section.services-main
       text: 'основные услуги',
     })
     h2.services-main__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
+    +tabs(services_main_tabs)
     .services-main__items
       each services_main_item in services_main
-        a.services-main__item(href="")
+        a.services-main__item.tabs__content(href="")
           .services-main__item-top
             .services-main__item-step.f-body= services_main_item.step
             .services-main__item-title.f-h3= services_main_item.title

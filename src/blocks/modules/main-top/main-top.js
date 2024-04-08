@@ -19,15 +19,15 @@ const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
     nextEl: '.main-top .slider-navigation-arrow--next',
     prevEl: '.main-top .slider-navigation-arrow--prev',
   },
+  effect: 'fade',
+  fadeEffect: {
+    crossFade: true
+  },
   loop: true,
   centeredSlides: true,
   breakpoints: {
     768: {
       slidesPerView: 1,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
       speed: 1000,
       spaceBetween: 0,
       allowTouchMove: false,

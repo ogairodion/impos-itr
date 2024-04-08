@@ -71,6 +71,7 @@
     },
     "dependencies": {
         "@fancyapps/fancybox": "^3.5.7",
+        "@fancyapps/ui": "^5.0.35",
         "jquery": "^3.7.1",
         "open": "^9.1.0",
         "swiper": "^11.0.4",
