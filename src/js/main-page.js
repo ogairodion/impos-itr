@@ -5,6 +5,7 @@ import "%modules%/team/team";
 import "%modules%/reviews/reviews-messengers";
 import "%modules%/reviews/reviews-letters";
 import "%modules%/partners/partners";
+import "%modules%/posts/posts";
 import "%modules%/certificates/certificates";
 import "%modules%/cases/cases";
 import "%modules%/rewards/rewards";

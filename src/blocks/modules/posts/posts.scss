@@ -1,19 +1,22 @@
 .posts {
-  padding-bottom: to-rem(64);
+  padding-bottom: to-rem(46);
 
-  &__title {
-    margin-bottom: to-rem(64);
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(64);
   }
 
-  &__items {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: to-rem(16);
+  &__title {
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      margin-bottom: to-rem(64);
+    }
   }
 
   &__item {
     display: flex;
     flex-direction: column;
+    max-width: to-rem(327);
     min-height: to-rem(446);
     border-radius: to-rem(24);
     background: var(--color-card-bg);
@@ -84,5 +87,9 @@
 
   &__button {
     margin-top: to-rem(48);
+  }
+
+  .swiper {
+    overflow: visible;
   }
 }

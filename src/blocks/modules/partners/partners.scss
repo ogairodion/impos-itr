@@ -23,10 +23,6 @@
     gap: to-rem(8);
   }
 
-  .swiper {
-    overflow: visible;
-  }
-
   &__item {
     display: flex;
     align-items: center;
@@ -49,5 +45,9 @@
     @media (min-width: 1200px) {
       display: none;
     }
+  }
+
+  .swiper {
+    overflow: visible;
   }
 }
