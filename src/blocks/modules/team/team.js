@@ -1,6 +1,6 @@
 import { Fancybox } from "@fancyapps/ui";
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 const parent = document.querySelector('.team');
 const slides = document.querySelectorAll('.team__slide');
@@ -41,7 +41,7 @@ slidesCurrent.innerText = slides.length;
 slidesActive.innerText = 1;
 
 const teamSlider = new Swiper('.team__slider', {
-  modules: [Navigation, Pagination],
+  modules: [Navigation],
   slidesPerView: 'auto',
   spaceBetween: 8,
   navigation: {

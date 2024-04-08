@@ -8,7 +8,9 @@ section.partners
       text: 'Нам доверяют',
     })
     h2.partners__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
-    .partners__items
-      each partner in partners
-        .partners__item
-          img(src=`img/partners/${partner}.svg`, alt="")
+    .partners__items.swiper
+      .swiper-wrapper
+        each partner in partners
+          .partners__item.swiper-slide
+            img(src=`img/partners/${partner}.svg`, alt="")
+      .slider-pagination

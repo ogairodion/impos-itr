@@ -1,6 +1,6 @@
 import "%components%/tabs/tabs";
 import Swiper from 'swiper';
-import { Navigation, EffectFade, Pagination, Thumbs } from 'swiper/modules';
+import { Navigation, EffectFade, Thumbs } from 'swiper/modules';
 
 const parent = document.querySelector('.scheme');
 const tabsContent = parent.querySelectorAll('.tabs__content');
