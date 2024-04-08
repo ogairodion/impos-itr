@@ -1,9 +1,17 @@
 .cases {
   position: relative;
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   &__title {
-    margin-bottom: to-rem(64);
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      margin-bottom: to-rem(64);
+    }
   }
 
   &__items {
@@ -11,16 +19,33 @@
   }
 
   &__item {
-    position: sticky;
-    top: 0;
-    display: flex;
     border: to-rem(1) solid var(--color-gray);
-    border-radius: to-rem(32);
-    background: var(--color-card-bg);
-    padding: to-rem(24);
+    border-left: 0;
+    border-right: 0;
+
+    @media (min-width: 1200px) {
+      position: sticky;
+      top: 0;
+      display: flex;
+      border-radius: to-rem(32);
+      background: var(--color-card-bg);
+      padding: to-rem(24);
+      border-left: to-rem(1) solid var(--color-gray);
+      border-right: to-rem(1) solid var(--color-gray);
+    }
+
+    &:first-child {
+      @media (max-width: 1199px) {
+        border-top: to-rem(1) solid var(--color-gray);
+      }
+    }
 
     &:not(:last-child) {
-      margin-top: to-rem(64);
+      border-top: none;
+
+      @media (min-width: 1200px) {
+        margin-top: to-rem(64);
+      }
     }
 
     &-info {
@@ -35,15 +60,59 @@
       width: 100%;
       max-width: to-rem(648);
       margin-left: auto;
+      padding-bottom: to-rem(24);
+
+      @media (min-width: 1200px) {
+        padding-bottom: 0;
+      }
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
 
-    &-title {
+    &-top {
       margin-bottom: to-rem(24);
+
+      @media (max-width: 1199px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding: to-rem(8, 0);
+      }
+    }
+
+    &-icon {
+      display: none;
+
+      @media (max-width: 1199px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: to-rem(48);
+        min-height: to-rem(48);
+        border-radius: to-rem(8);
+        background: var(--color-card-bg);
+        margin-left: to-rem(28);
+
+        svg {
+          transition: all 0.4s ease;
+        }
+      }
     }
 
     &-description {
       max-width: to-rem(423);
-      margin-bottom: to-rem(24);
+      margin-bottom: to-rem(32);
+
+      @media (min-width: 1200px) {
+        margin-bottom: to-rem(24);
+      }
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
 
     &-slider {
@@ -52,9 +121,14 @@
 
     &-slide {
       position: relative;
-      min-height: to-rem(365);
-      border-radius: to-rem(12);
+      min-height: to-rem(183);
+      border-radius: to-rem(8);
       overflow: hidden;
+
+      @media (min-width: 1200px) {
+        min-height: to-rem(365);
+        border-radius: to-rem(12);
+      }
 
       img {
         position: absolute;
@@ -66,14 +140,34 @@
         object-position: center;
       }
     }
+
+    &.open {
+      .cases {
+        &__item {
+          &-description, &-actions {
+            display: block;
+          }
+
+          &-icon {
+            svg {
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
   }
 
   &__table {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    border-radius: to-rem(8);
-    border: to-rem(1) solid var(--color-gray);
-    margin-top: auto;
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-radius: to-rem(8);
+      border: to-rem(1) solid var(--color-gray);
+      margin-top: auto;
+    }
 
     &-item {
       padding: to-rem(16, 24);
@@ -91,18 +185,32 @@
   }
 
   .slider-navigation {
-    width: 100%;
-    max-width: to-rem(344);
-    margin: 0 auto to-rem(50);
+    display: none;
+
+    @media (min-width: 1200px) {
+      display: flex;
+      width: 100%;
+      max-width: to-rem(344);
+      margin: 0 auto to-rem(50);
+    }
   }
 
   .button {
     max-width: 100%;
-    margin-top: auto;
+    margin-top:to-rem(8);
+
+    @media (min-width: 1200px) {
+      margin-top: auto;
+    }
 
     &--more {
       max-width: to-rem(672);
       margin-top: to-rem(48);
+
+      @media (max-width: 1199px) {
+        text-align: center;
+        padding: to-rem(19);
+      }
     }
   }
 

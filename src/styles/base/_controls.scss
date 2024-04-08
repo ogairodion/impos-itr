@@ -17,6 +17,12 @@
       font-size: to-rem(44);
       line-height: to-rem(56);
     }
+
+    br {
+      @media (max-width: 1199px) {
+        display: none;
+      }
+    }
   }
 
   &-h3 {

@@ -1,5 +1,9 @@
 .rewards {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   .point {
     margin: 0;

@@ -6,6 +6,13 @@ const items = cases.querySelectorAll('.cases__item');
 let headerHeight = document.querySelector('.header').offsetHeight;
 let diff = headerHeight;
 
+let windowWidth = 0;
+windowWidth = window.innerWidth;
+
+window.addEventListener('resize', () => {
+  windowWidth = window.innerWidth;
+});
+
 if (items.length) {
   items.forEach((item, id) => {
     let slider = item.querySelector('.swiper');
@@ -14,6 +21,7 @@ if (items.length) {
     const arrowPrev = item.querySelector('.slider-navigation-arrow--prev');
     const slidesLength = item.querySelector('.slider-navigation-progress__length');
     const slidesActive = item.querySelector('.slider-navigation-progress__active');
+    const slideTop = item.querySelector('.cases__item-top');
 
     slidesLength.innerText = slides.length;
 
@@ -44,5 +52,11 @@ if (items.length) {
 
     item.style.top += `${diff}px`;
     diff += 64;
+
+    slideTop.addEventListener('click', () => {
+      if (windowWidth < 1200) {
+        item.classList.toggle('open');
+      }
+    });
   });
 }

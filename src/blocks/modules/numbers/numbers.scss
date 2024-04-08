@@ -1,5 +1,9 @@
 .numbers {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   .point {
     margin: 0;
@@ -8,11 +12,22 @@
 
   &__top {
     display: flex;
+    flex-direction: column;
     margin-bottom: to-rem(64);
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      margin-bottom: to-rem(40);
+    }
   }
 
   &__title {
     max-width: to-rem(640);
+    margin-bottom: to-rem(24);
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -23,22 +38,51 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(6, 6fr);
-    gap: to-rem(16);
+    grid-template-columns: 1fr;
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(6, 6fr);
+      gap: to-rem(16);
+    }
   }
 
   &__item {
     position: relative;
     display: flex;
     flex-direction: column;
-    grid-column: span 3;
-    min-height: to-rem(400);
-    border-radius: to-rem(24);
-    background: var(--color-card-bg);
-    padding: to-rem(32);
+    border-bottom: to-rem(1) solid var(--color-gray);
+    padding: to-rem(8, 0, 32);
+
+    @media (min-width: 1200px) {
+      min-height: to-rem(400);
+      border-top: none;
+      border-radius: to-rem(24);
+      background: var(--color-card-bg);
+      grid-column: span 3;
+    }
+
+    &:first-child {
+      border-top: to-rem(1) solid var(--color-gray);
+
+      @media (min-width: 1200px) {
+        border-top: none;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      padding: to-rem(32);
+      border-bottom: none;
+    }
 
     &-top {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: to-rem(9);
+
+      @media (min-width: 1200px) {
+        display: flex;
+        margin-bottom: 0;
+      }
     }
 
     &-top, &-bottom {
@@ -46,9 +90,45 @@
     }
 
     &-title {
-      font-size: to-rem(88);
+      font-size: to-rem(72);
       line-height: 1;
       color: var(--color-primary);
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: to-rem(88);
+      }
+
+      &-mobile {
+        @media (max-width: 1199px) {
+          display: block;
+        }
+
+        @media (min-width: 1200px) {
+          display: none;
+        }
+      }
+    }
+
+    &-caption {
+      @media (max-width: 1199px) {
+        display: none;
+      }
+
+      &-mobile {
+        color: var(--color-primary);
+
+        @media (max-width: 1199px) {
+          display: block;
+        }
+
+        @media (min-width: 1200px) {
+          display: none;
+        }
+      }
     }
 
     &-description {
@@ -56,6 +136,9 @@
     }
 
     &-img {
+      @media (max-width: 1199px) {
+        display: none;
+      }
       img {
         position: absolute;
         right: 0;
@@ -67,7 +150,9 @@
     }
 
     &:first-child {
-      grid-column: span 4;
+      @media (min-width: 1200px) {
+        grid-column: span 4;
+      }
 
       .numbers {
         &__item {
@@ -87,12 +172,20 @@
     }
 
     &:nth-child(2) {
-      grid-column: span 2;
-      max-width: to-rem(433);
+      @media (min-width: 1200px) {
+        grid-column: span 2;
+        max-width: to-rem(433);
+      }
     }
 
     &:last-child {
-      display: none;
+      @media (min-width: 1200px) {
+        grid-column: span 6;
+      }
+
+      @media (min-width: 1400px) {
+        display: none;
+      }
     }
 
     &:not(:first-child) {
@@ -100,8 +193,11 @@
         &__item {
           &-top {
             flex: 1 1 auto;
-            flex-direction: row-reverse;
             justify-content: space-between;
+
+            @media (min-width: 1200px) {
+              flex-direction: row-reverse;
+            }
           }
 
           &-title {
@@ -114,6 +210,10 @@
             border-radius: to-rem(2);
             background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
             margin: to-rem(6, 0, 16);
+
+            @media (max-width: 1199px) {
+              display: none;
+            }
           }
 
           &-description {
@@ -130,6 +230,10 @@
     background: var(--color-card-bg);
     padding: to-rem(51, 51, 34);
     margin-top: to-rem(16);
+
+    @media (max-width: 1399px) {
+      display: none;
+    }
 
     &-top {
       position: absolute;

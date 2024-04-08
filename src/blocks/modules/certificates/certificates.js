@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 const parent = document.querySelector('.certificates');
 const slides = document.querySelectorAll('.certificates__slide');
@@ -10,17 +10,28 @@ slidesCurrent.innerText = slides.length;
 slidesActive.innerText = 1;
 
 const certificatesSlider = new Swiper('.certificates__slider', {
-  modules: [Navigation],
-  slidesPerView: 4,
+  modules: [Navigation, Pagination],
+  slidesPerView: 'auto',
   spaceBetween: 8,
-  slidesPerGroup: 4,
   navigation: {
     nextEl: '.certificates .slider-navigation-arrow--next',
     prevEl: '.certificates .slider-navigation-arrow--prev',
   },
+  pagination: {
+    el: '.certificates .slider-pagination',
+    clickable: true,
+  },
   loop: true,
-  allowTouchMove: false,
-  watchOverflow: true,
+  centeredSlides: true,
+  breakpoints: {
+    1200: {
+      slidesPerView: 4,
+      slidesPerGroup: 4,
+      allowTouchMove: false,
+      watchOverflow: true,
+      centeredSlides: false,
+    },
+  },
 });
 
 getActiveSlides(slides);
