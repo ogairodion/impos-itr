@@ -211,6 +211,10 @@
         text-align: center;
         padding: to-rem(19);
       }
+
+      @media (min-width: 1200px) {
+        margin-top: to-rem(48);
+      }
     }
   }
 

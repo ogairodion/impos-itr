@@ -35,13 +35,13 @@ footer.footer
               </svg>
           .footer__item-info
             .footer__columns
-              .footer__column
+              .footer__column.footer__column-mail
                 .footer__item-label.f-body-small Почта
                 a.footer__item-text.f-h4(href="mailto:info@impostrade.ru") info@impostrade.ru
-              .footer__column
+              .footer__column.footer__column-phone.footer__column-phone--hide
                 .footer__item-label.f-body-small Телефон Москва
                 a.footer__item-text.f-h4(href="tel:88007001896") 8 (800) 700-18-96
-              .footer__column
+              .footer__column.footer__column-phone
                 .footer__item-label.f-body-small Телефон Челябинск
                 a.footer__item-text.f-h4(href="tel:88007001896") 8 (800) 700-18-96
           .footer__contacts-wrapper
@@ -49,11 +49,13 @@ footer.footer
               text: 'Написать на почту',
               theme: 'light',
               icon: mail_icon,
+              class: 'btn--mail',
             })
             +button({
               text: 'Заказать звонок',
               theme: 'light',
               icon: phone_icon,
+              class: 'btn--phone',
             })
             .footer__contacts-socials
               a.footer__contacts-social.footer__contacts-social--telegram(href="")
@@ -78,7 +80,7 @@ footer.footer
         a.footer__menu-item.f-h4(href="") Контакты
       .footer__items
         .footer__item
-          .footer__item-caption Услуги
+          .footer__item-caption.f-caps-small Услуги
           .footer__item-bottom
             .footer__item-links
               a.footer__item-link(href="") Импорт товаров
@@ -87,7 +89,7 @@ footer.footer
               a.footer__item-link(href="") Международные перевозки
               a.footer__item-link(href="") Усуги по сертификации
         .footer__item
-          .footer__item-caption Китай
+          .footer__item-caption.f-caps-small Китай
           .footer__item-bottom
           .footer__item-links
               a.footer__item-link(href="") Грузоперевозки в Китае
@@ -95,7 +97,7 @@ footer.footer
               a.footer__item-link(href="") Юридическая помощь в Китае
               a.footer__item-link(href="") Склад в Китае
         .footer__item
-          .footer__item-caption Таможня
+          .footer__item-caption.f-caps-small Таможня
           .footer__item-bottom
             .footer__item-links
               a.footer__item-link(href="") Таможенное оформление

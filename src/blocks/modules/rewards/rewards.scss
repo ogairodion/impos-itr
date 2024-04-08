@@ -12,8 +12,14 @@
 
   &__top {
     display: flex;
-    align-items: center;
-    margin-bottom: to-rem(56);
+    flex-direction: column;
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: to-rem(56);
+    }
   }
 
   &__title {
@@ -34,6 +40,10 @@
     border-radius: to-rem(24);
     background: var(--color-card-bg);
 
+    @media (max-width: 1199px) {
+      max-width: to-rem(327);
+    }
+
     &-img {
       position: relative;
       flex: 1 1 auto;
@@ -52,26 +62,46 @@
     &-bottom {
       display: flex;
       align-items: center;
-      gap: to-rem(24);
+      gap: to-rem(16);
       margin-top: to-rem(8);
+
+      @media (min-width: 1200px) {
+        gap: to-rem(24);
+      }
     }
 
     &-play {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: to-rem(74);
-      min-height: to-rem(74);
-      border-radius: to-rem(16);
+      min-width: to-rem(56);
+      min-height: to-rem(56);
+      border-radius: to-rem(8);
       background: var(--color-gray);
+
+      @media (min-width: 1200px) {
+        min-width: to-rem(74);
+        min-height: to-rem(74);
+        border-radius: to-rem(16);
+      }
     }
 
     &-title {
-      width: calc(100% - 48px);
+      width: to-rem(223);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: to-rem(6);
+      margin-bottom: to-rem(2);
+
+      @media (max-width: 1199px) {
+        font-size: to-rem(16);
+        line-height: to-rem(24);
+      }
+
+      @media (min-width: 1200px) {
+        width: calc(100% - 48px);
+        margin-bottom: to-rem(6);
+      }
     }
 
     &-caption {
@@ -97,6 +127,10 @@
       width: to-rem(114);
       height: 100%;
       background: linear-gradient(90deg, rgba(30,32,32,1) 0%, rgba(30,32,32,0) 100%);
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
 
     &:after {
@@ -108,12 +142,34 @@
       width: to-rem(114);
       height: 100%;
       background: linear-gradient(270deg, rgba(30,32,32,1) 0%, rgba(30,32,32,0) 100%);
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
   }
 
   &__container {
-    display: grid;
-    grid-template-columns: 1fr to-rem(99);
+    @media (min-width: 1200px) {
+      display: grid;
+      grid-template-columns: 1fr to-rem(99);
+    }
+  }
+
+  .slider-navigation {
+    @media (max-width: 1199px) {
+      display: none;
+    }
+  }
+
+  .swiper {
+    @media (max-width: 1199px) {
+      overflow: visible;
+
+      &-slide {
+        height: auto;
+      }
+    }
   }
 
   &.block-main {
