@@ -1,7 +1,11 @@
 .footer {
   display: flex;
   flex-direction: column;
-  padding-bottom: to-rem(74);
+  padding-bottom: to-rem(32);
+
+  @media (min-width: 992px) {
+    padding-bottom: to-rem(74);
+  }
 
   a {
     &:hover {
@@ -17,8 +21,14 @@
   }
 
   .logo {
-    width: to-rem(442);
-    margin-bottom: to-rem(56);
+    width: to-rem(327);
+    margin: 0 auto;
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 992px) {
+      width: to-rem(442);
+      margin-bottom: to-rem(56);
+    }
 
     svg {
       width: 100% !important;
@@ -41,6 +51,15 @@
     flex-direction: column;
     gap: to-rem(16);
 
+    @media (max-width: 991px) {
+      order: 1;
+
+      &:first-child {
+        order: 9;
+        margin-top: to-rem(48);
+      }
+    }
+
     @media (min-width: 1300px) {
       flex-direction: row;
     }
@@ -51,17 +70,54 @@
   }
 
   &__item {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    border-radius: to-rem(32);
-    background: var(--color-card-bg);
-    padding: to-rem(24);
+    @media (min-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      background: var(--color-card-bg);
+      border-radius: to-rem(32);
+      padding: to-rem(24);
+    }
 
     &-top {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+
+      @media (max-width: 991px) {
+        align-items: center;
+        padding: to-rem(8, 0);
+        border-bottom: to-rem(1) solid var(--color-gray);
+      }
+    }
+
+    &-caption {
+      @media (max-width: 991px) {
+        font-size: to-rem(22);
+        line-height: to-rem(26);
+        color: var(--color-white);
+        opacity: 1;
+        text-transform: none;
+      }
+    }
+
+    &-open {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: to-rem(48);
+      min-height: to-rem(48);
+      border-radius: to-rem(8);
+      background: var(--color-card-bg);
+      margin-left: to-rem(28);
+
+      svg {
+        transition: all 0.4s ease;
+      }
+
+      @media (min-width: 992px) {
+        display: none;
+      }
     }
 
     &-info {
@@ -89,12 +145,47 @@
     }
 
     &-links {
-      display: flex;
+      display: none;
       flex-direction: column;
       gap: to-rem(8);
-      font-size: to-rem(16);
-      line-height: to-rem(24);
-      margin-top: to-rem(32);
+      font-size: to-rem(22);
+      line-height: to-rem(26);
+      margin-top: to-rem(16);
+
+      @media (min-width: 992px) {
+        display: flex;
+        font-size: to-rem(16);
+        line-height: to-rem(24);
+        margin-top: to-rem(32);
+      }
+    }
+
+    &-link {
+      @media (max-width: 991px) {
+        padding: to-rem(8, 0);
+      }
+    }
+
+    &.open {
+      padding-bottom: to-rem(16);
+      border-bottom: to-rem(1) solid var(--color-gray);
+
+      .footer {
+        &__item {
+
+          &-links {
+            display: flex;
+          }
+
+          &-top {
+            border-bottom: none;
+          }
+        }
+      }
+
+      svg {
+        transform: rotate(45deg);
+      }
     }
   }
 
@@ -120,10 +211,6 @@
         }
       }
     }
-  }
-
-  &__menu {
-    margin-bottom: to-rem(16);
   }
 
   &__columns {
@@ -173,8 +260,13 @@
   }
 
   &__contacts {
-    @media (min-width: 991px) {
-      order: 9;
+    @media (max-width: 991px) {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      background: var(--color-card-bg);
+      border-radius: to-rem(32);
+      padding: to-rem(24);
     }
 
     &-wrapper {
@@ -252,7 +344,11 @@
   &__menu {
     display: flex;
     flex-direction: column;
-    padding: to-rem(30, 24, 34);
+
+    @media (min-width: 992px) {
+      padding: to-rem(30, 24, 34);
+      margin-bottom: to-rem(16);
+    }
 
     @media (max-width: 991px) {
       order: 0;
@@ -264,13 +360,31 @@
       flex-direction: row;
       padding: to-rem(30, 56, 34);
     }
+
+    &-item {
+      @media (max-width: 991px) {
+        font-size: to-rem(22);
+        line-height: to-rem(26);
+        padding: to-rem(16, 0, 22);
+        border-bottom: to-rem(1) solid var(--color-gray);
+
+        &:first-child {
+          border-top: to-rem(1) solid var(--color-gray);
+        }
+      }
+    }
   }
 
   &__bottom {
     &-items {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: to-rem(16);
+      grid-template-columns: 1fr;
+      gap: to-rem(24);
+
+      @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: to-rem(16);
+      }
     }
 
     &-item {
