@@ -1,5 +1,5 @@
 .main-top {
-  padding-bottom: to-rem(116);
+  padding-bottom: to-rem(96);
 
   @media (min-width: 1200px) {
     padding-bottom: to-rem(160);
@@ -72,6 +72,7 @@
       border-radius: to-rem(32);
       background: var(--color-card-bg);
       padding: to-rem(8);
+      margin-top: to-rem(40);
     }
 
     @media (min-width: 1200px) {
