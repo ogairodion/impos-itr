@@ -103,7 +103,6 @@
     @media (max-width: 1199px) {
       flex: 1 1 auto;
       padding: to-rem(24);
-      transform: translateX(0);
     }
   }
 
@@ -333,16 +332,25 @@
   &__form {
     display: flex;
     flex-direction: column;
-    min-height: 100%;
     background: var(--color-dark);
-    border-top-left-radius: to-rem(32);
-    border-bottom-left-radius: to-rem(32);
-    padding: to-rem(32, 40, 40);
     opacity: 0;
     transform: translateX(100%);
 
     @media (max-width: 1199px) {
-      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      padding: to-rem(24);
+    }
+
+    @media (min-width: 1200px) {
+      min-height: 100%;
+      border-top-left-radius: to-rem(32);
+      border-bottom-left-radius: to-rem(32);
+      padding: to-rem(32, 40, 40);
     }
 
     &-title {
@@ -464,7 +472,6 @@
 
   &.open {
     transform: translateX(0);
-    transition: transform 1s ease-in-out;
 
     .menu {
       &__container, &__form {
