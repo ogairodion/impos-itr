@@ -2,19 +2,18 @@ import Swiper from 'swiper';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 
 const mainTop = document.querySelector('.main-top');
-const slides = mainTop.querySelectorAll('.swiper-slide');
 const slidesProgress = mainTop.querySelector('.slider-navigation-progress');
 const slidesProgressActive = slidesProgress.querySelector('.slider-navigation-progress__active');
 const slidesProgressLength = slidesProgress.querySelector('.slider-navigation-progress__length');
 
 const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
   modules: [Navigation, Pagination, EffectFade, Autoplay],
-  slidesPerView: 'auto',
+  slidesPerView: 1,
+  spaceBetween: 0,
   autoplay: {
     delay: 2000,
     disableOnInteraction: false,
   },
-  spaceBetween: 8,
   navigation: {
     nextEl: '.main-top .slider-navigation-arrow--next',
     prevEl: '.main-top .slider-navigation-arrow--prev',
@@ -24,19 +23,8 @@ const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
     crossFade: true
   },
   loop: true,
-  centeredSlides: true,
-  breakpoints: {
-    768: {
-      slidesPerView: 1,
-      speed: 1000,
-      spaceBetween: 0,
-      allowTouchMove: false,
-      observer: true,
-      observeParents: true,
-      observeSlideChildren: true,
-      centeredSlides: false,
-    },
-  },
+  speed: 1000,
+  allowTouchMove: false,
   pagination: {
     el: '.main-top__slider-pagination',
     clickable: true,
@@ -75,5 +63,17 @@ const mainTopSlider_2 = new Swiper('.main-top__slider-right', {
     el: '.main-top__slider-scrollbar',
     type: 'progressbar',
   },
+  loop: true,
+});
+
+const mainTopSlider_3 = new Swiper('.main-top__slider-mobile', {
+  modules: [Navigation, Pagination],
+  slidesPerView: 'auto',
+  spaceBetween: 8,
+  pagination: {
+    el: '.main-top__slider-scrollbar',
+    type: 'progressbar',
+  },
+  centeredSlides: true,
   loop: true,
 });
