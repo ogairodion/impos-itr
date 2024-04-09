@@ -21,6 +21,13 @@
     border: to-rem(1) solid rgba(#fff, 0.1);
     white-space: nowrap;
     padding: to-rem(13);
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:hover {
+      color: var(--color-card-bg);
+      background: var(--color-primary);
+    }
 
     &:nth-child(2n) {
       align-self: flex-end;

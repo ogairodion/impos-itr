@@ -5,11 +5,16 @@ include .././form/form.pug
 .menu-main
   .menu-main__wrapper
     .menu-main__icon
-      .menu-main__icon-wrapper
+      .menu-main__icon-wrapper.default
         span
         span
         span
         span
+      span.close.hidden
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M16.7745 7.2276C17.0674 7.52049 17.0674 7.99536 16.7745 8.28826L8.28919 16.7735C7.9963 17.0664 7.52142 17.0664 7.22853 16.7735C6.93564 16.4806 6.93564 16.0058 7.22853 15.7129L15.7138 7.2276C16.0067 6.9347 16.4816 6.9347 16.7745 7.2276Z" fill="#F8F1DF"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7744 16.7745C16.4815 17.0674 16.0066 17.0674 15.7137 16.7745L7.22842 8.28919C6.93552 7.9963 6.93552 7.52142 7.22842 7.22853C7.52131 6.93564 7.99618 6.93563 8.28908 7.22853L16.7744 15.7138C17.0673 16.0067 17.0673 16.4816 16.7744 16.7745Z" fill="#F8F1DF"/>
+        </svg>
     .menu-main__text.f-caps-small Меню
 
 .menu
@@ -29,18 +34,21 @@ include .././form/form.pug
                 .menu__item.f-menu(data-menu-id=index + 1)= menu_item.text
         .menu__column.menu__column-lvl-2
           .menu__column-top
+            .menu__column-close Назад
           each menu_item, index in menu_items
             - if (menu_item.submenu)
               each sub_menu_item, idx in menu_item.submenu
-                .menu__links
+                .menu__links(data-menu-id=`${index + 1}`)
                   each level_2_item in sub_menu_item.submenu.items
+                    - const dataItems = sub_menu_item.submenu.items.length ? 'true' : 'false'
                     - if (level_2_item.href)
                       a.menu__link.f-body(href=level_2_item.href)= level_2_item.text
                     - else
-                      .menu__link.f-body(data-menu-id=`${index + 1}`)= level_2_item.text
+                      .menu__link.f-body(data-items=dataItems)= level_2_item.text
           .menu__column-top
         .menu__column.menu__column-lvl-3
           .menu__column-top
+            .menu__column-close Назад
           each menu_item, index in menu_items
             - if (menu_item.submenu)
               each sub_menu_item in menu_item.submenu
@@ -51,7 +59,13 @@ include .././form/form.pug
                           a.menu__link.f-body(href=item.href)= item.text
       .menu__bottom
         each menu_bottom_item in menu_bottom
-          a.menu__bottom-item.f-h5(href=menu_bottom_item.href)= menu_bottom_item.text
+          a.menu__bottom-item.f-h5(href=menu_bottom_item.href class=menu_bottom_item.class)= menu_bottom_item.text
+      +button({
+        text: 'Заказать звонок',
+        icon: menu_form_icon,
+        theme: 'button--light',
+        class: 'button--call',
+      })
     .menu__form.form
       .menu__form-title.f-h3 Заказать звонок
       .menu__form-description.f-body.hidden Спасибо за обращение, наш менеджер свяжется с вами в ближайшее время.

@@ -108,6 +108,18 @@ function getSteps(content, slider) {
     createdStep.innerText = `Шаг ${index + 1 < 10 ? `0${index + 1}` : index + 1}`;
 
     steps.append(createdStep);
+
+    createdStep.addEventListener('click', () => {
+      slider.slideTo(index);
+
+      getPosition(slider, index);
+    });
+
+    createdStep.addEventListener('click', () => {
+      slider.slideTo(index);
+
+      getPosition(slider, index);
+    });
   });
 
   getPoints(content, points, pointsBar, slider);
