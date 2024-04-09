@@ -206,12 +206,15 @@
 
   &-main {
     display: flex;
-    width: to-rem(213);
-    cursor: pointer;
-    background: var(--color-card-bg);
-    border-radius: to-rem(12);
-    padding: to-rem(4);
-    transition: all 0.4s ease;
+
+    @media (min-width: 1200px) {
+      width: to-rem(213);
+      background: var(--color-card-bg);
+      border-radius: to-rem(12);
+      padding: to-rem(4);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
 
     &__wrapper {
       display: flex;
@@ -221,6 +224,10 @@
 
     &__text {
       font-weight: 400;
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
 
     &__icon {
@@ -228,11 +235,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: to-rem(40);
-      min-height: to-rem(40);
+      min-width: to-rem(48);
+      min-height: to-rem(48);
       border-radius: to-rem(8);
       background: var(--color-gray);
-      margin-right: to-rem(16);
+
+      @media (min-width: 1200px) {
+        min-width: to-rem(40);
+        min-height: to-rem(40);
+        margin-right: to-rem(16);
+      }
 
       &-wrapper {
         position: relative;

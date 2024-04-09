@@ -2,21 +2,32 @@
   &__wrapper {
     display: flex;
     align-items: center;
-    background: var(--color-card-bg);
-    border-radius: to-rem(12);
-    padding: to-rem(4);
+
+    @media (min-width: 1200px) {
+      background: var(--color-card-bg);
+      border-radius: to-rem(12);
+      padding: to-rem(4);
+    }
   }
 
   &__icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: to-rem(40);
-    min-height: to-rem(40);
+    min-width: to-rem(48);
+    min-height: to-rem(48);
     background: var(--color-gray);
     border-radius: to-rem(8);
 
+    @media (min-width: 1200px) {
+      min-width: to-rem(40);
+      min-height: to-rem(40);
+    }
+
     &-mail {
+      @media (max-width: 1199px) {
+        display: none;
+      }
       svg {
         transition: all 0.4s ease;
       }
@@ -42,6 +53,10 @@
     gap: to-rem(10);
     margin-left: to-rem(16);
     margin-right: to-rem(20);
+
+    @media (max-width: 1199px) {
+      display: none;
+    }
   }
 
   &__links {
@@ -78,6 +93,16 @@
           fill: var(--color-primary);
         }
       }
+    }
+  }
+
+  &__mobile {
+    display: none;
+  }
+
+  &.open {
+    @media (min-width: 1200px) {
+      display: none;
     }
   }
 }

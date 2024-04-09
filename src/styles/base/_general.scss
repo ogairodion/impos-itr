@@ -54,7 +54,7 @@ body {
   flex-direction: column;
   margin-top: to-rem(96);
 
-  @media (min-width: 992px) {
+  @media (min-width: 1200px) {
     margin-top: to-rem(136);
   }
 }
