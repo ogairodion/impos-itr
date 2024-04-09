@@ -58,7 +58,13 @@
     height: to-rem(10);
     border-radius: 100%;
     background: var(--color-gray);
+    cursor: pointer;
     transform: translateY(-50%);
+    transition: background 0.4s ease;
+
+    &:hover {
+      background: var(--color-primary);
+    }
   }
 
   &__progressbar {

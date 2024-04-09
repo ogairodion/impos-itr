@@ -110,10 +110,10 @@ function getSteps(content, slider) {
     steps.append(createdStep);
   });
 
-  getPoints(content, points, pointsBar);
+  getPoints(content, points, pointsBar, slider);
 }
 
-function getPoints(content, points, pointsBar) {
+function getPoints(content, points, pointsBar, slider) {
   const steps = content.querySelectorAll('.step');
   let positionX = 24;
 
@@ -130,6 +130,18 @@ function getPoints(content, points, pointsBar) {
 
     createdPoint.style.left = (positionX - (98 / 2)) + 'px';
     createdPointBar.style.left = (positionX - (98 / 2)) + 'px';
+
+    createdPoint.addEventListener('click', () => {
+      slider.slideTo(index);
+
+      getPosition(slider, index);
+    });
+
+    createdPointBar.addEventListener('click', () => {
+      slider.slideTo(index);
+
+      getPosition(slider, index);
+    });
 
     points.append(createdPoint);
     pointsBar.append(createdPointBar);

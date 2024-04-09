@@ -6,6 +6,8 @@ const slidesProgress = mainTop.querySelector('.slider-navigation-progress');
 const slidesProgressActive = slidesProgress.querySelector('.slider-navigation-progress__active');
 const slidesProgressLength = slidesProgress.querySelector('.slider-navigation-progress__length');
 
+const video = document.querySelector('video');
+
 const mainTopSlider_1 = new Swiper('.main-top__slider-left', {
   modules: [Navigation, Pagination, EffectFade, Autoplay],
   slidesPerView: 1,
@@ -77,3 +79,7 @@ const mainTopSlider_3 = new Swiper('.main-top__slider-mobile', {
   centeredSlides: true,
   loop: true,
 });
+
+if (video) {
+  video.play();
+}
