@@ -85,6 +85,10 @@
   }
 
   &-service {
-    padding-bottom: to-rem(40);
+    padding-bottom: to-rem(96);
+
+    @media (min-width: 1200px) {
+      padding-bottom: to-rem(40);
+    }
   }
 }

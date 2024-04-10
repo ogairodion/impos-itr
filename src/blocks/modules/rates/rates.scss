@@ -1,33 +1,75 @@
 .rates {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   &__title {
-    margin-bottom: to-rem(64);
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      margin-bottom: to-rem(64);
+    }
+  }
+
+  .point {
+    @media (max-width: 1199px) {
+      width: to-rem(243);
+    }
+  }
+
+  .l-default-np {
+    @media (max-width: 1199px) {
+      padding: 0;
+    }
   }
 
   &__wrapper {
-    display: grid;
-    grid-template-columns: to-rem(557) 1fr;
-    gap: to-rem(16);
+    display: flex;
+    flex-direction: column-reverse;
+    gap: to-rem(48);
+
+    @media (min-width: 1300px) {
+      display: grid;
+      gap: to-rem(16);
+      grid-template-columns: to-rem(557) 1fr;
+    }
   }
 
   &__form {
-    position: sticky;
-    top: to-rem(120);
     height: fit-content;
     padding: to-rem(32);
+
+    @media (min-width: 1300px) {
+      position: sticky;
+      top: to-rem(120);
+    }
+
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 24);
+    }
 
     &-progress {
       height: to-rem(2);
       border-radius: to-rem(2);
       background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%);
       margin: to-rem(16, 0);
+
+      @media (max-width: 1299px) {
+        display: none;
+      }
     }
 
     &-description {
       max-width: to-rem(315);
       opacity: 0.5;
       margin-left: auto;
+
+      @media (max-width: 1299px) {
+        margin-left: 0;
+        margin-top: to-rem(8);
+      }
     }
 
     .button {
@@ -40,12 +82,29 @@
       margin-top: to-rem(56);
 
       &__inputs {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: column;
         gap: to-rem(16);
+
+        @media (min-width: 1200px) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
 
         input {
           width: 100%;
+
+          &::placeholder {
+            @media (max-width: 1199px) {
+              color: var(--color-white);
+            }
+          }
+        }
+
+        .button {
+          @media (max-width: 1199px) {
+            margin-top: to-rem(32);
+          }
         }
       }
 
@@ -57,39 +116,83 @@
   }
 
   &__form, &__table {
-    background: var(--color-card-bg);
-    border-radius: to-rem(24);
+    @media (min-width: 1200px) {
+      background: var(--color-card-bg);
+      border-radius: to-rem(24);
+    }
   }
 
   &__table {
     overflow: hidden;
 
+    @media (max-width: 1199px) {
+      display: flex;
+      flex-direction: column;
+    }
+
     th {
       opacity: 0.5;
       text-align: left;
       padding: to-rem(32, 32, 24);
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
+    }
+
+    tr {
+      @media (max-width: 1199px) {
+        display: flex;
+        flex-direction: column;
+
+        &:first-child {
+          border-top: to-rem(1) solid var(--color-gray);
+        }
+      }
     }
 
     td {
       vertical-align: top;
       padding: to-rem(24, 32, 0);
 
+      @media (max-width: 1199px) {
+        padding: to-rem(0, 24);
+        border-bottom: to-rem(1) solid var(--color-gray);
+      }
+
       &:first-child {
         padding-top: to-rem(29);
+
+        @media (max-width: 1199px) {
+          display: none;
+        }
       }
 
       &:nth-child(2) {
-        padding-right: 0;
+        @media (min-width: 1200px) {
+          padding-right: 0;
+        }
       }
 
       &:last-child {
         vertical-align: bottom;
         padding-left: 0;
+
+        @media (max-width: 1199px) {
+          display: none;
+        }
       }
 
       ul, ol {
-        margin-top: to-rem(16);
-        padding-right: to-rem(64);
+        @media (max-width: 1199px) {
+          display: none;
+          padding-left: to-rem(20);
+        }
+
+        @media (min-width: 1200px) {
+          margin-top: to-rem(16);
+          padding-right: to-rem(64);
+        }
       }
 
       li {
@@ -106,25 +209,111 @@
           }
         }
       }
+
+      &.open {
+        .rates {
+          &__table {
+            &-items, &-info {
+              @media (max-width: 1199px) {
+                display: block;
+              }
+            }
+
+            ol {
+              @media (max-width: 1199px) {
+                display: block;
+              }
+            }
+          }
+        }
+
+        svg {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: to-rem(48);
+      min-height: to-rem(48);
+      background: var(--color-card-bg);
+      border-radius: to-rem(8);
+      margin-left: to-rem(8);
+
+      @media (min-width: 1200px) {
+        display: none;
+      }
+
+      svg {
+        transition: all 0.4s ease;
+      }
     }
 
     &-top {
-      padding-right: to-rem(32);
-      padding-bottom: to-rem(24);
+      @media (max-width: 1199px) {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: to-rem(16, 0, 24);
+      }
+
+      @media (min-width: 1200px) {
+        padding-right: to-rem(32);
+        padding-bottom: to-rem(24);
+      }
+    }
+
+    &-items {
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
 
     &-item {
       border-top: to-rem(1) solid var(--color-gray);
-      padding: to-rem(10, 32);
+      padding: to-rem(10, 2, 10, 32);
+
+      @media (min-width: 1200px) {
+        padding: to-rem(10, 32);
+      }
+
+      @media (max-width: 1199px) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    &-info {
+      display: none;
+
+      @media (max-width: 1199px) {
+        display: none;
+        padding: to-rem(10, 32);
+        border-top: to-rem(1) solid var(--color-gray);
+      }
     }
   }
 
   table, td, th {
-    border: to-rem(1) solid var(--color-gray);
-    border-collapse: collapse;
+    @media (min-width: 1200px) {
+      border: to-rem(1) solid var(--color-gray);
+      border-collapse: collapse;
+    }
   }
 
   input {
     background: var(--color-gray);
+  }
+
+  .mobile {
+    display: none;
+
+    @media (max-width: 1199px) {
+      display: block;
+    }
   }
 }

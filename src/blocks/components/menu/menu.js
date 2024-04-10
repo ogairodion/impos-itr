@@ -18,6 +18,11 @@ const btnCall = menu.querySelector('.button--call');
 
 const menuForm = menu.querySelector('.menu__form');
 
+const contacts = document.querySelector('.contacts');
+const contactsMobile = contacts.querySelector('.contacts__mobile');
+const contactsIcon = contacts.querySelector('.default');
+const contactsClose = contacts.querySelector('.close');
+
 let windowWidth = 0;
 windowWidth = window.innerWidth;
 
@@ -38,6 +43,10 @@ window.addEventListener('resize', () => {
 });
 
 menuBtn.addEventListener('click', () => {
+  contactsMobile.classList.remove('show');
+  contactsIcon.classList.remove('hidden');
+  contactsClose.classList.add('hidden');
+
   if (windowWidth < 1200) {
     if (!menuForm.classList.contains('hidden')) {
       menuForm.classList.add('hidden');

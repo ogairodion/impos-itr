@@ -5,6 +5,9 @@ const popup = document.querySelector('.map__popup');
 const marker = document.querySelector('.map__marker');
 const line = document.querySelector('.map__line');
 
+getActivePoint(0);
+getPopup(mapPoints[0]);
+
 if (mapPoints.length) {
   mapPoints.forEach((point, index) => {
     point.addEventListener('click', (event) => {

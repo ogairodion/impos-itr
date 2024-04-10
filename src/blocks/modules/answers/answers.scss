@@ -1,5 +1,9 @@
 .answers {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   .point {
     margin: 0;
@@ -8,17 +12,30 @@
 
   &__top {
     display: flex;
-    margin-bottom: to-rem(64);
+    flex-direction: column;
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      margin-bottom: to-rem(64);
+    }
   }
 
   &__title {
     max-width: to-rem(640);
+
+    @media (max-width: 1199px) {
+      margin-bottom: to-rem(24);
+    }
   }
 
   &__description {
     max-width: to-rem(358);
     opacity: 0.5;
-    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      margin: 0 auto;
+    }
   }
 
   &__map {
@@ -26,5 +43,9 @@
     background: var(--color-card-bg);
     padding: to-rem(51, 51, 34);
     margin-top: to-rem(16);
+
+    @media (max-width: 1399px) {
+      display: none;
+    }
   }
 }

@@ -1,25 +1,46 @@
 .questions {
-  padding-bottom: to-rem(64);
+  padding-bottom: to-rem(56);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(64);
+  }
 
   .point {
-    width: to-rem(328);
+    width: 100%;
     margin: 0;
     margin-bottom: to-rem(24);
+
+    @media (min-width: 1200px) {
+      width: to-rem(328);
+    }
   }
 
   &__top {
     display: flex;
-    margin-bottom: to-rem(64);
+    flex-direction: column;
+    margin-bottom: to-rem(40);
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      margin-bottom: to-rem(64);
+    }
   }
 
   &__title {
     max-width: to-rem(640);
+
+    @media (max-width: 1199px) {
+      margin-bottom: to-rem(24);
+    }
   }
 
   &__description {
     max-width: to-rem(358);
     opacity: 0.5;
-    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      margin: 0 auto;
+    }
   }
 
   .button--more {

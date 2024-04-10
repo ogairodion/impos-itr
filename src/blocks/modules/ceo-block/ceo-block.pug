@@ -20,11 +20,12 @@ section.ceo-block
             .ceo-block__item-title.f-h5= ceo_block_item.title
           - if (ceo_block_item.text)
           .ceo-block__item-text.f-body-small!= ceo_block_item.text
-          .ceo-block__item-img
-            +image({
-              type: 'jpg',
-              src: ceo_block_item.img,
-            })
+          - if (ceo_block_item.img)
+            .ceo-block__item-img
+              +image({
+                type: 'jpg',
+                src: ceo_block_item.img,
+              })
     .ceo-block__tags
       each ceo_block_tag in ceo_block_tags
         +tag({

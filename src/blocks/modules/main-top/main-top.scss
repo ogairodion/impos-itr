@@ -24,12 +24,12 @@
     overflow: hidden;
 
     @media (min-width: 992px) {
-      min-height: to-rem(643);
+      min-height: to-rem(500);
     }
 
     @media (min-width: 1200px) {
       width: 50%;
-      min-height: to-rem(500);
+      min-height: to-rem(643);
     }
 
     video {

@@ -1,5 +1,9 @@
 .ceo-block {
-  padding-bottom: to-rem(160);
+  padding-bottom: to-rem(96);
+
+  @media (min-width: 1200px) {
+    padding-bottom: to-rem(160);
+  }
 
   .point {
     width: to-rem(328);
@@ -9,33 +13,68 @@
 
   &__top {
     display: flex;
-    margin-bottom: to-rem(48);
+    flex-direction: column;
+    margin-bottom: to-rem(53);
+
+    @media (min-width: 1200px) {
+      flex-direction: row;
+      margin-bottom: to-rem(48);
+    }
   }
 
   &__title {
     max-width: to-rem(640);
+
+    @media (max-width: 1199px) {
+      margin-bottom: to-rem(24);
+    }
   }
 
   &__description {
     max-width: to-rem(358);
     opacity: 0.5;
-    margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      margin: 0 auto;
+    }
   }
 
   &__items {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    gap: to-rem(48);
-    margin-bottom: to-rem(56);
+    display: flex;
+    flex-direction: column;
+    gap: to-rem(40);
+    margin-bottom: to-rem(24);
+
+    @media (min-width: 992px) {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: to-rem(56);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: to-rem(48);
+    }
   }
 
   &__item {
     &-img {
+      position: relative;
+      min-height: to-rem(327);
       border-radius: to-rem(32);
       overflow: hidden;
 
+      @media (min-width: 992px) {
+        min-height: to-rem(421);
+      }
+
       img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         object-position: center;
       }

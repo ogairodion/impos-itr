@@ -97,12 +97,70 @@
   }
 
   &__mobile {
+    position: fixed;
+    top: to-rem(72);
+    left: 0;
+    z-index: 100;
     display: none;
-  }
+    flex-direction: column;
+    width: 100%;
+    height: calc(100% - 72px);
+    background: var(--color-dark);
+    padding: to-rem(48, 24, 24);
 
-  &.open {
-    @media (min-width: 1200px) {
-      display: none;
+    &-label {
+      opacity: 0.5;
+      margin-bottom: to-rem(8);
+    }
+
+    &-phone {
+      margin-bottom: to-rem(32);
+    }
+
+    &-mail {
+      width: 100%;
+    }
+
+    &-socials {
+      display: flex;
+      gap: to-rem(8);
+      width: 100%;
+      margin-bottom: to-rem(40);
+    }
+
+    &-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 1 1 auto;
+      min-height: to-rem(48);
+      border-radius: to-rem(8);
+
+      &--telegram {
+        background: #2F89CE;
+      }
+
+      &--whatsapp {
+        background: #48C95F;
+      }
+
+      &--viber {
+        background: #7C509A;
+      }
+    }
+
+    .button {
+      width: 100%;
+      max-width: 100%;
+      margin-top: to-rem(32);
+    }
+
+    &.show {
+      display: flex;
+
+      @media (min-width: 1200px) {
+        display: none;
+      }
     }
   }
 }

@@ -5,14 +5,23 @@
 
   .dropdown {
     cursor: pointer;
-    border-radius: to-rem(24);
+    border-radius: to-rem(16);
     background: var(--color-card-bg);
+
+    @media (min-width: 1200px) {
+      border-radius: to-rem(24);
+    }
 
     &__top {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      padding: to-rem(8);
+      padding: to-rem(16, 8, 24, 0);
+
+      @media (min-width: 1200px) {
+        align-items: center;
+        padding: to-rem(8);
+      }
     }
 
     &:hover {
@@ -42,21 +51,38 @@
       border-radius: to-rem(16);
       border: to-rem(1) solid var(--color-gray);
       color: var(--color-primary);
+
+      @media (max-width: 1199px) {
+        display: none;
+      }
     }
 
     &__title {
       color: var(--color-primary);
+
+      @media (max-width: 1199px) {
+        color: var(--color-white);
+        padding-left: to-rem(24);
+      }
     }
 
     &__arrow {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: to-rem(80);
-      min-height: to-rem(80);
-      border-radius: to-rem(16);
+      min-width: to-rem(48);
+      min-height: to-rem(48);
+      border-radius: to-rem(8);
       background: var(--color-gray);
       border: to-rem(1) solid var(--color-gray);
+      margin-left: to-rem(16);
+
+      @media (min-width: 1200px) {
+        min-width: to-rem(80);
+        min-height: to-rem(80);
+        border-radius: to-rem(16);
+        margin-left: 0;
+      }
 
       svg {
         transition: all 0.4s ease;
@@ -72,6 +98,11 @@
     &__text {
       max-width: to-rem(609);
       margin: 0 auto;
+
+      @media (max-width: 1199px) {
+        opacity: 0.5;
+        padding: to-rem(24, 32, 0, 24);
+      }
     }
 
     &.open {
