@@ -37,4 +37,71 @@
       margin-bottom: to-rem(8);
     }
   }
+
+  &-map {
+    padding: to-rem(24, 0);
+    background: var(--color-dark);
+
+    &__actions {
+      margin-bottom: to-rem(32);
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: to-rem(24);
+    }
+
+    &__info {
+      border-bottom: to-rem(1) solid var(--color-gray);
+      padding: to-rem(24);
+      padding-bottom: to-rem(40);
+    }
+
+    &__title {
+      margin-bottom: to-rem(16);
+    }
+
+    &__bottom {
+      padding: to-rem(0, 24);
+      padding-top: to-rem(16);
+
+      &-cases {
+        margin-bottom: to-rem(8);
+      }
+
+      &-title {
+        margin-bottom: to-rem(8);
+      }
+
+      &-text {
+        opacity: 0.5;
+      }
+    }
+
+    &__description {
+      opacity: 0.5;
+    }
+
+    .fancybox-close-small {
+      display: none;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 100%;
+      margin-top: to-rem(16);
+    }
+
+    &__close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: to-rem(48);
+      height: to-rem(48);
+      background: var(--color-card-bg);
+      border-radius: to-rem(8);
+    }
+  }
 }

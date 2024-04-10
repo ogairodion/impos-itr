@@ -1,8 +1,8 @@
 include data.pug
 
-.map-items.hidden
+.map-items
   each map_item in map_countries
-    .map-item.hidden(data-id=map_item.id)
+    a.map-item(href='#popup-map' data-id=map_item.id data-fancybox)
       .map-item__top
         .map-item__top-actions
           .map-item__country= map_item.name
@@ -10,12 +10,14 @@ include data.pug
         .map-item__flag
           img(src="img/flags/china.svg", alt="")
         .map-item__text Инфо о блоке с разработке. можно выводить сюда статисстику по сделкам отдельной страны. Например сколько всего было сделjк, какие суммы и тд.
+      .map-item__links.hidden
+        .map-item__link.map-item__link--services test
+        .map-item__link.map-item__link--cases test
       .map-item__bottom
         .map-item__cases
-          .map-item__bottom-label Кейс
           .map-item__bottom-title 88 888
           .map-item__bottom-text Описание примерно 2 строки
         .map-item__services
-          .map-item__bottom-label Кейс
           .map-item__bottom-title 88 888
           .map-item__bottom-text Описание примерно 2 строки
+  .map-more.f-body <span>Все+</span> 15
