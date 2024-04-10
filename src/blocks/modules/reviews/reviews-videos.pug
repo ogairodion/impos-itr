@@ -1,0 +1,7 @@
+.reviews-messengers
+  .reviews-messengers__slider.swiper
+    .swiper-wrapper
+      each review_messengers in reviews_messengers
+  +slider-navigation({
+    type: 'vertical',
+  })

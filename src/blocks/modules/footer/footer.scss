@@ -21,9 +21,13 @@
   }
 
   .logo {
-    width: to-rem(327);
+    width: 100%;
     margin: 0 auto;
     margin-bottom: to-rem(40);
+
+    @media (min-width: 375px) {
+      width: to-rem(327);
+    }
 
     @media (min-width: 992px) {
       width: to-rem(442);

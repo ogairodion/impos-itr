@@ -24,12 +24,20 @@
 
   &__title {
     max-width: to-rem(640);
+
+    @media (max-width: 1199px) {
+      margin-bottom: to-rem(24);
+    }
   }
 
   &__description {
     max-width: to-rem(368);
     opacity: 0.5;
     margin: 0 auto;
+
+    @media (max-width: 1199px) {
+      margin-left: 0;
+    }
   }
 
   &__slide {

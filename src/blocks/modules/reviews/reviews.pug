@@ -12,7 +12,10 @@ section.reviews
       text: 'отзывы',
     })
     h2.reviews__title.f-h2.f-centered Заголовк блока про услуги<br /> в разработке
-    +tabs(reviews_tabs)
+    .reviews__tabs.swiper
+      .swiper-wrapper
+        .swiper-slide
+          +tabs(reviews_tabs)
     .tabs__content.tabs__content-messengers(data-tab=reviews_tabs[0].value)
       include reviews-messengers.pug
     .tabs__content.tabs__content-letters.hidden(data-tab=reviews_tabs[1].value)

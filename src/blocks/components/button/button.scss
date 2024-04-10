@@ -66,11 +66,16 @@
     align-items: center;
     justify-content: center;
     max-width: to-rem(672);
+    text-align: center;
     color: var(--color-primary);
     background: var(--color-dark);
     border: to-rem(1) solid var(--color-gray);
-    padding: to-rem(27, 0);
+    padding: to-rem(19);
     margin: 0 auto;
+
+    @media (min-width: 1200px) {
+      padding: to-rem(27);
+    }
   }
 
   &:disabled {
