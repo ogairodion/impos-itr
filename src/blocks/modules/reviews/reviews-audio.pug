@@ -1,0 +1,22 @@
+.reviews-audio
+  .reviews-audio__slider.swiper
+    .swiper-wrapper
+      each reviews_audio in reviews_audios
+        .reviews-audio__slide
+          .reviews-audio__slide-top
+            .reviews-audio__slide-play
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M16.9611 13.7384L8.99228 18.292C7.65896 19.0539 6 18.0912 6 16.5555V7.44827C6 5.91262 7.65896 4.94989 8.99228 5.71178L16.9611 10.2654C18.3048 11.0332 18.3048 12.9706 16.9611 13.7384Z" fill="#F8F1DF"/>
+              </svg>
+            .reviews-audio__slide-content
+              .reviews-audio__slide-file(data-audio=reviews_audio.file)
+              .reviews-audio__slide-timer
+                .reviews-audio__slide-timer--current.f-caps-small
+                .reviews-audio__slide-timer--length.f-caps-small
+          .reviews-audio__slide-bottom
+            .reviews-audio__slide-logo
+              img(src=reviews_audio.logo, alt="")
+            .reviews-audio__slide-title.f-h5= reviews_audio.title
+  +slider-navigation({
+    type: 'vertical',
+  })

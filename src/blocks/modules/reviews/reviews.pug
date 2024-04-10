@@ -20,6 +20,10 @@ section.reviews
       include reviews-messengers.pug
     .tabs__content.tabs__content-letters.hidden(data-tab=reviews_tabs[1].value)
       include reviews-letters.pug
+    .tabs__content.tabs__content-audio.hidden(data-tab=reviews_tabs[2].value)
+      include reviews-audio.pug
+    .tabs__content.tabs__content-videos.hidden(data-tab=reviews_tabs[3].value)
+      include reviews-videos.pug
     +button({
       theme: 'button--more',
       text: 'Смотреть все отзывы компании ( 54 )',

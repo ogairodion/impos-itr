@@ -1,7 +1,21 @@
-.reviews-messengers
-  .reviews-messengers__slider.swiper
+.reviews-videos
+  .reviews-videos__slider.swiper
     .swiper-wrapper
-      each review_messengers in reviews_messengers
+      each reviews_video in reviews_videos
+        a.reviews-videos__slide.swiper-slide(class=className href=reviews_video.href data-fancybox)
+          .reviews-videos__slide-img
+            +image({
+              src: reviews_video.img,
+              type: 'jpg',
+            })
+          .reviews-videos__slide-bottom
+            .reviews-videos__slide-play
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path opacity="0.4" d="M16.9611 13.7384L8.99228 18.292C7.65896 19.0539 6 18.0912 6 16.5555V7.44827C6 5.91262 7.65896 4.94989 8.99228 5.71178L16.9611 10.2654C18.3048 11.0332 18.3048 12.9706 16.9611 13.7384Z" fill="#F8F1DF"/>
+              </svg>
+            .reviews-videos__slide-info
+              .reviews-videos__slide-title.f-h5= reviews_video.title
+              .reviews-videos__slide-caption.f-body-small= reviews_video.time
   +slider-navigation({
     type: 'vertical',
   })
