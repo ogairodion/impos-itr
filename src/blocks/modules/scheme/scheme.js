@@ -6,8 +6,10 @@ const parent = document.querySelector('.scheme');
 const tabsContent = parent.querySelectorAll('.tabs__content');
 
 let windowWidth = 0;
+let progressBarWidth = 276.32;
 
 windowWidth = window.innerWidth;
+
 
 function callback(mutationsList) {
   mutationsList.forEach((element) => {
@@ -46,6 +48,12 @@ function getSliders(element) {
   const sliderLength = element.querySelector('.slider-navigation-progress__length');
   const sliderActiveIndex = element.querySelector('.slider-navigation-progress__active');
 
+  const progressbar = element.querySelector('.progress-bar');
+  const activeTitle = element.querySelector('.scheme__slider-title');
+
+  const currentStep = element.querySelector('.scheme__slider-step--current');
+  const currentStepAll = element.querySelector('.scheme__slider-step--all');
+
   sliderLength.innerText = sliders.length;
   sliderActiveIndex.innerText = 1;
 
@@ -72,12 +80,16 @@ function getSliders(element) {
     on: {
       slideChange() {
         sliderActiveIndex.innerText = this.activeIndex + 1;
-
-        getPosition(this, this.activeIndex);
+        currentStep.innerText = `Шаг ${this.activeIndex + 1 < 10 ? `0${this.activeIndex + 1}` : `${this.activeIndex + 1}`}`;
+        progressbar.style.strokeDashoffset = progressBarWidth* ((100 - ((this.realIndex + 1) / this.slides.length) * 100) / 100);
+        getPosition(this, this.activeIndex, activeTitle);
       },
 
       init() {
-        getPosition(this, this.activeIndex);
+        currentStep.innerText = `Шаг ${this.activeIndex + 1 < 10 ? `0${this.activeIndex + 1}` : `${this.activeIndex + 1}`}`;
+        currentStepAll.innerHTML = `<span>из ${sliders.length}</span>`;
+        progressbar.style.strokeDashoffset = progressBarWidth* ((100 - ((this.realIndex + 1) / this.slides.length) * 100) / 100);
+        getPosition(this, this.activeIndex, activeTitle);
       }
     },
     thumbs: {
@@ -87,12 +99,12 @@ function getSliders(element) {
 
   if (!steps || !steps.length) {
     if (windowWidth >= 1440) {
-      getSteps(element, slider);
+      getSteps(element, slider, activeTitle);
     }
   }
 }
 
-function getSteps(content, slider) {
+function getSteps(content, slider, activeTitle) {
   const steps = content.querySelector('.steps__wrapper');
   const progress = steps.querySelector('.steps__progress');
   const progressbar = steps.querySelector('.steps__progressbar');
@@ -112,13 +124,13 @@ function getSteps(content, slider) {
     createdStep.addEventListener('click', () => {
       slider.slideTo(index);
 
-      getPosition(slider, index);
+      getPosition(slider, index, activeTitle);
     });
 
     createdStep.addEventListener('click', () => {
       slider.slideTo(index);
 
-      getPosition(slider, index);
+      getPosition(slider, index, activeTitle);
     });
   });
 
@@ -127,6 +139,8 @@ function getSteps(content, slider) {
 
 function getPoints(content, points, pointsBar, slider) {
   const steps = content.querySelectorAll('.step');
+  const progress = content.querySelector('.steps__progress');
+
   let positionX = 24;
 
   steps.forEach((step, index) => {
@@ -158,12 +172,16 @@ function getPoints(content, points, pointsBar, slider) {
     points.append(createdPoint);
     pointsBar.append(createdPointBar);
   });
+
+  progress.style.width = ((98 + 12) * steps.length - 30) + 'px';
 }
 
-function getPosition(slider, slideActive) {
+function getPosition(slider, slideActive, activeTitle) {
   const step = 98;
   const tab = slider.el.closest('.tabs__content');
   const progressbar = tab.querySelector('.steps__progressbar');
+  const slideTitle = slider.slides[slideActive].querySelector('.scheme__slide-title');
 
   progressbar.style.width = ((step + 12) * (slideActive + 1) - 16) + 'px';
+  activeTitle.innerText = slideTitle.innerText;
 }

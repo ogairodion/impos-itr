@@ -13,6 +13,12 @@
     }
   }
 
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: to-rem(16);
+  }
+
   &__item {
     display: flex;
     flex-direction: column;

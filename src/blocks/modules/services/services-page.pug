@@ -13,6 +13,11 @@ section.services.point-wrapper
     .services__items
       each services_item in services_items
         .services__item
+          .services__item-img.filter-fade
+            +image({
+              src: services_item.img,
+              type: services_item.type
+            })
           .services__item-info
             .services__item-top
               .services__item-title.f-h4= services_item.title
