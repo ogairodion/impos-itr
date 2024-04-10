@@ -1,3 +1,10 @@
+-
+  const plus_icon = `
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path opacity="0.4" fill-rule="evenodd" clip-rule="evenodd" d="M12 5.25C12.4142 5.25 12.75 5.58579 12.75 6V18C12.75 18.4142 12.4142 18.75 12 18.75C11.5858 18.75 11.25 18.4142 11.25 18V6C11.25 5.58579 11.5858 5.25 12 5.25Z" fill="#F8F1DF"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.75 12C18.75 12.4142 18.4142 12.75 18 12.75L6 12.75C5.58579 12.75 5.25 12.4142 5.25 12C5.25 11.5858 5.58579 11.25 6 11.25L18 11.25C18.4142 11.25 18.75 11.5858 18.75 12Z" fill="#F8F1DF"/>
+    </svg>`
+
 .reviews-messengers
   .reviews-messengers__slider
     each review_messengers in reviews_messengers
@@ -15,9 +22,28 @@
               span.fade-bottom —
               span.reviews-messengers__slide-step--length.fade-bottom 12
           .reviews-messengers__slide-description.f-body.fade-bottom= review_messengers.description
+          .reviews-messengers__slide-link.f-caps-small Подробнее
           .reviews-messengers__slide-bottom
             .reviews-messengers__slide-caption.f-caps-small.fade-bottom Услуги
             .reviews-messengers__slide-progress
             .reviews-messengers__slide-tags
               each reviews_tag in review_messengers.tags
                 .reviews-messengers__slide-tag.f-caps-small.fade-bottom= reviews_tag
+
+  #reviews-messengers-popup.reviews-messengers__popup
+    .reviews-messengers__popup-info
+      .reviews-messengers__popup-top
+        .reviews-messengers__popup-title.f-h4
+      .reviews-messengers__popup-description.f-body
+      .reviews-messengers__popup-bottom
+        .reviews-messengers__popup-caption.f-caps-small Услуги
+        .reviews-messengers__popup-progress
+        .reviews-messengers__popup-tags
+    .reviews-messengers__popup-img
+      img(src="", alt="")
+    +button({
+        text: 'Закрыть',
+        icon: plus_icon,
+        class: 'btn--close',
+        close: true,
+      })

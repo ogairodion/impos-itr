@@ -14,9 +14,18 @@
   }
 
   &__items {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    flex-direction: column;
     gap: to-rem(16);
+
+    @media (min-width: 992px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__item {
@@ -97,5 +106,15 @@
 
   .swiper {
     overflow: visible;
+  }
+
+  &.block-main {
+    padding-bottom: to-rem(160);
+
+    .posts {
+      &__item {
+        max-width: unset !important;
+      }
+    }
   }
 }

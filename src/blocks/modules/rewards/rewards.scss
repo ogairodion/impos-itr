@@ -173,10 +173,16 @@
   }
 
   &.block-main {
+    padding-bottom: to-rem(160);
+
     .rewards {
       &__slide {
         flex: 1 1 auto;
         width: auto;
+
+        @media (max-width: 1199px) {
+          max-width: unset;
+        }
 
         img {
           width: 100%;
@@ -186,6 +192,10 @@
         &-video {
           width: calc(50% - 16px);
           max-width: 100%;
+
+          @media (max-width: 1199px) {
+            width: 100%;
+          }
         }
       }
 

@@ -18,7 +18,8 @@ section.cases.block-main
       each cases_item in cases_items
         .cases__item
           .cases__item-info
-            .cases__item-title.f-h3!= cases_item.title
+            .cases__item-top
+              .cases__item-title.f-h3!= cases_item.title
             .cases__item-description.f-body= cases_item.description
             .cases__table.cases__item-table
               each cases_table_item in cases_item.table

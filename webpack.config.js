@@ -18,6 +18,7 @@ module.exports = {
       "main-page": "./src/js/main-page.js",
       service: "./src/js/service.js",
       cases: "./src/js/cases.js",
+      reviews: "./src/js/reviews.js",
     },
 
     output: {

@@ -13,9 +13,28 @@
         .reviews-letters__slide-info
           .reviews-letters__slide-title.f-h4.fade-bottom= review_letters.title
           .reviews-letters__slide-description.f-body.fade-bottom= review_letters.description
+          .reviews-letters__slide-link.f-caps-small Подробнее
           .reviews-letters__slide-bottom
             .reviews-letters__slide-caption.f-caps-small.fade-bottom Услуги
             .reviews-letters__slide-progress
             .reviews-letters__slide-tags
               each reviews_tag in review_letters.tags
                 .reviews-letters__slide-tag.f-caps-small.fade-bottom= reviews_tag
+
+  #reviews-letters-popup.reviews-letters__popup
+      .reviews-letters__popup-info
+        .reviews-letters__popup-top
+          .reviews-letters__popup-title.f-h4
+          .reviews-letters__popup-description.f-body
+        .reviews-letters__popup-bottom
+          .reviews-letters__popup-caption.f-caps-small Услуги
+          .reviews-letters__popup-progress
+          .reviews-letters__popup-tags
+      .reviews-letters__popup-img
+        img(src="", alt="")
+      +button({
+          text: 'Закрыть',
+          icon: plus_icon,
+          class: 'btn--close',
+          close: true,
+        })

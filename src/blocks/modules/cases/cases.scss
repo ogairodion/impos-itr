@@ -219,6 +219,8 @@
   }
 
   &.block-main {
+    padding-bottom: to-rem(160);
+
     .cases {
       &__items {
         display: flex;
@@ -229,6 +231,14 @@
       &__item {
         position: static;
         margin-top: 0;
+
+        &-actions {
+          display: flex !important;
+        }
+
+        &-description {
+          display: block !important;
+        }
       }
     }
   }
