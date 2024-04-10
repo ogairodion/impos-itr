@@ -1,0 +1,40 @@
+.popup {
+  display: none;
+  max-width: to-rem(400);
+  border-radius: to-rem(24);
+  background: var(--color-card-bg);
+  padding: to-rem(24);
+
+  &-form {
+    &__title {
+      margin-bottom: to-rem(48);
+    }
+
+    .form {
+      &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: to-rem(16);
+      }
+
+      &__label {
+        opacity: 0.5;
+      }
+
+      input {
+        background: var(--color-gray);
+
+        &::placeholder {
+          opacity: 1;
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+      max-width: 100%;
+      margin-top: to-rem(24);
+      margin-bottom: to-rem(8);
+    }
+  }
+}

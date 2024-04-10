@@ -1,0 +1,30 @@
+include ../.././components/form/form.pug
+
+-
+  const popup_form_inputs = [
+    {
+      label: 'Ваше имя',
+      type: 'text',
+      required: true,
+      placeholder: 'Иван',
+    },
+    {
+      label: 'Ваша почта',
+      type: 'email',
+      required: true,
+      placeholder: 'Info@impostrade.ru',
+    },
+  ]
+
+section.popup.popup-form#popup-form
+  .popup-form__container
+    h3.popup-form__title.f-h3 Оставьте заявку
+    .popup-form__wrapper
+      +form({
+        inputs: popup_form_inputs,
+        button: {
+          text: 'Подписаться на рассылку',
+          icon: horizontal_form_icon,
+          theme: 'button--light'
+        },
+      })
