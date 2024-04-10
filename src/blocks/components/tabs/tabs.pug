@@ -2,6 +2,6 @@ mixin tabs(elements)
   .tabs
     each element, index in elements
       - if (index === 0)
-        .tab.f-caps.active(data-tab=element.value)= element.text
+        .tab.f-caps.active(data-tab=element.value class=element.class)= element.text
       - else
-        .tab.f-caps(data-tab=element.value)= element.text
+        .tab.f-caps(data-tab=element.value class=element.class)= element.text

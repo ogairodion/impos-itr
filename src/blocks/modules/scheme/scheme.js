@@ -10,6 +10,7 @@ let progressBarWidth = 276.32;
 
 windowWidth = window.innerWidth;
 
+getSliders(tabsContent[0]);
 
 function callback(mutationsList) {
   mutationsList.forEach((element) => {

@@ -1,26 +1,35 @@
 
-const mapPoints = document.querySelectorAll('[data-city]');
+const mapPoints = [];
 const map = document.querySelector('.map');
 const popup = document.querySelector('.map__popup');
 const marker = document.querySelector('.map__marker');
 const line = document.querySelector('.map__line');
+const mapPointsPath = map.querySelectorAll('path');
+const mapItems = document.querySelectorAll('.map-item');
 
-getActivePoint(0);
-getPopup(mapPoints[0]);
-
-if (mapPoints.length) {
-  mapPoints.forEach((point, index) => {
-    point.addEventListener('click', (event) => {
-      marker.classList.remove('show');
-      line.classList.remove('show');
-
-      getActivePoint(index);
-      getPopup(event.target);
-    });
+if (mapPointsPath.length) {
+  mapPointsPath.forEach((point, index) => {
+    point.dataset.id = index + 1;
   });
+
+  getItems();
 }
 
 function getPopup(event) {
+  const item = Object.values(mapItems).find((item) => item.dataset.id === event.dataset.id);
+
+  const itemTitle = item.querySelector('.map-item__country');
+  const itemText = item.querySelector('.map-item__text');
+  const itemFlag = item.querySelector('.map-item__flag img');
+
+  const name = popup.querySelector('.map__popup-title');
+  const text = popup.querySelector('.map__popup-text');
+  const img = popup.querySelector('.map__popup-flag img');
+
+  name.innerText = itemTitle.innerText;
+  text.innerText = itemText.innerText;
+  img.src = itemFlag.src;
+
   const parentWidth = map.offsetWidth;
   const parentHeight = map.offsetHeight;
 
@@ -65,4 +74,33 @@ function getActivePoint(index) {
       point.classList.remove('active');
     }
   });
+}
+
+function getItems() {
+  mapItems.forEach((item) => {
+    const itemID = item.dataset.id;
+    const itemCountry = item.querySelector('.map-item__country');
+    const point = Object.values(mapPointsPath).find((point) => point.dataset.id == itemID);
+
+    if (point) {
+      point.dataset.country = itemCountry.innerText;
+      mapPoints.push(point);
+    }
+  });
+
+  if (mapPoints.length) {
+    mapPoints.forEach((point, index) => {
+      point.addEventListener('click', (event) => {
+        marker.classList.remove('show');
+        line.classList.remove('show');
+
+        getActivePoint(index);
+        getPopup(event.target);
+      });
+    });
+  }
+
+  getActivePoint(0);
+  getPopup(mapPoints[0]);
+
 }

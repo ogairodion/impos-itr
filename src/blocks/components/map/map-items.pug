@@ -1,0 +1,21 @@
+include data.pug
+
+.map-items.hidden
+  each map_item in map_countries
+    .map-item.hidden(data-id=map_item.id)
+      .map-item__top
+        .map-item__top-actions
+          .map-item__country= map_item.name
+          .map-item__icon
+        .map-item__flag
+          img(src="img/flags/china.svg", alt="")
+        .map-item__text Инфо о блоке с разработке. можно выводить сюда статисстику по сделкам отдельной страны. Например сколько всего было сделjк, какие суммы и тд.
+      .map-item__bottom
+        .map-item__cases
+          .map-item__bottom-label Кейс
+          .map-item__bottom-title 88 888
+          .map-item__bottom-text Описание примерно 2 строки
+        .map-item__services
+          .map-item__bottom-label Кейс
+          .map-item__bottom-title 88 888
+          .map-item__bottom-text Описание примерно 2 строки

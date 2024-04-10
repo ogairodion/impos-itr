@@ -4,7 +4,7 @@
 
   svg {
     path {
-      &[data-city] {
+      &[data-country] {
         position: relative;
         cursor: pointer;
         fill: var(--color-primary);
