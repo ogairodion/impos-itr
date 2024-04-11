@@ -12,18 +12,18 @@ let windowWidth = 0;
 windowWidth = window.innerWidth;
 
 if (windowWidth < 1200) {
-  sliderNavigation.classList.add('slider-navigation--default');
+  sliderNavigation.classList.add('slider-navigation--default-reverse');
   sliderNavigation.classList.remove('slider-navigation--vertical');
 } else {
   sliderNavigation.classList.add('slider-navigation--vertical');
-  sliderNavigation.classList.remove('slider-navigation--default');
+  sliderNavigation.classList.remove('slider-navigation--default-reverse');
 }
 
 window.addEventListener('resize', () => {
   windowWidth = window.innerWidth;
 
   if (windowWidth < 1200) {
-    sliderNavigation.classList.add('slider-navigation--default');
+    sliderNavigation.classList.add('slider-navigation--default-reverse');
     sliderNavigation.classList.remove('slider-navigation--vertical');
 
     if (slides[0].classList.contains('team__slide-more')) {
@@ -33,7 +33,7 @@ window.addEventListener('resize', () => {
     }
   } else {
     sliderNavigation.classList.add('slider-navigation--vertical');
-    sliderNavigation.classList.remove('slider-navigation--default');
+    sliderNavigation.classList.remove('slider-navigation--default-reverse');
   }
 });
 

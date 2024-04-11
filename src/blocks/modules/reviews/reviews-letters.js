@@ -23,22 +23,22 @@ if (slides.length) {
 }
 
 if (windowWidth < 1200) {
-  sliderNavigation.classList.add('slider-navigation--default');
+  sliderNavigation.classList.add('slider-navigation--default-reverse');
   sliderNavigation.classList.remove('slider-navigation--vertical');
 } else {
   sliderNavigation.classList.add('slider-navigation--vertical');
-  sliderNavigation.classList.remove('slider-navigation--default');
+  sliderNavigation.classList.remove('slider-navigation--default-reverse');
 }
 
 window.addEventListener('resize', () => {
   windowWidth = window.innerWidth;
 
   if (windowWidth < 1200) {
-    sliderNavigation.classList.add('slider-navigation--default');
+    sliderNavigation.classList.add('slider-navigation--default-reverse');
     sliderNavigation.classList.remove('slider-navigation--vertical');
   } else {
     sliderNavigation.classList.add('slider-navigation--vertical');
-    sliderNavigation.classList.remove('slider-navigation--default');
+    sliderNavigation.classList.remove('slider-navigation--default-reverse');
   }
 });
 
@@ -56,6 +56,8 @@ const reviewsLettersSlider = new Swiper('.reviews-letters__slider', {
   loop: true,
   watchOverflow: true,
   centeredSlides: true,
+  observeParents: true,
+  observer: true,
   breakpoints: {
     1200: {
       slidesPerView: 2,

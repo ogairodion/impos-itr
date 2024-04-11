@@ -15,22 +15,22 @@ let windowWidth = 0;
 windowWidth = window.innerWidth;
 
 if (windowWidth < 1200) {
-  sliderNavigation.classList.add('slider-navigation--default');
+  sliderNavigation.classList.add('slider-navigation--default-reverse');
   sliderNavigation.classList.remove('slider-navigation--vertical');
 } else {
   sliderNavigation.classList.add('slider-navigation--vertical');
-  sliderNavigation.classList.remove('slider-navigation--default');
+  sliderNavigation.classList.remove('slider-navigation--default-reverse');
 }
 
 window.addEventListener('resize', () => {
   windowWidth = window.innerWidth;
 
   if (windowWidth < 1200) {
-    sliderNavigation.classList.add('slider-navigation--default');
+    sliderNavigation.classList.add('slider-navigation--default-reverse');
     sliderNavigation.classList.remove('slider-navigation--vertical');
   } else {
     sliderNavigation.classList.add('slider-navigation--vertical');
-    sliderNavigation.classList.remove('slider-navigation--default');
+    sliderNavigation.classList.remove('slider-navigation--default-reverse');
   }
 });
 
@@ -45,6 +45,9 @@ const reviewsVideosSlider = new Swiper('.reviews-videos__slider', {
   loop: true,
   watchOverflow: true,
   centeredSlides: true,
+  observeParents: true,
+  observer: true,
+  watchSlidesProgress: true,
   breakpoints: {
     1200: {
       slidesPerView: 2,

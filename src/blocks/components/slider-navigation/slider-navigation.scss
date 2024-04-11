@@ -12,13 +12,12 @@
     }
   }
 
-  &--default {
+  &--default, &--default-reverse {
     display: flex;
     gap: to-rem(4);
     padding: to-rem(4);
     border-radius: to-rem(16);
     background: var(--color-card-bg);
-
 
     @media (min-width: 768px) {
       border-radius: to-rem(20);
@@ -58,6 +57,26 @@
 
           @media (min-width: 768px) {
             border-radius: to-rem(8);
+          }
+        }
+      }
+    }
+  }
+
+  &--default-reverse {
+    flex-direction: row-reverse;
+
+    .slider-navigation {
+      &-arrow {
+        &:last-child {
+          svg {
+            transform: rotate(180deg);
+          }
+        }
+
+        &:first-child {
+          svg {
+            transform: rotate(0);
           }
         }
       }
