@@ -7,6 +7,7 @@ const line = document.querySelector('.map__line');
 const mapPointsPath = map.querySelectorAll('path');
 const mapItems = document.querySelectorAll('.map-item');
 const mapMore = document.querySelector('.map-more');
+const geographyItems = document.querySelectorAll('.geography__item');
 
 let isHidden = true;
 
@@ -16,6 +17,23 @@ if (mapPointsPath.length) {
   });
 
   getItems();
+}
+
+if (geographyItems && geographyItems.length) {
+  geographyItems.forEach((item, index) => {
+    item.addEventListener('click', () => {
+      const dataID = item.dataset.id;
+      const findPoint = mapPoints.find((point) => point.dataset.id === dataID);
+
+      if (findPoint) {
+        marker.classList.remove('show');
+        line.classList.remove('show');
+
+        getActivePoint(index);
+        getPopup(findPoint);
+      }
+    });
+  });
 }
 
 function getPopup(event) {

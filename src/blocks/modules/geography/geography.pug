@@ -1,0 +1,13 @@
+section.geography
+  .l-default
+    .geography__top
+      h1.geography__title.f-h2 География грузоперевозок
+      .geography__description.f-body Текст описания блока в разработке, примерный объем текста может варьировтаься от 2-3 строк до 4-5.. Все ситуалисвно
+    .geography__container
+      .geography__map
+        include ../.././components/map/map.pug
+      .geography__items
+        each map_tag in map_countries
+          .geography__item.f-body(data-id=map_tag.id)= map_tag.name
+        .geography__more
+          <span>Все +&nbsp;</span> 15

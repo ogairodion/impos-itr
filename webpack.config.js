@@ -19,6 +19,7 @@ module.exports = {
       service: "./src/js/service.js",
       cases: "./src/js/cases.js",
       reviews: "./src/js/reviews.js",
+      geography: "./src/js/geography.js",
     },
 
     output: {

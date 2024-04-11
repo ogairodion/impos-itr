@@ -16,6 +16,7 @@ if (slides.length) {
     const fileUrl = file.querySelector('.reviews-audio__slide-file').dataset.audio;
     const container = file.querySelector('.reviews-audio__slide-file');
     const buttonPlay = file.querySelector('.reviews-audio__slide-play');
+    const buttonPause = file.querySelector('.reviews-audio__slide-pause');
     const currrentTime = file.querySelector('.reviews-audio__slide-timer--current');
     const overTime = file.querySelector('.reviews-audio__slide-timer--length');
 
@@ -34,6 +35,10 @@ if (slides.length) {
       wavesurfer.play();
     });
 
+    buttonPause.addEventListener('click', () => {
+      wavesurfer.pause();
+    });
+
     wavesurfer.on('ready', function () {
       currrentTime.innerText = secondsToTimestamp(wavesurfer.getCurrentTime());
       overTime.innerText = secondsToTimestamp(wavesurfer.getDuration());
@@ -41,6 +46,18 @@ if (slides.length) {
 
     wavesurfer.on('audioprocess', function () {
       currrentTime.innerText = secondsToTimestamp(wavesurfer.getCurrentTime());
+
+      if (!buttonPlay.classList.contains('hidden')) {
+        buttonPlay.classList.add('hidden');
+        buttonPause.classList.remove('hidden');
+      }
+    });
+
+    wavesurfer.on('pause', function () {
+      if (buttonPlay.classList.contains('hidden')) {
+        buttonPlay.classList.remove('hidden');
+        buttonPause.classList.add('hidden');
+      }
     });
   });
 }
