@@ -29,7 +29,7 @@ section.scheme
         .scheme__slider-wrapper
           .swiper.scheme__slider
             .swiper-wrapper
-              each scheme_slide in scheme_slides
+              each scheme_slide in scheme_tab.slides
                 .swiper-slide.scheme__slide
                   .scheme__slide-img
                     +image({
@@ -39,7 +39,7 @@ section.scheme
           .scheme__slide-info
             .swiper.scheme__slider-info
               .swiper-wrapper
-                each scheme_slide in scheme_slides
+                each scheme_slide in scheme_tab.slides
                   .swiper-slide.scheme__slide
                     .scheme__slide-step.f-caps-small.fade-bottom= scheme_slide.step
                     .scheme__slide-title.f-h4.fade-bottom= scheme_slide.title

@@ -5,7 +5,9 @@
   background: var(--color-card-bg);
   padding: to-rem(24);
 
-  &-form {
+  &-form, &-call {
+    color: var(--color-white);
+
     &__title {
       margin-bottom: to-rem(48);
     }

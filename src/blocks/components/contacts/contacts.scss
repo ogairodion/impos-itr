@@ -18,10 +18,17 @@
     min-height: to-rem(48);
     background: var(--color-gray);
     border-radius: to-rem(8);
+    cursor: pointer;
 
     @media (min-width: 1200px) {
       min-width: to-rem(40);
       min-height: to-rem(40);
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     &-mail {

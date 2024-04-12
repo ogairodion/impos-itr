@@ -16,12 +16,40 @@ include ../.././components/form/form.pug
     },
   ]
 
+  const popup_call_inputs = [
+    {
+      label: 'Ваше телефон *',
+      type: 'phone',
+      required: true,
+      placeholder: '+ 7 (123) 456 78-90',
+    },
+    {
+      label: 'Ваше имя',
+      type: 'email',
+      placeholder: 'Введите имя',
+    },
+  ]
+
 .popup.popup-form#popup-form
   .popup-form__container
     h3.popup-form__title.f-h3 Оставьте заявку
     .popup-form__wrapper
       +form({
         inputs: popup_form_inputs,
+        button: {
+          text: 'Оставить заявку',
+          icon: horizontal_form_icon,
+          theme: 'button--light'
+        },
+      })
+
+
+.popup.popup-form#popup-call
+  .popup-form__container
+    h3.popup-form__title.f-h3 Заказать обратный звонок
+    .popup-form__wrapper
+      +form({
+        inputs: popup_call_inputs,
         button: {
           text: 'Оставить заявку',
           icon: horizontal_form_icon,

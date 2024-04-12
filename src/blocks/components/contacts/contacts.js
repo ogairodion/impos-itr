@@ -1,3 +1,5 @@
+import { Fancybox } from "@fancyapps/ui";
+
 const contacts = document.querySelector('.contacts');
 const contactsIcon = contacts.querySelector('.default');
 const contactsClose = contacts.querySelector('.close');
@@ -31,6 +33,8 @@ contacts.addEventListener('click', () => {
     contactsMobile.classList.toggle('show');
     contactsIcon.classList.toggle('hidden');
     contactsClose.classList.toggle('hidden');
+  } else {
+    Fancybox.show([{ src: "#popup-call", type: "inline" }]);
   }
 });
 

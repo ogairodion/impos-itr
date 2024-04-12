@@ -7,6 +7,7 @@ const line = document.querySelector('.map__line');
 const mapPointsPath = map.querySelectorAll('path');
 const mapItems = document.querySelectorAll('.map-item');
 const mapMore = document.querySelector('.map-more');
+const mapClose = document.querySelector('.map__popup-close');
 const geographyItems = document.querySelectorAll('.geography__item');
 
 let isHidden = true;
@@ -25,6 +26,8 @@ if (geographyItems && geographyItems.length) {
       const dataID = item.dataset.id;
       const findPoint = mapPoints.find((point) => point.dataset.id === dataID);
 
+      popup.classList.remove('hidden');
+
       if (findPoint) {
         marker.classList.remove('show');
         line.classList.remove('show');
@@ -33,6 +36,12 @@ if (geographyItems && geographyItems.length) {
         getPopup(findPoint);
       }
     });
+  });
+}
+
+if (mapClose) {
+  mapClose.addEventListener('click', () => {
+    closePopup();
   });
 }
 
@@ -203,4 +212,10 @@ function getPopupMobile(item) {
 
   popupMobileServicesHref.href = itemServicesHref.innerText;
   popupMobileCasesHref.href = itemCasesHref.innerText;
+}
+
+function closePopup() {
+  popup.classList.add('hidden');
+  line.classList.remove('show');
+  marker.classList.remove('show');
 }

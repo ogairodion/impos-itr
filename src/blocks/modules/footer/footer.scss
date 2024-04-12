@@ -290,6 +290,7 @@
           margin-bottom: to-rem(24);
 
           @media (min-width: 992px) {
+            margin-top: auto;
             margin-bottom: to-rem(60);
           }
         }
