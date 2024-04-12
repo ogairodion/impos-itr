@@ -32,10 +32,16 @@ if (slides.length) {
     })
 
     buttonPlay.addEventListener('click', () => {
+      buttonPlay.classList.add('hidden');
+      buttonPause.classList.remove('hidden');
+
       wavesurfer.play();
     });
 
     buttonPause.addEventListener('click', () => {
+      buttonPlay.classList.remove('hidden');
+      buttonPause.classList.add('hidden');
+
       wavesurfer.pause();
     });
 
@@ -46,18 +52,6 @@ if (slides.length) {
 
     wavesurfer.on('audioprocess', function () {
       currrentTime.innerText = secondsToTimestamp(wavesurfer.getCurrentTime());
-
-      if (!buttonPlay.classList.contains('hidden')) {
-        buttonPlay.classList.add('hidden');
-        buttonPause.classList.remove('hidden');
-      }
-    });
-
-    wavesurfer.on('pause', function () {
-      if (buttonPlay.classList.contains('hidden')) {
-        buttonPlay.classList.remove('hidden');
-        buttonPause.classList.add('hidden');
-      }
     });
   });
 }

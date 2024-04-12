@@ -680,6 +680,10 @@
       }
     }
 
+    .reviews-audio {
+      display: flex;
+    }
+
     .reviews-audio__slider, .reviews-videos__slider {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
