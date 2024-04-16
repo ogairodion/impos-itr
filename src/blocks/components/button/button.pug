@@ -1,10 +1,16 @@
 mixin button(element)
   - if (element)
     - if (element.href && !element.fancybox)
-      a.button(class=[element.theme, element.class] href=element.href)
-        .button__text.f-caps= element.text
-        - if (element.icon)
-          .button__icon!= element.icon
+      - if (element.target)
+        a.button(class=[element.theme, element.class] href=element.href target="_blank")
+          .button__text.f-caps= element.text
+          - if (element.icon)
+            .button__icon!= element.icon
+      - else
+        a.button(class=[element.theme, element.class] href=element.href)
+          .button__text.f-caps= element.text
+          - if (element.icon)
+            .button__icon!= element.icon
     - else if (element.href && element.fancybox)
       a.button(class=[element.theme, element.class] href=element.href data-fancybox)
         .button__text.f-caps= element.text

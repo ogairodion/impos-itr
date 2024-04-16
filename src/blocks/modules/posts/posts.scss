@@ -6,6 +6,7 @@
   }
 
   &__title {
+    color: var(--color-primary);
     margin-bottom: to-rem(40);
 
     @media (min-width: 1200px) {
@@ -71,9 +72,10 @@
       left: to-rem(16);
       bottom: to-rem(8);
       z-index: 2;
-      color: var(--color-white);
+      color: var(--color-primary);
       border-radius: to-rem(8);
-      border: to-rem(1) solid var(--color-white);
+      background: rgba(#F8F1DF, 0.08);
+      border: to-rem(1) solid rgba(#fff, 0.22);
       padding: to-rem(7, 20);
     }
 

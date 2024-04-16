@@ -6,9 +6,10 @@
   }
 
   &__title {
+    color: var(--color-primary);
     margin-bottom: to-rem(40);
 
-    @media (min-width: 1200px) {
+    @media (min-width: 1300px) {
       margin-bottom: to-rem(24);
     }
   }
@@ -18,8 +19,8 @@
       display: grid;
       gap: to-rem(16);
 
-      @media (min-width: 1200px) {
-        grid-template-columns: 1fr to-rem(417);
+      @media (min-width: 1300px) {
+        grid-template-columns: to-rem(787) to-rem(417);
         gap: to-rem(39);
       }
     }
@@ -32,6 +33,10 @@
       }
 
       .slider-navigation {
+        @media (min-width: 1200px) {
+          max-width: to-rem(360);
+        }
+
         @media (max-width: 1199px) {
           margin-top: to-rem(40);
         }

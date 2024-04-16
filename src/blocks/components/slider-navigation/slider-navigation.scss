@@ -43,6 +43,8 @@
 
           @media (min-width: 768px) {
             border-radius: to-rem(8);
+            border-top-left-radius: to-rem(12);
+            border-bottom-left-radius: to-rem(12);
           }
 
           svg {
@@ -57,6 +59,8 @@
 
           @media (min-width: 768px) {
             border-radius: to-rem(8);
+            border-top-right-radius: to-rem(12);
+            border-bottom-right-radius: to-rem(12);
           }
         }
       }

@@ -6,6 +6,7 @@
   }
 
   &__title {
+    color: var(--color-primary);
     margin-bottom: to-rem(64);
 
     @media (min-width: 1200px) {

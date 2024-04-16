@@ -67,7 +67,7 @@
   &__slider {
     @media (min-width: 768px) {
       display: grid;
-      grid-template-columns: to-rem(81) 1fr 1fr;
+      grid-template-columns: to-rem(81) 1fr to-rem(242);
       gap: to-rem(24);
       border-radius: to-rem(32);
       background: var(--color-card-bg);
@@ -162,8 +162,8 @@
     }
 
     &-text {
-      max-width: to-rem(245);
       opacity: 0.5;
+      max-width: to-rem(245);
 
       @media (min-width: 768px) {
         max-width: fit-content;
@@ -173,6 +173,7 @@
     &-img {
       min-height: to-rem(166);
       border-radius: to-rem(24);
+      margin-left: auto;
       overflow: hidden;
 
       img {

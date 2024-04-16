@@ -12,13 +12,18 @@
   }
 
   &__wrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
     @media (max-width: 1199px) {
       align-items: center;
       border-radius: to-rem(12);
       background: var(--color-card-bg);
       padding: to-rem(4);
+    }
+
+    &-logo {
+      text-align: center;
     }
   }
 

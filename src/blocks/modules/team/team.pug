@@ -38,7 +38,7 @@ section.team
           each team_slide in team_slides
             .team__slide.swiper-slide
               .team__slide-start
-                .team__slide-steps.f-caps-small.fade-bottom
+                .team__slide-steps.f-caps-small.fade-bottom-0-5
                   span.team__slide-step--current 01
                   span —
                   span.team__slide-step--length 12
@@ -50,7 +50,7 @@ section.team
                 .team__slide-info
                   .team__slide-name.f-h5.fade-bottom!= team_slide.name
                   .team__slide-progress
-                  .team__slide-position.f-body-small.fade-bottom= team_slide.position
+                  .team__slide-position.f-body-small.fade-bottom-0-5= team_slide.position
               .team__slide-education
                 .team__slide-title.f-caps-small.fade-bottom= team_slide.info.title
                 .team__slide-text.f-body-small.fade-bottom!= team_slide.info.text

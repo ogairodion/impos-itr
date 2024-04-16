@@ -186,7 +186,7 @@ img {
 }
 
 .swiper-slide {
-  .fade-bottom {
+  .fade-bottom, .fade-bottom-0-5 {
     @media (min-width: 1200px) {
       opacity: 0;
       transform: translateY(to-rem(20));
@@ -198,6 +198,14 @@ img {
       @media (min-width: 1200px) {
         transition: all 1s ease-in-out !important;
         opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-bottom-0-5 {
+      @media (min-width: 1200px) {
+        transition: all 1s ease-in-out !important;
+        opacity: 0.5;
         transform: translateY(0);
       }
     }

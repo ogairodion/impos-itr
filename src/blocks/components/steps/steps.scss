@@ -24,7 +24,7 @@
     cursor: pointer;
     transition: all 0.4s ease;
 
-    &:hover {
+    &:hover, &.active {
       color: var(--color-card-bg);
       background: var(--color-primary);
     }

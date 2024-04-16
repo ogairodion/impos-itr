@@ -1,5 +1,6 @@
 .point {
   width: to-rem(193);
+  color: var(--color-primary);
   margin: 0 auto to-rem(24);
 
   @media (min-width: 768px) {

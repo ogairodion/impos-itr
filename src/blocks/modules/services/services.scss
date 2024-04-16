@@ -28,12 +28,12 @@
     border-radius: to-rem(16);
     padding: to-rem(8);
 
-    @media (min-width: 768px) {
-      border-radius: to-rem(32);
-    }
-
     @media (min-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 1200px) {
+      grid-template-columns: to-rem(296) 1fr;
       gap: to-rem(32);
     }
 
@@ -61,6 +61,7 @@
     }
 
     &-title {
+      color: var(--color-primary);
       margin-bottom: to-rem(16);
 
       @media (max-width: 767px) {
@@ -77,10 +78,12 @@
       @media (max-width: 767px) {
         max-width: to-rem(287);
         padding-left: to-rem(16);
+        padding-right: 0;
       }
 
       @media (min-width: 992px) {
         margin-bottom: 0;
+        padding-right: to-rem(8);
       }
     }
 
@@ -94,7 +97,7 @@
       }
 
       @media (min-width: 992px) {
-        padding-right: to-rem(16);
+        padding: to-rem(24, 16, 16, 0);
       }
 
       .services {

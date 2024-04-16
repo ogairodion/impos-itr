@@ -6,10 +6,11 @@
   }
 
   &__title {
-    margin-bottom: to-rem(64);
+    color: var(--color-primary);
+    margin-bottom: to-rem(40);
 
     @media (min-width: 1200px) {
-      margin-bottom: to-rem(40);
+      margin-bottom: to-rem(64);
     }
   }
 
@@ -73,10 +74,6 @@
 
     &-info {
       margin-top: auto;
-
-      @media (min-width: 1200px) {
-        min-height: to-rem(64);
-      }
     }
 
     &-content, &-back {
@@ -136,10 +133,11 @@
       color: var(--color-primary);
       border-radius: to-rem(8);
       border: to-rem(1) solid var(--color-gray);
-      padding: to-rem(20, 24);
 
       @media (min-width: 1200px) {
         display: flex;
+        align-items: center;
+        justify-content: center;
       }
     }
   }

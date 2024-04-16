@@ -28,6 +28,7 @@
 
   &__title {
     max-width: to-rem(640);
+    color: var(--color-primary);
 
     @media (max-width: 1199px) {
       margin-bottom: to-rem(24);

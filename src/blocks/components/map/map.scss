@@ -111,6 +111,19 @@
       background: var(--color-dark);
       cursor: pointer;
     }
+
+    &-flag {
+      min-width: to-rem(72);
+      height: to-rem(48);
+      border-radius: to-rem(8);
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
   }
 
   &__progress {

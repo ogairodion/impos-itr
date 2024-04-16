@@ -180,9 +180,18 @@ function getPoints(content, points, pointsBar, slider) {
 function getPosition(slider, slideActive, activeTitle) {
   const step = 98;
   const tab = slider.el.closest('.tabs__content');
+  const steps = tab.querySelectorAll('.step');
   const progressbar = tab.querySelector('.steps__progressbar');
   const slideTitle = slider.slides[slideActive].querySelector('.scheme__slide-title');
 
   progressbar.style.width = ((step + 12) * (slideActive + 1) - 16) + 'px';
   activeTitle.innerText = slideTitle.innerText;
+
+  steps.forEach((step, index) => {
+    if (index === slideActive) {
+      step.classList.add('active');
+    } else {
+      step.classList.remove('active');
+    }
+  });
 }

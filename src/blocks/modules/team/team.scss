@@ -6,6 +6,7 @@
   }
 
   &__title {
+    color: var(--color-primary);
     margin-bottom: to-rem(64);
 
     @media (min-width: 1200px) {
@@ -266,6 +267,7 @@
 
     &-more {
       display: flex;
+      padding: to-rem(0, 8);
 
       @media (min-width: 1200px) {
         max-width: 100%;
@@ -293,21 +295,22 @@
             flex-direction: column;
             position: relative;
             flex: 1 1 auto;
-            padding: to-rem(8);
+            padding: to-rem(0, 8);
+            margin: to-rem(8, 0);
           }
 
           &-education {
             display: flex;
             flex-direction: column;
             max-width: to-rem(433);
-            padding: to-rem(40, 40, 24, 29);
+            padding: to-rem(48, 40, 24, 29);
           }
 
           &-job {
             display: flex;
             flex-direction: column;
             max-width: to-rem(382);
-            padding: to-rem(40, 28, 24, 32);
+            padding: to-rem(48, 16, 16, 32);
             border-left: to-rem(1) solid var(--color-gray);
           }
 
@@ -335,11 +338,13 @@
 
           &-info {
             position: relative;
+            width: 100%;
             z-index: 2;
             border: to-rem(1) solid rgba(#fff, 0.22);
             border-radius: to-rem(16);
             background: rgba(#F8F1DF, 0.08);
             backdrop-filter: blur(to-rem(8));
+            margin: 0;
             margin-top: auto;
             padding: to-rem(24, 18, 23, 24);
           }

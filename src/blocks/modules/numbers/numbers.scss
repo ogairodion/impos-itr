@@ -23,6 +23,7 @@
 
   &__title {
     max-width: to-rem(640);
+    color: var(--color-primary);
     margin-bottom: to-rem(24);
 
     @media (min-width: 1200px) {
@@ -91,7 +92,6 @@
 
     &-title {
       font-size: to-rem(72);
-      line-height: 1;
       color: var(--color-primary);
 
       @media (max-width: 1199px) {
@@ -100,6 +100,7 @@
 
       @media (min-width: 1200px) {
         font-size: to-rem(88);
+        line-height: to-rem(105);
       }
 
       &-mobile {
@@ -166,6 +167,12 @@
 
           &-description {
             max-width: to-rem(354);
+          }
+
+          &-caption {
+            @media (min-width: 1200px) {
+              margin-top: to-rem(24);
+            }
           }
         }
       }

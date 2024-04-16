@@ -2,6 +2,8 @@
   &__wrapper {
     display: flex;
     align-items: center;
+    max-width: fit-content;
+    margin-left: auto;
 
     @media (min-width: 1200px) {
       background: var(--color-card-bg);
@@ -56,6 +58,11 @@
     align-items: center;
   }
 
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+
   &__items {
     gap: to-rem(10);
     margin-left: to-rem(16);
@@ -71,6 +78,7 @@
   }
 
   &__phone {
+    letter-spacing: to-rem(0.7);
     font-weight: 400;
 
     &:hover {

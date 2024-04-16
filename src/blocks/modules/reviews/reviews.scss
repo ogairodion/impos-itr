@@ -6,6 +6,7 @@
   }
 
   &__title {
+    color: var(--color-primary);
     margin-bottom: to-rem(40);
 
     @media (min-width: 1200px) {
@@ -257,7 +258,7 @@
         gap: to-rem(16);
         min-height: to-rem(437);
         padding: to-rem(8);
-        padding-right: to-rem(41);
+        padding-right: to-rem(32);
       }
 
       @media (min-width: 1300px) {
@@ -321,6 +322,7 @@
 
         @media (min-width: 1200px) {
           padding: to-rem(24);
+          padding-right: 0;
           padding-left: 0;
         }
       }
