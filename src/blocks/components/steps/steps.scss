@@ -7,26 +7,38 @@
 
   &__wrapper {
     display: flex;
-    align-items: flex-start;
-    gap: to-rem(12);
     min-height: to-rem(126);
   }
 
-  .step {
+  .steps__pagination  {
+    position: static;
+    display: flex;
+    align-items: flex-start;
+    gap: to-rem(12);
+    flex: 1 1 auto;
+  }
+
+  .swiper-pagination-bullet {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: to-rem(98);
+    height: auto !important;
     text-align: center;
-    color: var(--color-primary);
+    color: var(--color-primary) !important;
     border-radius: to-rem(8);
-    border: to-rem(1) solid rgba(#fff, 0.1);
+    background: none !important;
+    border: to-rem(1) solid rgba(#fff, 0.1) !important;
     white-space: nowrap;
     padding: to-rem(13);
     cursor: pointer;
+    opacity: 1 !important;
     transition: all 0.4s ease;
 
-    &:hover, &.active {
-      color: var(--color-card-bg);
-      background: var(--color-primary);
+    &:hover, &-active {
+      color: var(--color-card-bg) !important;
+      background: var(--color-primary) !important;
     }
 
     &:nth-child(2n) {
@@ -65,13 +77,8 @@
     height: to-rem(10);
     border-radius: 100%;
     background: var(--color-gray);
-    cursor: pointer;
     transform: translateY(-50%);
     transition: background 0.4s ease;
-
-    &:hover {
-      background: var(--color-primary);
-    }
   }
 
   &__progressbar {
@@ -79,7 +86,7 @@
     height: to-rem(24);
     overflow: hidden;
 
-    &:after {
+    .logo {
       content: '';
       position: absolute;
       top: 50%;
@@ -88,9 +95,13 @@
       width: to-rem(32);
       height: to-rem(24);
       transform: translateY(-50%);
-      background-image: url('.././img/scheme/logo-bar.png');
-      background-size: 100% 100%;
-      background-repeat: no-repeat;
+      margin: 0;
+      background-color: var(--color-card-bg);
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
     }
 
     &:before {

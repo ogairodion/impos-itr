@@ -79,7 +79,7 @@
       margin-top: auto;
     }
 
-    &-scrollbar {
+    &-progressbar {
       display: none;
 
       @media (min-width: 768px) {
@@ -92,13 +92,20 @@
         margin-top: auto;
       }
 
-      span {
+      .swiper-pagination-bullet {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
         z-index: 1;
-        background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%) !important;
-      }
-
-      .swiper-pagination-progressbar-fill {
         border-radius: to-rem(1);
+        background: linear-gradient(270deg, #F8F1DF 0%, rgba(248, 241, 223, 0) 100%, rgba(248, 241, 223, 0) 100%) !important;
+
+        &-active {
+          width: 100%;
+          transition: all 1s ease;
+        }
       }
     }
 

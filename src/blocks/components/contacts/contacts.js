@@ -33,8 +33,6 @@ contacts.addEventListener('click', () => {
     contactsMobile.classList.toggle('show');
     contactsIcon.classList.toggle('hidden');
     contactsClose.classList.toggle('hidden');
-  } else {
-    Fancybox.show([{ src: "#popup-call", type: "inline" }]);
   }
 });
 

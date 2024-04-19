@@ -1,5 +1,9 @@
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Swiper from 'swiper';
 import { Navigation, EffectFade } from 'swiper/modules';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const cases = document.querySelector('.cases');
 const items = cases.querySelectorAll('.cases__item');
@@ -7,7 +11,6 @@ let headerHeight = document.querySelector('.header').offsetHeight;
 let diff = headerHeight;
 
 let windowWidth = 0;
-windowWidth = window.innerWidth;
 
 window.addEventListener('resize', () => {
   windowWidth = window.innerWidth;
@@ -60,3 +63,37 @@ if (items.length) {
     });
   });
 }
+
+
+const itemsArray = gsap.utils.toArray('.cases__item');
+
+itemsArray.forEach((item) => {
+  if (windowWidth < 1200) {
+    gsap.from(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: 'top top',
+        end: '+=500',
+        markers: true,
+        onLeaveBack: () => {
+          const shadow = item.querySelector('.shadow');
+          shadow.classList.remove('show');
+        },
+      }
+    });
+
+    gsap.to(item, {
+      scrollTrigger: {
+        trigger: item,
+        start: 'top top',
+        end: '+=500',
+        markers: true,
+        toggleActions: 'none none none none',
+        onEnter: () => {
+          const shadow = item.querySelector('.shadow');
+          shadow.classList.add('show');
+        },
+      }
+    });
+  }
+});

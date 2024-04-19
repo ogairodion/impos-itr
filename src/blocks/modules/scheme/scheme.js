@@ -1,6 +1,6 @@
 import "%components%/tabs/tabs";
 import Swiper from 'swiper';
-import { Navigation, EffectFade, Thumbs } from 'swiper/modules';
+import { Navigation, EffectFade, Thumbs, Pagination } from 'swiper/modules';
 
 const parent = document.querySelector('.scheme');
 const tabsContent = parent.querySelectorAll('.tabs__content');
@@ -10,12 +10,12 @@ let progressBarWidth = 276.32;
 
 windowWidth = window.innerWidth;
 
-getSliders(tabsContent[0]);
+getSliders(tabsContent[0], 0);
 
 function callback(mutationsList) {
-  mutationsList.forEach((element) => {
+  mutationsList.forEach((element, index) => {
     if (!element.target.classList.contains('hidden')) {
-      getSliders(element.target);
+      getSliders(element.target, index);
     }
   });
 }
@@ -27,24 +27,23 @@ window.addEventListener('resize', () => {
   windowWidth = window.innerWidth;
 
   if (windowWidth >= 1440 && !steps.length) {
-    tabsContent.forEach((content) => {
-      getSliders(content);
+    tabsContent.forEach((content, index) => {
+      getSliders(content, index);
     });
   }
 });
 
-tabsContent.forEach((content) => {
+tabsContent.forEach((content, index) => {
+  content.classList.add(`tabs-content-${index}`);
   mutationObserver.observe(content, { attributes: true });
 });
 
-function getSliders(element) {
+function getSliders(element, index) {
   let slider = element.querySelector('.scheme__slider');
   let sliderInfo = element.querySelector('.scheme__slider-info');
   let arrowLeft = element.querySelector('.slider-navigation-arrow--prev');
   let arrowRight = element.querySelector('.slider-navigation-arrow--next');
   let sliders = sliderInfo ? sliderInfo.querySelectorAll('.swiper-slide') : [];
-
-  const steps = element.querySelectorAll('.step');
 
   const sliderLength = element.querySelector('.slider-navigation-progress__length');
   const sliderActiveIndex = element.querySelector('.slider-navigation-progress__active');
@@ -68,7 +67,7 @@ function getSliders(element) {
   });
 
   sliderInfo = new Swiper(sliderInfo, {
-    modules: [Navigation, EffectFade, Thumbs],
+    modules: [Navigation, EffectFade, Thumbs, Pagination],
     slidesPerView: 1,
     effect: 'fade',
     fadeEffect: {
@@ -78,11 +77,16 @@ function getSliders(element) {
       nextEl: arrowRight,
       prevEl: arrowLeft,
     },
+    pagination: {
+      el: `.tabs-content-${index} .steps__pagination`,
+      clickable: true,
+    },
     on: {
       slideChange() {
         sliderActiveIndex.innerText = this.activeIndex + 1;
         currentStep.innerText = `Шаг ${this.activeIndex + 1 < 10 ? `0${this.activeIndex + 1}` : `${this.activeIndex + 1}`}`;
         progressbar.style.strokeDashoffset = progressBarWidth* ((100 - ((this.realIndex + 1) / this.slides.length) * 100) / 100);
+
         getPosition(this, this.activeIndex, activeTitle);
       },
 
@@ -90,6 +94,11 @@ function getSliders(element) {
         currentStep.innerText = `Шаг ${this.activeIndex + 1 < 10 ? `0${this.activeIndex + 1}` : `${this.activeIndex + 1}`}`;
         currentStepAll.innerHTML = `<span>из ${sliders.length}</span>`;
         progressbar.style.strokeDashoffset = progressBarWidth* ((100 - ((this.realIndex + 1) / this.slides.length) * 100) / 100);
+
+        if (windowWidth >= 1440) {
+          getSteps(element, this, activeTitle);
+        }
+
         getPosition(this, this.activeIndex, activeTitle);
       }
     },
@@ -97,42 +106,20 @@ function getSliders(element) {
       swiper: slider,
     },
   });
-
-  if (!steps || !steps.length) {
-    if (windowWidth >= 1440) {
-      getSteps(element, slider, activeTitle);
-    }
-  }
 }
 
-function getSteps(content, slider, activeTitle) {
-  const steps = content.querySelector('.steps__wrapper');
-  const progress = steps.querySelector('.steps__progress');
-  const progressbar = steps.querySelector('.steps__progressbar');
+function getSteps(content, slider) {
+  const steps = content.querySelectorAll('.swiper-pagination-bullet');
+  const stepsParent = content.querySelector('.steps');
+  const progress = stepsParent.querySelector('.steps__progress');
+  const progressbar = stepsParent.querySelector('.steps__progressbar');
   const points = progress.querySelector('.steps__points');
   const pointsBar = progressbar.querySelector('.steps__points');
-  const slides = slider.el.swiper.slides;
 
-  slides.forEach((_slide, index) => {
-    const createdStep = document.createElement('div');
-
-    createdStep.classList.add('step');
-    createdStep.classList.add('f-caps-small');
-    createdStep.innerText = `Шаг ${index + 1 < 10 ? `0${index + 1}` : index + 1}`;
-
-    steps.append(createdStep);
-
-    createdStep.addEventListener('click', () => {
-      slider.slideTo(index);
-
-      getPosition(slider, index, activeTitle);
-    });
-
-    createdStep.addEventListener('click', () => {
-      slider.slideTo(index);
-
-      getPosition(slider, index, activeTitle);
-    });
+  steps.forEach((step, index) => {
+    step.classList.add('step');
+    step.classList.add('f-caps-small');
+    step.innerText = `Шаг ${index + 1 < 10 ? `0${index + 1}` : index + 1}`;
   });
 
   getPoints(content, points, pointsBar, slider);

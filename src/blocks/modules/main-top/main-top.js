@@ -5,6 +5,7 @@ const mainTop = document.querySelector('.main-top');
 const slidesProgress = mainTop.querySelector('.slider-navigation-progress');
 const slidesProgressActive = slidesProgress.querySelector('.slider-navigation-progress__active');
 const slidesProgressLength = slidesProgress.querySelector('.slider-navigation-progress__length');
+const slidesProgressBar = mainTop.querySelector('.main-top__slider-progressbar-fill');
 
 const video = document.querySelector('video');
 
@@ -62,8 +63,8 @@ const mainTopSlider_2 = new Swiper('.main-top__slider-right', {
     prevEl: '.main-top .slider-navigation-arrow--prev',
   },
   pagination: {
-    el: '.main-top__slider-scrollbar',
-    type: 'progressbar',
+    el: '.main-top__slider-progressbar',
+    type: 'bullets',
   },
   loop: true,
 });
@@ -73,8 +74,9 @@ const mainTopSlider_3 = new Swiper('.main-top__slider-mobile', {
   slidesPerView: 'auto',
   spaceBetween: 8,
   pagination: {
-    el: '.main-top__slider-scrollbar',
-    type: 'progressbar',
+    el: '.main-top__slider-pagination',
+    type: 'bullets',
+    clickable: true,
   },
   centeredSlides: true,
   loop: true,
