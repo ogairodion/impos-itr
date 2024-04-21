@@ -36,11 +36,6 @@ if (items.length) {
       modules: [Navigation, EffectFade],
       slidesPerView: 1,
       spaceBetween: 8,
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true
-      },
-      speed: 1000,
       navigation: {
         nextEl: `.swiper-arrow-next-${id}`,
         prevEl: `.swiper-arrow-prev-${id}`,
@@ -68,13 +63,12 @@ if (items.length) {
 const itemsArray = gsap.utils.toArray('.cases__item');
 
 itemsArray.forEach((item) => {
-  if (windowWidth < 1200) {
+  if (windowWidth < 1200 && !cases.classList.contains('block-main')) {
     gsap.from(item, {
       scrollTrigger: {
         trigger: item,
         start: 'top top',
         end: '+=500',
-        markers: true,
         onLeaveBack: () => {
           const shadow = item.querySelector('.shadow');
           shadow.classList.remove('show');
@@ -87,7 +81,6 @@ itemsArray.forEach((item) => {
         trigger: item,
         start: 'top top',
         end: '+=500',
-        markers: true,
         toggleActions: 'none none none none',
         onEnter: () => {
           const shadow = item.querySelector('.shadow');
