@@ -15,21 +15,23 @@
 
   &__items {
     display: grid;
-    gap: to-rem(16);
+    gap: to-rem(8);
 
     @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: to-rem(16);
     }
   }
 
   &__item {
     display: grid;
     background: var(--color-card-bg);
-    border-radius: to-rem(32);
+    border-radius: to-rem(16);
     padding: to-rem(8);
 
     @media (min-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
+      border-radius: to-rem(32);
     }
 
     @media (min-width: 1200px) {
@@ -61,7 +63,6 @@
     }
 
     &-title {
-      color: var(--color-primary);
       margin-bottom: to-rem(16);
 
       @media (max-width: 767px) {

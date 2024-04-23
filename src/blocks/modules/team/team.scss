@@ -7,10 +7,10 @@
 
   &__title {
     color: var(--color-primary);
-    margin-bottom: to-rem(64);
+    margin-bottom: to-rem(40);
 
     @media (min-width: 1200px) {
-      margin-bottom: to-rem(40);
+      margin-bottom: to-rem(64);
     }
   }
 
@@ -182,15 +182,19 @@
 
   &__slide {
     position: relative;
+    display: flex;
+    flex-direction: column;
     max-width: to-rem(327);
     height: auto;
     min-height: to-rem(437);
-    border-radius: to-rem(32);
+    border-radius: to-rem(20);
     background: var(--color-card-bg);
     padding: to-rem(8);
 
     @media (min-width: 1200px) {
       max-width: to-rem(410);
+      border-radius: to-rem(32);
+      padding: to-rem(8, 8, 24);
     }
 
     .button {
@@ -261,7 +265,11 @@
     }
 
     &-job {
-      padding: to-rem(0, 16);
+      margin-top: auto;
+
+      @media (min-width: 1200px) {
+        padding: to-rem(0, 16);
+      }
     }
 
     &-more {

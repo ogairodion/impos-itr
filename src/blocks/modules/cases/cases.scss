@@ -61,7 +61,7 @@
 
       @media (min-width: 1200px) {
         max-width: to-rem(533);
-        padding: to-rem(8, 24, 7);
+        padding: to-rem(8, 0, 7);
       }
     }
 
@@ -83,11 +83,13 @@
     }
 
     &-top {
+      align-items: center;
       margin-bottom: to-rem(24);
+      padding: to-rem(8, 24);
 
       @media (max-width: 1199px) {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         margin-bottom: 0;
         padding: to-rem(8, 0);
@@ -118,6 +120,7 @@
       margin-bottom: to-rem(32);
 
       @media (min-width: 1200px) {
+        padding: to-rem(8, 24);
         margin-bottom: to-rem(24);
       }
 

@@ -54,6 +54,8 @@ function getSliders(element, index) {
   const currentStep = element.querySelector('.scheme__slider-step--current');
   const currentStepAll = element.querySelector('.scheme__slider-step--all');
 
+  const pagination = element.querySelector('.steps__pagination');
+
   sliderLength.innerText = sliders.length;
   sliderActiveIndex.innerText = 1;
 
@@ -78,7 +80,7 @@ function getSliders(element, index) {
       prevEl: arrowLeft,
     },
     pagination: {
-      el: `.tabs-content-${index} .steps__pagination`,
+      el: pagination,
       clickable: true,
     },
     on: {

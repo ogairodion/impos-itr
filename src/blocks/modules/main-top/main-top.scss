@@ -136,7 +136,11 @@
 
   .button {
     min-width: to-rem(333);
-    margin-top: to-rem(48);
+    margin-top: to-rem(24);
+
+    @media (min-width: 768px) {
+      margin-top: to-rem(48);
+    }
   }
 
   .swiper {

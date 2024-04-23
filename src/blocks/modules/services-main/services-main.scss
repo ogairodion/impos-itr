@@ -7,10 +7,15 @@
 
   &__title {
     color: var(--color-primary);
-    margin-bottom: to-rem(64);
+    margin-bottom: to-rem(40);
+
+    @media (max-width: 1199px) {
+      font-size: to-rem(22);
+      line-height: to-rem(26);
+    }
 
     @media (min-width: 1200px) {
-      margin-bottom: to-rem(40);
+      margin-bottom: to-rem(64);
     }
   }
 
@@ -29,10 +34,10 @@
     flex-direction: column;
     border-radius: to-rem(16);
     overflow: hidden;
+    background: var(--color-card-bg);
     padding: to-rem(8);
 
     @media (min-width: 992px) {
-      background: var(--color-card-bg);
       border-radius: to-rem(40);
       padding: to-rem(24, 24, 48);
 

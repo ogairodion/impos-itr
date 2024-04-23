@@ -138,7 +138,7 @@
         margin-bottom: to-rem(16);
       }
 
-      &-steps, &-description, &-caption {
+      &-step, &-steps, &-description, &-caption {
         opacity: 0.5;
       }
 
@@ -166,6 +166,7 @@
         align-items: flex-start;
         min-height: to-rem(80);
         gap: to-rem(4);
+        margin: to-rem(0, -4);
       }
 
       &-tag {
@@ -584,7 +585,7 @@
 
     .swiper-slide {
       @media (min-width: 1200px) {
-        // opacity: 0;
+        opacity: 0;
       }
 
       &-visible {
@@ -668,6 +669,12 @@
 
       @media (max-width: 1199px) {
         min-height: to-rem(400);
+      }
+
+      &-progress {
+        @media (min-width: 1200px) {
+          width: 100%;
+        }
       }
     }
 

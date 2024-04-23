@@ -38,6 +38,7 @@
     @media (max-width: 1199px) {
       max-width: to-rem(160);
       min-height: to-rem(90);
+      border-radius: to-rem(16);
       margin-bottom: to-rem(8);
     }
   }
