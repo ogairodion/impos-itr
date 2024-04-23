@@ -29,9 +29,15 @@
       padding: to-rem(19, 32);
     }
 
-    &.active, &:hover {
+    &.active {
       background: var(--color-primary);
       color: var(--color-dark);
+    }
+
+    &:hover {
+      &:not(.active) {
+        background: var(--color-gray);
+      }
     }
   }
 }

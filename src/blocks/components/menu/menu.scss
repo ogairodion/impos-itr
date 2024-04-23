@@ -64,12 +64,11 @@
 
     &:hover {
       background: #3C3E3E;
-      color: var(--color-dark);
 
       .menu {
         &__close {
           &-icon {
-            background: var(--color-dark);
+            background: var(--color-gray);
           }
         }
       }
@@ -463,7 +462,7 @@
 
       .menu-main {
         &__icon {
-          background: var(--color-dark);
+          background: var(--color-gray);
         }
       }
     }
