@@ -129,7 +129,8 @@
 
     &-step {
       display: none;
-      max-width: fit-content;
+      width: to-rem(64);
+      height: to-rem(64);
       color: var(--color-primary);
       border-radius: to-rem(8);
       border: to-rem(1) solid var(--color-gray);

@@ -92,6 +92,7 @@
 
     &-title {
       font-size: to-rem(72);
+      line-height: to-rem(72);
       color: var(--color-primary);
 
       @media (max-width: 1199px) {
@@ -124,6 +125,7 @@
 
         @media (max-width: 1199px) {
           display: block;
+          padding-top: to-rem(12);
         }
 
         @media (min-width: 1200px) {
@@ -140,13 +142,14 @@
       @media (max-width: 1199px) {
         display: none;
       }
-      img {
+
+      svg {
         position: absolute;
         right: 0;
         bottom: 0;
         z-index: 1;
-        width: 100%;
-        height: 100%;
+        width: 100% !important;
+        height: 100% !important;
       }
     }
 
@@ -171,7 +174,7 @@
 
           &-caption {
             @media (min-width: 1200px) {
-              margin-top: to-rem(24);
+              margin-top: to-rem(22);
             }
           }
         }
