@@ -220,12 +220,12 @@
                 display: block;
               }
             }
+          }
+        }
 
-            ol {
-              @media (max-width: 1199px) {
-                display: block;
-              }
-            }
+        ol, ul {
+          @media (max-width: 1199px) {
+            display: block;
           }
         }
 

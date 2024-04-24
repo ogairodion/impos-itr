@@ -5,6 +5,12 @@
     padding-bottom: to-rem(160);
   }
 
+  .l-default {
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 16);
+    }
+  }
+
   &__title {
     margin-bottom: to-rem(40);
 
@@ -65,6 +71,10 @@
 
     &-title {
       margin-bottom: to-rem(16);
+
+      @media (max-width: 1199px) {
+        padding: to-rem(0, 8);
+      }
 
       @media (max-width: 767px) {
         max-width: to-rem(186);

@@ -47,8 +47,8 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 88px;
-      height: 88px;
+      width: 99px;
+      height: 99px;
 
       svg {
         transform: rotate(-90deg);
@@ -79,8 +79,8 @@
 
     &-step {
       position: relative;
-      min-width: to-rem(88);
-      min-height: to-rem(88);
+      min-width: to-rem(99);
+      min-height: to-rem(99);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -98,6 +98,12 @@
 
       &--current {
         display: block;
+      }
+    }
+
+    &-title {
+      @media (max-width: 1199px) {
+        max-width: to-rem(133);
       }
     }
   }

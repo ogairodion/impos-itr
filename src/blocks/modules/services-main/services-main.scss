@@ -5,6 +5,12 @@
     padding-bottom: to-rem(160);
   }
 
+  .l-default {
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 16);
+    }
+  }
+
   &__title {
     color: var(--color-primary);
     margin-bottom: to-rem(40);
@@ -12,6 +18,7 @@
     @media (max-width: 1199px) {
       font-size: to-rem(22);
       line-height: to-rem(26);
+      padding: to-rem(0, 16);
     }
 
     @media (min-width: 1200px) {
@@ -74,6 +81,13 @@
       }
     }
 
+    &-title {
+      @media (max-width: 991px) {
+        font-size: to-rem(22);
+        line-height: to-rem(26);
+      }
+    }
+
     &-text {
       max-width: to-rem(464);
       padding: to-rem(0, 24);
@@ -88,12 +102,13 @@
     &-img {
       position: relative;
       min-height: to-rem(174);
-      border-radius: to-rem(12);
+      border-radius: to-rem(8);
       overflow: hidden;
       margin-bottom: to-rem(24);
 
       @media (min-width: 992px) {
         min-height: to-rem(323);
+        border-radius: to-rem(8);
       }
 
       @media (max-width: 991px) {
@@ -176,6 +191,7 @@
     @media (max-width: 991px) {
       order: 10;
       margin-top: to-rem(42);
+      border-radius: to-rem(8);
     }
 
     @media (min-width: 992px) {

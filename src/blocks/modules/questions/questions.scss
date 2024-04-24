@@ -5,6 +5,12 @@
     padding-bottom: to-rem(64);
   }
 
+  .l-default {
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 16);
+    }
+  }
+
   .dropdown {
     animation: show 0.4s ease-in-out;
   }
@@ -17,6 +23,10 @@
     @media (min-width: 1200px) {
       width: to-rem(328);
     }
+
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 8);
+    }
   }
 
   &__top {
@@ -27,6 +37,10 @@
     @media (min-width: 1200px) {
       flex-direction: row;
       margin-bottom: to-rem(64);
+    }
+
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 8);
     }
   }
 

@@ -46,8 +46,12 @@
     flex-direction: column;
     width: auto;
     padding: to-rem(8);
-    border-radius: to-rem(24);
+    border-radius: to-rem(16);
     background: var(--color-card-bg);
+
+    @media (min-width: 1200px) {
+      border-radius: to-rem(24);
+    }
 
     @media (max-width: 1199px) {
       max-width: to-rem(327);
@@ -56,8 +60,16 @@
     &-img {
       position: relative;
       flex: 1 1 auto;
-      border-radius: to-rem(16);
+      border-radius: to-rem(8);
       overflow: hidden;
+
+      @media (max-width: 1199px) {
+        min-height: to-rem(379);
+      }
+
+      @media (min-width: 1200px) {
+        border-radius: to-rem(16);
+      }
 
       img {
         display: block;

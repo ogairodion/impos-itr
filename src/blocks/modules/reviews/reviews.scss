@@ -147,6 +147,20 @@
         margin-top: auto;
       }
 
+      &-description {
+        @media (max-width: 1199px) {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -moz-box;
+          -moz-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          line-clamp: 4;
+          box-orient: vertical;
+        }
+      }
+
       &-progress {
         width: 100%;
         height: to-rem(2);
@@ -338,6 +352,20 @@
         opacity: 0.5;
       }
 
+      &-description {
+        @media (max-width: 1199px) {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -moz-box;
+          -moz-box-orient: vertical;
+          display: -webkit-box;
+          -webkit-line-clamp: 4;
+          -webkit-box-orient: vertical;
+          line-clamp: 4;
+          box-orient: vertical;
+        }
+      }
+
       &-bottom {
         margin-top: auto;
       }
@@ -399,6 +427,7 @@
 
       @media (max-width: 1199px) {
         max-width: to-rem(327);
+        border-radius: to-rem(16);
       }
 
       &-img {
@@ -410,6 +439,7 @@
 
         @media (max-width: 1199px) {
           min-height: to-rem(320);
+          border-radius: to-rem(8);
         }
 
         img {

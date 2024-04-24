@@ -5,11 +5,19 @@
     padding-bottom: to-rem(160);
   }
 
+  .l-default {
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 16);
+    }
+  }
+
   &__title {
     color: var(--color-primary);
     margin-bottom: to-rem(40);
+    padding: to-rem(0, 8);
 
     @media (min-width: 1200px) {
+      padding: 0;
       margin-bottom: to-rem(64);
     }
   }
@@ -226,8 +234,12 @@
       position: relative;
       width: to-rem(180);
       height: to-rem(180);
-      border-radius: to-rem(24);
+      border-radius: to-rem(12);
       overflow: hidden;
+
+      @media (min-width: 1200px) {
+        border-radius: to-rem(24);
+      }
 
       img {
         position: absolute;
