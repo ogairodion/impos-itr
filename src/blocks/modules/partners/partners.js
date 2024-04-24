@@ -11,7 +11,7 @@ const partnersSlider = new Swiper('.partners__items', {
   observeParents: true,
   observer: true,
   breakpoints: {
-    1200: {
+    1300: {
       slidesPerView: 6,
       allowTouchMove: false,
       centeredSlides: false,

@@ -12,9 +12,8 @@
   }
 
   &__wrapper {
-    display: grid;
-
     @media (min-width: 1200px) {
+      display: grid;
       grid-template-columns: 1fr to-rem(99);
       gap: to-rem(15);
     }

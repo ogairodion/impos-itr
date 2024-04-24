@@ -5,9 +5,8 @@ const postsSlider = new Swiper('.posts__slider', {
   modules: [Pagination],
   slidesPerView: 'auto',
   spaceBetween: 8,
-  loop: true,
   breakpoints: {
-    1200: {
+    1300: {
       spaceBetween: 16,
       allowTouchMove: false,
       loop: false,

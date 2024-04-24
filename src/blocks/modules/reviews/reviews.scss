@@ -52,6 +52,7 @@
         align-items: center;
         flex-wrap: wrap;
         gap: to-rem(4);
+        margin: to-rem(0, -4);
         margin-bottom: to-rem(24);
       }
 
@@ -217,6 +218,7 @@
         align-items: center;
         flex-wrap: wrap;
         gap: to-rem(4);
+        margin: to-rem(0, -4);
         margin-bottom: to-rem(24);
       }
 
@@ -359,6 +361,7 @@
         justify-content: flex-end;
         align-items: flex-start;
         min-height: to-rem(80);
+        margin: to-rem(0, -4);
         gap: to-rem(4);
       }
 

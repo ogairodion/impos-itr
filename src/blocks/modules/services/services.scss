@@ -31,6 +31,7 @@
 
     @media (min-width: 992px) {
       grid-template-columns: repeat(2, 1fr);
+      gap: to-rem(16);
       border-radius: to-rem(32);
     }
 
