@@ -39,6 +39,8 @@
       padding: to-rem(24);
       border-left: to-rem(1) solid var(--color-gray);
       border-right: to-rem(1) solid var(--color-gray);
+      margin-top: to-rem(64);
+      margin-top: to-rem(64);
     }
 
     &:first-child {
@@ -49,9 +51,11 @@
 
     &:not(:last-child) {
       border-top: none;
+    }
 
+    &:first-child {
       @media (min-width: 1200px) {
-        margin-top: to-rem(64);
+        margin-top: 0;
       }
     }
 
