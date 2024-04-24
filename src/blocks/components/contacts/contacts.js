@@ -3,6 +3,7 @@ import { Fancybox } from "@fancyapps/ui";
 const contacts = document.querySelector('.contacts');
 const contactsIcon = contacts.querySelector('.default');
 const contactsClose = contacts.querySelector('.close');
+const contactsCall = contacts.querySelector('.contacts__call');
 const contactsMobile = contacts.querySelector('.contacts__mobile');
 
 const menu = document.querySelector('.menu');
@@ -40,3 +41,9 @@ if (windowWidth > 1200) {
   contactsIcon.classList.remove('hidden');
   contactsClose.classList.add('hidden');
 }
+
+contactsCall.addEventListener('click', () => {
+  if (windowWidth >= 1200) {
+    Fancybox.show([{ src: "#popup-call", type: "inline" }]);
+  }
+});

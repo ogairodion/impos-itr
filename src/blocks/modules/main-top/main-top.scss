@@ -135,10 +135,12 @@
   }
 
   .button {
-    min-width: to-rem(333);
+    max-width: 100%;
     margin-top: to-rem(24);
 
     @media (min-width: 768px) {
+      max-width: fit-content;
+      min-width: to-rem(333);
       margin-top: to-rem(48);
     }
   }
