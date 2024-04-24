@@ -33,6 +33,7 @@
       position: sticky;
       top: 0;
       display: flex;
+      gap: to-rem(8);
       border-radius: to-rem(32);
       background: var(--color-card-bg);
       padding: to-rem(24);
@@ -61,7 +62,6 @@
 
       @media (min-width: 1200px) {
         max-width: to-rem(533);
-        padding: to-rem(8, 0, 7);
       }
     }
 
@@ -85,7 +85,7 @@
     &-top {
       align-items: center;
       margin-bottom: to-rem(24);
-      padding: to-rem(8, 24);
+      padding: to-rem(8, 24, 0);
 
       @media (max-width: 1199px) {
         display: flex;
