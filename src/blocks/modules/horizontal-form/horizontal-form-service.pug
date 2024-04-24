@@ -7,13 +7,14 @@ section.horizontal-form.horizontal-form-service
       .horizontal-form__info
         h3.horizontal-form__title.f-h3 Остались вопросы?
         .horizontal-form__progress
-        .horizontal-form__description.f-body Подпишитесь на нашу новостную рассылку и станьте первым, кто узнает о наших акциях , о специальных предложениях и многом другом
+        .horizontal-form__description.f-body Текст в разработке, описываем что с вами свяжется менеджен и ответит на все интересующие вопросы
       .horizontal-form__wrapper
         +form({
           inputs: form_inputs,
           button: {
-            text: 'Подписаться на рассылку',
+            text: 'Задать вопрос',
             icon: horizontal_form_icon,
             theme: 'button--light'
           },
+          privacy_text: 'Нажимая кнопку «Задать вопрос» я соглашаюсь на обработку персональных данных',
         })
