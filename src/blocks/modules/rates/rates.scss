@@ -176,6 +176,7 @@
       }
 
       &:last-child {
+        max-width: to-rem(186);
         vertical-align: bottom;
         padding-left: 0;
 
@@ -278,7 +279,7 @@
       padding: to-rem(10, 2, 10, 32);
 
       @media (min-width: 1200px) {
-        padding: to-rem(10, 32);
+        padding: to-rem(10, 32, 14);
       }
 
       @media (max-width: 1199px) {

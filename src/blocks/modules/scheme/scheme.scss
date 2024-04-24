@@ -174,4 +174,14 @@
       display: block;
     }
   }
+
+  &-page {
+    .scheme {
+      &__title {
+        @media (min-width: 1300px) {
+          margin-bottom: to-rem(64);
+        }
+      }
+    }
+  }
 }

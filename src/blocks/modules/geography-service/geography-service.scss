@@ -1,4 +1,4 @@
-.answers {
+.geography-service {
   padding-bottom: to-rem(96);
 
   @media (min-width: 1200px) {
@@ -31,7 +31,7 @@
   }
 
   &__description {
-    max-width: to-rem(358);
+    max-width: to-rem(390);
     opacity: 0.5;
 
     @media (min-width: 1200px) {

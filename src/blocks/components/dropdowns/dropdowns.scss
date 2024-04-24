@@ -97,10 +97,10 @@
 
     &__text {
       max-width: to-rem(609);
+      opacity: 0.5;
       margin: 0 auto;
 
       @media (max-width: 1199px) {
-        opacity: 0.5;
         padding: to-rem(24, 32, 0, 24);
       }
     }

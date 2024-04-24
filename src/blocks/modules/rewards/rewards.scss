@@ -213,6 +213,10 @@
         flex-wrap: wrap;
         gap: to-rem(16);
       }
+
+      &__top {
+        margin-bottom: 0;
+      }
     }
   }
 }

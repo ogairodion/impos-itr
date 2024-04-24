@@ -193,6 +193,12 @@
     }
   }
 
+  &__items {
+    @media (max-width: 1199px) {
+      margin-bottom: to-rem(12);
+    }
+  }
+
   &__item {
     display: flex;
     cursor: pointer;
@@ -314,7 +320,7 @@
         line-height: to-rem(24);
         border-radius: to-rem(8);
         background: var(--color-card-bg);
-        padding: to-rem(10, 0);
+        padding: to-rem(10, 0, 14);
 
         &.half {
           order: 0;
@@ -354,7 +360,11 @@
 
     &-title {
       font-weight: 600;
-      margin-bottom: to-rem(40);
+      margin-bottom: to-rem(24);
+
+      @media (min-width: 1200px) {
+        margin-bottom: to-rem(40);
+      }
     }
 
     .form {

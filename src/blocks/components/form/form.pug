@@ -12,4 +12,4 @@ mixin form(element)
       text: element.button.text,
       icon: element.button.icon,
     })
-    .form__privacy.f-body-small Нажимая кнопку «Подписаться на рассылку» я соглашаюсь на обработку персональных данных
+    .form__privacy.f-body-small= element.privacy_text || 'Нажимая кнопку «Подписаться на рассылку» я соглашаюсь на обработку персональных данных'

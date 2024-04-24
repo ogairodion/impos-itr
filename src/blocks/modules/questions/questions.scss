@@ -5,6 +5,10 @@
     padding-bottom: to-rem(64);
   }
 
+  .dropdown {
+    animation: show 0.4s ease-in-out;
+  }
+
   .point {
     width: 100%;
     margin: 0;
@@ -36,7 +40,7 @@
   }
 
   &__description {
-    max-width: to-rem(358);
+    max-width: to-rem(390);
     opacity: 0.5;
 
     @media (min-width: 1200px) {
@@ -45,6 +49,7 @@
   }
 
   .button--more {
+    width: 100%;
     max-width: 100%;
     margin-top: to-rem(48);
   }

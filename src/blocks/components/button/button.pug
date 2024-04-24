@@ -20,8 +20,10 @@ mixin button(element)
       - if (element.close)
         button.button(class=[element.theme, element.class] href=element.href data-fancybox-close)
           .button__text.f-caps= element.text
-          .button__icon!= element.icon
+          - if (element.icon)
+            .button__icon!= element.icon
       - else
         button.button(class=[element.theme, element.class])
           .button__text.f-caps= element.text
-          .button__icon!= element.icon
+          - if (element.icon)
+            .button__icon!= element.icon

@@ -1,0 +1,13 @@
+include ../.././components/point/point.pug
+
+section.geography-service
+  .l-default
+    +point({
+      number: '02',
+      text: 'География',
+    })
+    .geography-service__top
+      h2.geography-service__title.f-h2 Заголовк блока с логотипами в разработке
+      .geography-service__description.f-body Текст описания блока в разработке, примерный объем текста может варьировтаься от 2-3 строк до 4-5.. Все ситуалисвно
+    .geography-service__map
+      include ../.././components/map/map.pug
