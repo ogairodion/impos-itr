@@ -181,16 +181,15 @@
 
     &-text {
       opacity: 0.5;
-      color: var(--color-primary);
     }
   }
 
   .button {
     max-width: 100%;
+    margin-top: to-rem(24);
 
     @media (max-width: 991px) {
       order: 10;
-      margin-top: to-rem(42);
       border-radius: to-rem(8);
     }
 
@@ -201,6 +200,7 @@
       width: calc(100% - 48px);
       z-index: 1;
       transform: translateY(200%);
+      margin-top: to-rem(42);
     }
   }
 

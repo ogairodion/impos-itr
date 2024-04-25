@@ -78,6 +78,8 @@
 
       @media (max-width: 767px) {
         max-width: to-rem(200);
+        font-size: to-rem(26);
+        line-height: to-rem(32);
         padding-left: to-rem(16);
         padding-top: to-rem(8);
       }

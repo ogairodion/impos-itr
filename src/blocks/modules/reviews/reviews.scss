@@ -112,6 +112,7 @@
       }
 
       &-link {
+        color: var(--color-primary);
         margin: to-rem(48, 0, 32);
 
         @media (min-width: 1200px) {
@@ -284,6 +285,7 @@
       }
 
       &-link {
+        color: var(--color-primary);
         margin: to-rem(48, 0, 32);
 
         @media (min-width: 1200px) {

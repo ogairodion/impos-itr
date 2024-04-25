@@ -11,6 +11,27 @@ const mapClose = document.querySelector('.map__popup-close');
 const geographyItems = document.querySelectorAll('.geography__item');
 
 let isHidden = true;
+let isMobile = false;
+let isChanged = false;
+
+let windowWidth = 0;
+
+windowWidth = window.innerWidth;
+
+isMobile = windowWidth < 1400 ? true : false;
+isChanged = !isMobile;
+
+window.addEventListener('resize', () => {
+  windowWidth = window.innerWidth;
+
+  isMobile = windowWidth < 1400 ? true : false;
+
+  if (!isMobile && !isChanged) {
+    getItems();
+
+    isChanged = true;
+  }
+});
 
 if (mapPointsPath.length) {
   mapPointsPath.forEach((point, index) => {
@@ -168,7 +189,7 @@ mapMore.addEventListener('click', () => {
 
   isHidden = !isHidden;
 
-  moreText.innerText = isHidden ? 'Все+' : 'Скрыть-';
+  moreText.innerHTML = isHidden ? 'Все&nbsp;+&nbsp;' : 'Скрыть&nbsp;-&nbsp;';
 
   mapItems.forEach((item, id) => {
     if (id > 10) {

@@ -176,7 +176,7 @@
       }
 
       &:last-child {
-        max-width: to-rem(186);
+        width: to-rem(218);
         vertical-align: bottom;
         padding-left: 0;
 
@@ -194,8 +194,9 @@
         }
 
         @media (min-width: 1200px) {
-          margin-top: to-rem(16);
           padding-right: to-rem(64);
+          margin-top: to-rem(16);
+          margin-bottom: 0;
         }
       }
 
@@ -267,11 +268,14 @@
 
       @media (min-width: 1200px) {
         padding-right: to-rem(32);
-        padding-bottom: to-rem(24);
       }
     }
 
     &-items {
+      @media (min-width: 1200px) {
+        margin-top: to-rem(24);
+      }
+
       @media (max-width: 1199px) {
         display: none;
       }

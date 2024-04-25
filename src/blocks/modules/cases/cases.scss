@@ -88,7 +88,6 @@
     &-title {
       @media (max-width: 1199px) {
         padding: to-rem(8, 0);
-        padding-top: to-rem(4);
       }
     }
 
@@ -226,6 +225,12 @@
     &:last-child {
       .shadow {
         display: none !important;
+      }
+    }
+
+    .button {
+      @media (max-width: 1199px) {
+        border-radius: to-rem(8);
       }
     }
   }
