@@ -12,6 +12,12 @@
     padding: to-rem(32, 0);
   }
 
+  .l-default {
+    @media (max-width: 1199px) {
+      padding: to-rem(0, 16);
+    }
+  }
+
   &--hide {
     transform: translateY(-100%);
   }
