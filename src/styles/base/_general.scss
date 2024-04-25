@@ -223,13 +223,17 @@ img {
 }
 
 .slider-pagination {
-  position: static;
-  top: unset;
+  position: absolute;
   display: flex;
   justify-content: center;
-  gap: to-rem(8);
-  margin: 0 auto;
-  margin-top: to-rem(16);
+  top: 50% !important;
+  left: 50% !important;
+  height: 100%;
+  transform: translate(-50%, -50%) !important;
+
+  &.swiper-pagination-bullets-dynamic {
+    display: block;
+  }
 
   .swiper-pagination-bullet {
     width: to-rem(8);
@@ -237,10 +241,23 @@ img {
     border-radius: to-rem(1);
     background: var(--color-card-bg);
     margin: 0 !important;
+    margin-right: to-rem(8) !important;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+
+    &:last-child {
+      margin-right: 0 !important;
+    }
 
     &-active {
       background: var(--color-primary);
     }
+  }
+
+  &-wrapper {
+    position: relative;
+    height: to-rem(8);
+    margin-top: to-rem(16);
   }
 }
 

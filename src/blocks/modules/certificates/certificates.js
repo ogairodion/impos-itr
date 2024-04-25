@@ -20,6 +20,7 @@ const certificatesSlider = new Swiper('.certificates__slider', {
   pagination: {
     el: '.certificates .slider-pagination',
     clickable: true,
+    dynamicBullets: true,
   },
   loop: true,
   centeredSlides: true,
