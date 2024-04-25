@@ -281,15 +281,17 @@
 
       @media (min-width: 1200px) {
         padding: to-rem(0, 16);
+        margin-top: 0;
       }
     }
 
     &-more {
       display: flex;
-      padding: to-rem(0, 8);
+      flex-direction: row;
 
       @media (min-width: 1200px) {
         max-width: 100%;
+        padding: to-rem(0, 8);
       }
 
       .button {
@@ -314,6 +316,7 @@
             flex-direction: column;
             position: relative;
             flex: 1 1 auto;
+            min-width: to-rem(421);
             padding: to-rem(0, 8);
             margin: to-rem(8, 0);
           }
