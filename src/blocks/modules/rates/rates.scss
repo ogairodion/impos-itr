@@ -189,6 +189,8 @@
         @media (max-width: 1199px) {
           display: none;
           padding-left: to-rem(20);
+          margin-top: to-rem(8);
+          margin-bottom: to-rem(32);
         }
 
         @media (min-width: 1200px) {
@@ -218,6 +220,7 @@
             &-items, &-info {
               @media (max-width: 1199px) {
                 display: block;
+                margin-bottom: to-rem(40);
               }
             }
           }

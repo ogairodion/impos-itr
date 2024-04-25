@@ -13,6 +13,19 @@
 
   .dropdown {
     animation: show 0.4s ease-in-out;
+
+    &__top {
+      @media (max-width: 1199px) {
+        padding: to-rem(8);
+      }
+    }
+
+    &__title {
+      @media (max-width: 1199px) {
+        padding: to-rem(8, 16, 16);
+        padding-right: 0;
+      }
+    }
   }
 
   .point {

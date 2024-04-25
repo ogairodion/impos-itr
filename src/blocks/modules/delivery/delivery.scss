@@ -54,7 +54,11 @@
     }
 
     &-title {
-      margin-bottom: to-rem(40);
+      margin-bottom: to-rem(32);
+
+      @media (min-width: 1200px) {
+        margin-bottom: to-rem(40);
+      }
     }
 
     .button {

@@ -150,6 +150,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: to-rem(8);
 
+    @media (min-width: 500px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
     @media (min-width: 1200px) {
       grid-template-columns: repeat(6, 1fr);
     }
@@ -164,6 +168,10 @@
     min-height: to-rem(70);
     border-radius: to-rem(8);
     overflow: hidden;
+
+    @media (min-width: 500px) {
+      min-height: to-rem(90);
+    }
 
     @media (min-width: 1200px) {
       min-height: to-rem(120);
@@ -193,6 +201,10 @@
     border: to-rem(1) solid rgba(#F8F1DF, 0.5);
     background: var(--color-gray);
     overflow: hidden;
+
+    @media (min-width: 500px) {
+      min-height: to-rem(90);
+    }
   }
 }
 

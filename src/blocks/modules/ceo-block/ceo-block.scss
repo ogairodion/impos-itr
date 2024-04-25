@@ -6,9 +6,13 @@
   }
 
   .point {
-    width: to-rem(328);
+    width: to-rem(193);
     margin: 0;
     margin-bottom: to-rem(24);
+
+    @media (min-width: 1200px) {
+      width: to-rem(328);
+    }
   }
 
   &__top {
