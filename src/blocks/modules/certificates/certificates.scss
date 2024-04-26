@@ -84,16 +84,4 @@
       overflow: hidden;
     }
   }
-
-  .swiper-slide {
-    @media (min-width: 1200px) {
-      opacity: 0;
-    }
-
-    &-visible {
-      @media (min-width: 1200px) {
-        opacity: 1;
-      }
-    }
-  }
 }

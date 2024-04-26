@@ -228,10 +228,12 @@ function getPopupMobile(item) {
   popupMobileCases.querySelector('.popup-map__bottom-title').innerText = itemBottomCases.querySelector('.map-item__bottom-title').innerText;
   popupMobileCases.querySelector('.popup-map__bottom-text').innerText = itemBottomCases.querySelector('.map-item__bottom-text').innerText;
 
-  popupMobileServices.querySelector('.popup-map__bottom-title').innerText = itemBottomServices.querySelector('.map-item__bottom-title').innerText;
-  popupMobileServices.querySelector('.popup-map__bottom-text').innerText = itemBottomServices.querySelector('.map-item__bottom-text').innerText;
+  if (itemServicesHref) {
+    popupMobileServices.querySelector('.popup-map__bottom-title').innerText = itemBottomServices.querySelector('.map-item__bottom-title').innerText;
+    popupMobileServices.querySelector('.popup-map__bottom-text').innerText = itemBottomServices.querySelector('.map-item__bottom-text').innerText;
+    popupMobileServicesHref.href = itemServicesHref.innerText;
+  }
 
-  popupMobileServicesHref.href = itemServicesHref.innerText;
   popupMobileCasesHref.href = itemCasesHref.innerText;
 }
 
