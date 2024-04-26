@@ -74,9 +74,10 @@
       z-index: 2;
       color: var(--color-primary);
       border-radius: to-rem(8);
-      background: rgba(#F8F1DF, 0.08);
+      background: #F8F1DF14;
       border: to-rem(1) solid rgba(#fff, 0.22);
       padding: to-rem(7, 20);
+      backdrop-filter: blur(to-rem(8));
     }
 
     &-title {
