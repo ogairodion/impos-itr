@@ -261,6 +261,7 @@
     }
 
     &-info {
+      width: 100%;
       margin: to-rem(32, 16, 39);
     }
 
@@ -360,7 +361,6 @@
 
           &-info {
             position: relative;
-            width: 100%;
             z-index: 2;
             border: to-rem(1) solid rgba(#fff, 0.22);
             border-radius: to-rem(16);
