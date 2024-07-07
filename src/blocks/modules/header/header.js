@@ -10,11 +10,5 @@ let scrollBefore = 0;
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
-  if (scrollBefore <= window.scrollY && window.scrollY > header.offsetHeight) {
-    header.classList.add('header--hide');
-  } else {
-    header.classList.remove('header--hide');
-  }
-
   scrollBefore = window.scrollY;
 });

@@ -3,8 +3,9 @@ import { Navigation } from 'swiper/modules';
 import { Fancybox } from "@fancyapps/ui";
 
 const parent = document.querySelector('.reviews-letters');
+const reviews = document.querySelector('.reviews');
 
-if (parent) {
+if (parent && !reviews.classList.contains('block-main')) {
   const slides = document.querySelectorAll('.reviews-letters__slide');
   const slidesCurrent = parent.querySelector('.slider-navigation-progress__length');
   const slidesActive = parent.querySelector('.slider-navigation-progress__active');

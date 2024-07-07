@@ -155,10 +155,15 @@
     td {
       vertical-align: top;
       padding: to-rem(24, 32, 0);
+      padding-bottom: to-rem(24);
 
       @media (max-width: 1199px) {
         padding: to-rem(0, 24);
         border-bottom: to-rem(1) solid var(--color-gray);
+      }
+
+      &:has(.rates__table-items), &:has(ol) {
+        padding-bottom: 0;
       }
 
       &:first-child {

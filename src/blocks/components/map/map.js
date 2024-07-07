@@ -77,8 +77,10 @@ if (map) {
 
     const itemBottomServices = item.querySelector('.map-item__cases');
     const itemBottomCases = item.querySelector('.map-item__services');
+    const itemBottomImport = item.querySelector('.map-item__import');
 
     const itemCasesHref = item.querySelector('.map-item__link--cases');
+    const itemImportHref = item.querySelector('.map-item__link--import');
     const itemServicesHref = item.querySelector('.map-item__link--services');
 
     const name = popup.querySelector('.map__popup-title');
@@ -87,9 +89,11 @@ if (map) {
 
     const services = popup.querySelector('.map__popup-services');
     const cases = popup.querySelector('.map__popup-cases');
+    const imports = popup.querySelector('.map__popup-import');
 
     const btnCases = popup.querySelector('.button--cases');
     const btnServices = popup.querySelector('.button--services');
+    const btnImport = popup.querySelector('.button--import');
 
     name.innerText = itemTitle.innerText;
     text.innerText = itemText.innerText;
@@ -101,8 +105,12 @@ if (map) {
     cases.querySelector('.map__popup-caption').innerText = itemBottomCases.querySelector('.map-item__bottom-title').innerText;
     cases.querySelector('.map__popup-text').innerText = itemBottomCases.querySelector('.map-item__bottom-text').innerText;
 
+    imports.querySelector('.map__popup-caption').innerText = itemBottomImport.querySelector('.map-item__bottom-title').innerText;
+    imports.querySelector('.map__popup-text').innerText = itemBottomImport.querySelector('.map-item__bottom-text').innerText;
+
     btnServices.href = itemServicesHref.innerText;
     btnCases.href = itemCasesHref.innerText;
+    btnImport.href = itemImportHref.innerText;
 
     const parentWidth = map.offsetWidth;
     const parentHeight = map.offsetHeight;
@@ -207,9 +215,11 @@ if (map) {
 
     const itemBottomServices = item.querySelector('.map-item__cases');
     const itemBottomCases = item.querySelector('.map-item__services');
+    const itemBottomImport = item.querySelector('.map-item__import');
 
     const itemCasesHref = item.querySelector('.map-item__link--cases');
     const itemServicesHref = item.querySelector('.map-item__link--services');
+    const itemImportHref = item.querySelector('.map-item__link--import');
 
     const popupMobile = document.querySelector('.popup-map');
 
@@ -219,9 +229,11 @@ if (map) {
 
     const popupMobileCases = popupMobile.querySelector('.popup-map__bottom-cases');
     const popupMobileServices = popupMobile.querySelector('.popup-map__bottom-services');
+    const popupMobileImport = popupMobile.querySelector('.popup-map__bottom-import');
 
     const popupMobileServicesHref = popupMobile.querySelector('.button--services');
     const popupMobileCasesHref = popupMobile.querySelector('.button--cases');
+    const popupMobileImportHref = popupMobile.querySelector('.button--import');
 
     popupMobileTitle.innerText = itemTitle.innerText;
     popupMobileText.innerText = itemText.innerText;
@@ -234,6 +246,12 @@ if (map) {
       popupMobileServices.querySelector('.popup-map__bottom-title').innerText = itemBottomServices.querySelector('.map-item__bottom-title').innerText;
       popupMobileServices.querySelector('.popup-map__bottom-text').innerText = itemBottomServices.querySelector('.map-item__bottom-text').innerText;
       popupMobileServicesHref.href = itemServicesHref.innerText;
+    }
+
+    if (itemImportHref) {
+      popupMobileImport.querySelector('.popup-map__bottom-title').innerText = itemBottomImport.querySelector('.map-item__bottom-title').innerText;
+      popupMobileImport.querySelector('.popup-map__bottom-text').innerText = itemBottomImport.querySelector('.map-item__bottom-text').innerText;
+      popupMobileImportHref.href = itemImportHref.innerText;
     }
 
     popupMobileCasesHref.href = itemCasesHref.innerText;

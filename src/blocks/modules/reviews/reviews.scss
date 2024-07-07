@@ -639,6 +639,8 @@
     }
 
     .swiper-slide {
+      overflow: hidden;
+
       @media (min-width: 1200px) {
         opacity: 0;
       }

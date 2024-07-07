@@ -2,8 +2,9 @@ import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 
 const parent = document.querySelector('.reviews-videos');
+const reviews = document.querySelector('.reviews');
 
-if (parent) {
+if (parent && !reviews.classList.contains('block-main')) {
   const slides = document.querySelectorAll('.reviews-videos__slide');
   const slidesCurrent = parent.querySelector('.slider-navigation-progress__length');
   const slidesActive = parent.querySelector('.slider-navigation-progress__active');

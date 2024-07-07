@@ -3,7 +3,7 @@ import { Navigation } from 'swiper/modules';
 
 const parent = document.querySelector('.rewards');
 
-if (parent) {
+if (parent && !parent.classList.contains('block-main')) {
   const slides = parent.querySelectorAll('.swiper-slide');
   const slidesLength = parent.querySelector('.slider-navigation-progress__length');
   const slidesActive = parent.querySelector('.slider-navigation-progress__active');

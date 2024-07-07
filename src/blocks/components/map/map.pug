@@ -1665,6 +1665,9 @@ include .././button/button.pug
         .map__popup-item.map__popup-cases
           .map__popup-caption.f-h4 88 888
           .map__popup-text.f-body-small Описание примерно 2 строки
+        .map__popup-item.map__popup-import
+          .map__popup-caption.f-h4 88 888
+          .map__popup-text.f-body-small Описание примерно 2 строки
       .map__popup-btns
         +button({
           text: 'О кейсе',
@@ -1678,6 +1681,14 @@ include .././button/button.pug
           text: 'О услуге',
           theme: 'dark',
           class: 'button--services',
+          icon: scheme_map_icon,
+          href: '#',
+        })
+
+        +button({
+          text: 'Импорт',
+          theme: 'dark',
+          class: 'button--import',
           icon: scheme_map_icon,
           href: '#',
         })

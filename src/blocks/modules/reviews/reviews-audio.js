@@ -3,8 +3,9 @@ import { Navigation, Grid } from 'swiper/modules';
 import WaveSurfer from 'wavesurfer.js';
 
 const parent = document.querySelector('.reviews-audio');
+const reviews = document.querySelector('.reviews');
 
-if (parent) {
+if (parent && !reviews.classList.contains('block-main')) {
   const slides = document.querySelectorAll('.reviews-audio__slide');
   const slidesCurrent = parent.querySelector('.slider-navigation-progress__length');
   const slidesActive = parent.querySelector('.slider-navigation-progress__active');

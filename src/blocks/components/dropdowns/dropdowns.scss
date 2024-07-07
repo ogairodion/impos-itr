@@ -15,7 +15,6 @@
     &__top {
       display: flex;
       align-items: flex-start;
-      justify-content: space-between;
       padding: to-rem(16, 8, 24, 0);
 
       @media (min-width: 1200px) {
@@ -76,13 +75,12 @@
       border-radius: to-rem(8);
       background: var(--color-gray);
       border: to-rem(1) solid var(--color-gray);
-      margin-left: to-rem(16);
+      margin-left: auto;
 
       @media (min-width: 1200px) {
         min-width: to-rem(80);
         min-height: to-rem(80);
         border-radius: to-rem(16);
-        margin-left: 0;
       }
 
       svg {
